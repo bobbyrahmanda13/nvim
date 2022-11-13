@@ -88,6 +88,9 @@ run = function()
         end,
 })
 
+-- git signs plugins
+use("lewis6991/gitsigns.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
