@@ -21,6 +21,7 @@ mason_lspconfig.setup({
     "cssls",
     "tailwindcss",
     "volar",
+    "emmet_ls",
   }
 })
 mason_null_ls.setup({
