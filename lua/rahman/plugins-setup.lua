@@ -15,7 +15,7 @@ local packer_bootstrap = ensure_packer() -- true if packer was just install
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -30,6 +30,7 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
 
   use("Mofiqul/dracula.nvim") -- preferred colorscheme
+  use("lukas-reineke/indent-blankline.nvim") -- preferred indent blankline
 
 -- tmux & split window navigation
 -- use("christoomey/vim-tmux-navigator")
