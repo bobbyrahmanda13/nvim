@@ -9,8 +9,8 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
-    formatting.prettier,
-    diagnostics.eslint_d
+    formatting.prettierd,
+    diagnostics.eslint_d,
   },
 -- configure format on save
 on_attach = function(client, bufnr)
