@@ -6,6 +6,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<C-s>", ":w<CR>")
 
 keymap.set("n", "x", '"_x')
 
@@ -22,10 +23,10 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to previous tab
 
-keymap.set("n", "<leader>h", "<C-w>h<CR>") -- open new tab 
-keymap.set("n", "<leader>j", "<C-w>j<CR>") -- close current tab
-keymap.set("n", "<leader>k", "<C-w>k<CR>") -- go to next tab
-keymap.set("n", "<leader>l", "<C-w>l<CR>") -- go to previous tab
+keymap.set("n", "<leader>h", "<C-w>h<CR>") 
+keymap.set("n", "<leader>j", "<C-w>j<CR>") 
+keymap.set("n", "<leader>k", "<C-w>k<CR>") 
+keymap.set("n", "<leader>l", "<C-w>l<CR>") 
 
 
 -- plugins keymaps
