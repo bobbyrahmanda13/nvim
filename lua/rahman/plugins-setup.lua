@@ -74,7 +74,6 @@ use("williamboman/mason-lspconfig.nvim")
 use("neovim/nvim-lspconfig")
 use("hrsh7th/cmp-nvim-lsp")
 use({ "glepnir/lspsaga.nvim", branch = "main" })
-use("jose-elias-alvarez/typescript.nvim")
 use("onsails/lspkind.nvim")
 
 -- formatting & linting

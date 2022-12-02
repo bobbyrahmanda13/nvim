@@ -7,10 +7,6 @@ local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
   return
 end
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-  return
-end
 
 local keymap = vim.keymap
 
@@ -32,11 +28,8 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
-  -- typescript specific keymaps (e.g. rename file and update imports)
-  if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-  end
 end
+
 
 -- used to enable autocompletion
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -46,11 +39,9 @@ capabilities = capabilities,
 on_attach = on_attach
 })
 
-typescript.setup({
-  server = {
-    capabilities = capabilities,
+lspconfig["tsserver"].setup({
+capabilities = capabilities,
 on_attach = on_attach
-}
 })
 
 lspconfig["cssls"].setup({
