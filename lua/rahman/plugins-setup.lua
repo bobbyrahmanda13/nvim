@@ -29,7 +29,7 @@ return packer.startup(function(use)
   -- lua functions that many plugins use
   use("nvim-lua/plenary.nvim")
 
-  use("Mofiqul/dracula.nvim") -- preferred colorscheme
+  use("folke/tokyonight.nvim") -- preferred colorscheme
   use("lukas-reineke/indent-blankline.nvim") -- preferred indent blankline
 
 -- tmux & split window navigation
