@@ -4,6 +4,7 @@ if not status then
 return
 end
 
+
 local tokyonight = require("tokyonight")
 tokyonight.setup({
 -- your configuration comes here
