@@ -28,6 +28,11 @@ keymap.set("n", "<leader>j", "<C-w>j<CR>")
 keymap.set("n", "<leader>k", "<C-w>k<CR>") 
 keymap.set("n", "<leader>l", "<C-w>l<CR>") 
 
+keymap.set("n", "<C-d>", "<C-d>zz<CR>") 
+keymap.set("n", "<C-u>", "<C-u>zz<CR>") 
+keymap.set("n", "n", "nzzzv") 
+keymap.set("n", "N", "Nzzzv") 
+
 
 -- plugins keymaps
 
