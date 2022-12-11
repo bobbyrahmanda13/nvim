@@ -15,7 +15,8 @@ end
 -- load friendly-snippets
 require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.filetype_extend("javascript", {"vue"})
-luasnip.filetype_extend("typescript", {"javascript","vue"})
+luasnip.filetype_extend("typescript", {"javascript"})
+luasnip.filetype_extend("vue", {"javascript","typescript"})
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
