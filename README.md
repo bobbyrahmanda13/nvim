@@ -1,10 +1,11 @@
-## Config Nvim simple Frontend Developer
-
-Hahhaha
+<div align="center">
+    <h1>Config Nvim Minimal</h1>
+</div>
 
 Plugins
 --------
 
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
@@ -16,7 +17,8 @@ Plugins
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - Colorscheme [catppuccin](https://github.com/catppuccin/nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
- - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 
 
