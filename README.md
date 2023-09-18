@@ -22,4 +22,4 @@
 ## Keyboard Shortcuts
 | Key Shortcut | Description |
 |-----|-----|
-| K | Lsp Hover |
+| `K` | Lsp Hover |
