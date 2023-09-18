@@ -35,3 +35,4 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 |-----|-----|
 | <kbd>K</kbd> | `Lsp Hover` |
 | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp Rename |
+| <kbd>space</kbd>+<kbd>s</kbd> | Replace all names with the same |
