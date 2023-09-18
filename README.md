@@ -2,7 +2,11 @@
     <h1>Config Nvim Minimal</h1>
 </div>
 
-Plugins
+### Quickstart
+----------
+
+
+### Plugins
 --------
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
