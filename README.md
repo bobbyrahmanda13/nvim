@@ -33,5 +33,5 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 ## Keyboard Shortcuts
 | Key Shortcut | Description |
 |-----|-----|
-| `<kbd>K</kbd>` | Lsp Hover |
-| '<kbd>space</kbd>+<kbd>vrn</kbd>' | Lsp Rename |
+| <kbd>K</kbd> | `Lsp Hover` |
+| <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp Rename |
