@@ -15,6 +15,8 @@ Plugins
 - [nvim-lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 - Colorscheme [catppuccin](https://github.com/catppuccin/nvim)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
+ - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 
 
