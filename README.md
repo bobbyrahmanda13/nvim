@@ -9,6 +9,10 @@ sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev
 ```
 untuk informasi selanjutnya liat aja di [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
+- ini jika menggunakan termux
+```pkg install neovim nodejs-lts curl xsel build-essential ripgrep fd-findunzip ```
+karena di termux package nya tidak selengkap linux jadi install aja apa yang ada aja kwkwk pake **pnpm** aja error gk jalan, pake **yarn** malas, ujung2 pake **npm** aja lagi, karena build from source juga gk bisa di termux
+
 ## Plugins
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -29,4 +33,5 @@ untuk informasi selanjutnya liat aja di [Building Neovim](https://github.com/neo
 ## Keyboard Shortcuts
 | Key Shortcut | Description |
 |-----|-----|
-| `K` | Lsp Hover |
+| `<kbd>K</kbd>` | Lsp Hover |
+| '<kbd>space</kbd>+<kbd>vrn</kbd>' | Lsp Rename |
