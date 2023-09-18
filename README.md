@@ -6,7 +6,7 @@ Karena saya menggunakan build from source jadi ini package debian yang harus say
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find
 ```
-untuk informasi selanjutnya liat aja di [Neovim](https://github.com/neovim/neovim)
+untuk informasi selanjutnya liat aja di [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
 ## Plugins
 
