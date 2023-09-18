@@ -1,5 +1,6 @@
 # Rahman init.lua
-ini adalah config untuk developer javascript / typescript, config ini tanpa menggunakan null-ls sebagai formatting atau menggunakan mason karena malas kwkwk jadi kalau mau install language server ikutin cara LSP aja install pake package manager yg kalian sukai
+Ini adalah config untuk developer javascript / typescript, config ini tanpa menggunakan null-ls sebagai formatting atau menggunakan mason karena malas kwkwk jadi kalau mau install language server ikutin cara LSP aja install pake package manager yg kalian sukai
+
 ## Quickstart
 Karena saya menggunakan build from source jadi ini package debian yang harus saya install
 - ini jika menggunakan linux debian 
