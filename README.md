@@ -2,12 +2,10 @@
     <h1>Config Nvim Minimal</h1>
 </div>
 
-### Quickstart
-----------
+## Quickstart
 
 
-### Plugins
---------
+## Plugins
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
