@@ -1,7 +1,4 @@
-<div align="center">
-    <h1>Config Nvim Minimal</h1>
-</div>
-
+# Rahman init.lua
 ## Quickstart
 
 
@@ -22,5 +19,7 @@
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-
-
+## Keyboard Shortcuts
+| Key Shortcut | Description |
+|-----|-----|
+| K | Lsp Hover |
