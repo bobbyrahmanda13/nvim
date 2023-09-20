@@ -31,16 +31,27 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Keyboard Shortcuts
-| Key Shortcut | Description |
-|-----|-----|
-| <kbd>K</kbd> | `Lsp Hover` |
-| <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp Rename |
+| Mode | Key Shortcut | Description |
+|-----|-----|-----|
+| Normal | <kbd>K</kbd> | `Lsp Hover` |
+| Normal | <kbd>J</kbd> | Delete blank line |
+| Visual | <kbd>J</kbd> | Move down lines |
+| <kbd>K</kbd> | Move up lines |
+| <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp rename |
 | <kbd>space</kbd>+<kbd>s</kbd> | Replace all names with the same |
 | <kbd>space</kbd>+<kbd>ex</kbd> | File Explorer |
-| <kbd>space</kbd>+<kbd>nh</kbd> | No Higlight | 
-| <kbd>space</kbd>+<kbd>sv</kbd> | Split Window Vertically |
-| <kbd>space</kbd>+<kbd>sh</kbd> | Split Window Horizontaly |
-| <kbd>space</kbd>+<kbd>se</kbd> | Make Split Window Equal |
-| <kbd>space</kbd>+<kbd>sx</kbd> | Close Current Split Window |
-
+| <kbd>space</kbd>+<kbd>nh</kbd> | No highlight | 
+| <kbd>space</kbd>+<kbd>sv</kbd> | Split window vertically |
+| <kbd>space</kbd>+<kbd>sh</kbd> | Split window horizontaly |
+| <kbd>space</kbd>+<kbd>se</kbd> | Make split window equal |
+| <kbd>space</kbd>+<kbd>sx</kbd> | Close current split window |
+| <kbd>space</kbd>+<kbd>to</kbd> | Open new tab |
+| <kbd>space</kbd>+<kbd>tx</kbd> | Close current tab |
+| <kbd>space</kbd>+<kbd>tn</kbd> | Go to next tab |
+| <kbd>space</kbd>+<kbd>tp</kbd> | Go to previous tab |
+| <kbd>space</kbd>+<kbd>h</kbd> | Jump to left window |
+| <kbd>space</kbd>+<kbd>l</kbd> | Jump to right window |
+| <kbd>space</kbd>+<kbd>k</kbd> | Jump to up window |
+| <kbd>space</kbd>+<kbd>j</kbd> | Jump to down window |
+| <kbd>space</kbd>+<kbd>p</kbd> | Paste paragraph |
 
