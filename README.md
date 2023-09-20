@@ -36,3 +36,11 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | <kbd>K</kbd> | `Lsp Hover` |
 | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp Rename |
 | <kbd>space</kbd>+<kbd>s</kbd> | Replace all names with the same |
+| <kbd>space</kbd>+<kbd>ex</kbd> | File Explorer |
+| <kbd>space</kbd>+<kbd>nh</kbd> | No Higlight | 
+| <kbd>space</kbd>+<kbd>sv</kbd> | Split Window Vertically |
+| <kbd>space</kbd>+<kbd>sh</kbd> | Split Window Horizontaly |
+| <kbd>space</kbd>+<kbd>se</kbd> | Make Split Window Equal |
+| <kbd>space</kbd>+<kbd>sx</kbd> | Close Current Split Window |
+
+
