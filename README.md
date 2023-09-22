@@ -33,11 +33,8 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 ## Keyboard Shortcuts
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
-| Normal | <kbd>K</kbd> | `Lsp Hover` |
-| Normal | <kbd>J</kbd> | Delete blank line |
-| Visual | <kbd>J</kbd> | Move down lines |
-| Visual | <kbd>K</kbd> | Move up lines |
-| Normal | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp rename |
+| Visual | <kbd>J</kbd> | Move the highlighted code to the bottom using visual mode |
+| Visual | <kbd>K</kbd> | Move the highlighted code to the top using visual mode |
 | Normal | <kbd>space</kbd>+<kbd>s</kbd> | Replace all names with the same |
 | Normal | <kbd>space</kbd>+<kbd>ex</kbd> | File Explorer |
 | Normal | <kbd>space</kbd>+<kbd>nh</kbd> | No highlight | 
@@ -45,14 +42,28 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>space</kbd>+<kbd>sh</kbd> | Split window horizontaly |
 | Normal | <kbd>space</kbd>+<kbd>se</kbd> | Make split window equal |
 | Normal | <kbd>space</kbd>+<kbd>sx</kbd> | Close current split window |
-| Normal | <kbd>space</kbd>+<kbd>to</kbd> | Open new tab |
 | Normal | <kbd>space</kbd>+<kbd>tx</kbd> | Close current tab |
+| Normal | <kbd>space</kbd>+<kbd>to</kbd> | Open new tab |
 | Normal | <kbd>space</kbd>+<kbd>tn</kbd> | Go to next tab |
 | Normal | <kbd>space</kbd>+<kbd>tp</kbd> | Go to previous tab |
 | Normal | <kbd>space</kbd>+<kbd>h</kbd> | Jump to left window |
 | Normal | <kbd>space</kbd>+<kbd>l</kbd> | Jump to right window |
 | Normal | <kbd>space</kbd>+<kbd>k</kbd> | Jump to up window |
 | Normal | <kbd>space</kbd>+<kbd>j</kbd> | Jump to down window |
+| Normal | <kbd>Ctrl</kbd>+<kbd>d</kbd> | Jumps down half a page but the cursor stays in the middle |  
+| Normal | <kbd>Ctrl</kbd>+<kbd>u</kbd> | Jumps up half a page but the cursor stays in the middle |  
+| Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
+| Normal | <kbd>N</kbd> | used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
+| Normal | <kbd>space</kbd>+<kbd>space</kbd> | Reload configuration | 
 | Normal | <kbd>space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
+| Normal | <kbd>yk<kbd> | Copy words  |
+| Normal | <kbd>hw<kbd> | Highlight words |  
 
+## Keyboard Shortcuts Plugins
+| Mode | Key Shortcut | Description |
+|-----|-----|-----|
+| Normal | <kbd>K</kbd> | `Lsp Hover` |
+| Normal | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp rename |
+| Normal |
+| Normal |
 

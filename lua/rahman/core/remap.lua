@@ -8,9 +8,6 @@ keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "<C-s>", ":w<CR>")
 
-keymap.set("n", "<leader>+", "<C-a>")
-keymap.set("n", "<leader>-", "<C-x>")
-
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontaly
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
@@ -34,10 +31,15 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv") 
 keymap.set("v", "K", ":m '<-2<CR>gv=gv") 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-keymap.set("n", "J", "mzJ`z") 
-keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", "\"_dP")
 keymap.set({"n", "v"}, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
+keymap.set("n","yk","yiw")
+keymap.set("n","hw","viw")
 
 -- plugin keymaps
 -- telescope 
