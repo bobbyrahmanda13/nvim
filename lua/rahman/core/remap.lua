@@ -31,15 +31,19 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("v", "J", ":m '>+1<CR>gv=gv") 
 keymap.set("v", "K", ":m '<-2<CR>gv=gv") 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-keymap.set("x", "<leader>p", "\"_dP")
-keymap.set({"n", "v"}, "<leader>y", [["+y]])
+
+keymap.set({"n", "v"}, "<leader>y", "\"+yap")
 keymap.set("n", "<leader>Y", [["+Y]])
+
 keymap.set({"n", "v"}, "<leader>d", [["_d]])
-keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
+
 keymap.set("n","yk","yiw")
 keymap.set("n","hw","viw")
+keymap.set("x", "<leader>p", "\"_dP")
+
+keymap.set("n", "<leader><leader>", function()
+  vim.cmd("so")
+end)
 
 -- plugin keymaps
 -- telescope 
