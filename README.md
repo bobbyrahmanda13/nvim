@@ -55,8 +55,8 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
 | Normal | <kbd>N</kbd> | Used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
 | Normal | <kbd>space</kbd>+<kbd>space</kbd> | Reload configuration | 
-| Normal | <kbd>yk<kbd> | Copy words  |
-| Normal | <kbd>hw<kbd> | Highlight words |  
+| Normal | <kbd>yk</kbd> | Copy words  |
+| Normal | <kbd>hw</kbd> | Highlight words |  
 | Normal | <kbd>space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
 
 ## Keyboard Shortcuts Plugins
