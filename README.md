@@ -31,6 +31,8 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Keyboard Shortcuts
+
+### Editor
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
 | Visual | <kbd>J</kbd> | Move the highlighted code to the bottom using visual mode |
@@ -59,7 +61,7 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>hw</kbd> | Highlight words |  
 | Normal | <kbd>space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
 
-## Keyboard Shortcuts Plugins
+### Plugins
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
 | Normal | <kbd>K</kbd> | `Lsp Hover` |
