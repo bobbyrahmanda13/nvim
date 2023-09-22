@@ -53,6 +53,6 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>space</kbd>+<kbd>l</kbd> | Jump to right window |
 | Normal | <kbd>space</kbd>+<kbd>k</kbd> | Jump to up window |
 | Normal | <kbd>space</kbd>+<kbd>j</kbd> | Jump to down window |
-| Normal | <kbd>space</kbd>+<kbd>p</kbd> | highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
+| Normal | <kbd>space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
 
 
