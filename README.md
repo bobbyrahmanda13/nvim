@@ -53,7 +53,7 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>Ctrl</kbd>+<kbd>d</kbd> | Jumps down half a page but the cursor stays in the middle |  
 | Normal | <kbd>Ctrl</kbd>+<kbd>u</kbd> | Jumps up half a page but the cursor stays in the middle |  
 | Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
-| Normal | <kbd>N</kbd> | used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
+| Normal | <kbd>N</kbd> | Used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
 | Normal | <kbd>space</kbd>+<kbd>space</kbd> | Reload configuration | 
 | Normal | <kbd>yk<kbd> | Copy words  |
 | Normal | <kbd>hw<kbd> | Highlight words |  
