@@ -67,3 +67,4 @@ karena di termux package nya tidak selengkap linux jadi install aja apa yang ada
 | Normal | <kbd>K</kbd> | `Lsp Hover` |
 | Normal | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp rename |
 
+ini belom semua ya kalau ada waktu update lagi sedang males update kwkwkw
