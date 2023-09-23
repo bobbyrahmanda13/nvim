@@ -1,17 +1,22 @@
 # Rahman init.lua
-Ini adalah config untuk developer javascript / typescript, config ini tanpa menggunakan null-ls sebagai formatting atau menggunakan mason karena malas kwkwk jadi kalau mau install language server ikutin cara LSP aja install pake package manager yg kalian sukai
+This is a config for javascript / typescript developers, this config without using null-ls as formatting or using mason because you're lazy, so if you want to install a language server, just follow the LSP method and install it using the package manager you like
 
 ## Quickstart
-Karena saya menggunakan build from source jadi ini package debian yang harus saya install
-- ini jika menggunakan linux debian 
+
+Because I use build from source, this is the Debian package that I have to install
+
+- this is if using Debian Linux
+
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find
 ```
 untuk informasi selanjutnya liat aja di [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
-- ini jika menggunakan termux
-```pkg install neovim nodejs-lts curl xsel build-essential ripgrep fd-findunzip ```
-karena di termux package nya tidak selengkap linux jadi install aja apa yang ada aja kwkwk pake **pnpm** aja error gk jalan, pake **yarn** malas, ujung2 pake **npm** aja lagi, karena build from source juga gk bisa di termux
+- this is if using termux
+
+```pkg install neovim nodejs-lts curl xsel build-essential ripgrep fd-find unzip ```
+
+Because in termux the package is not as complete as linux so just install whatever is there, just use **pnpm** error, use **yarn** is lazy, in the end just use **npm** again, because building from source also doesn't work in termux
 
 ## Plugins
 
