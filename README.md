@@ -42,34 +42,57 @@ Because in termux the package is not as complete as linux so just install whatev
 |-----|-----|-----|
 | Visual | <kbd>J</kbd> | Move the highlighted code to the bottom using visual mode |
 | Visual | <kbd>K</kbd> | Move the highlighted code to the top using visual mode |
-| Normal | <kbd>space</kbd>+<kbd>s</kbd> | Replace all names with the same |
-| Normal | <kbd>space</kbd>+<kbd>ex</kbd> | File Explorer |
-| Normal | <kbd>space</kbd>+<kbd>nh</kbd> | No highlight | 
-| Normal | <kbd>space</kbd>+<kbd>sv</kbd> | Split window vertically |
-| Normal | <kbd>space</kbd>+<kbd>sh</kbd> | Split window horizontaly |
-| Normal | <kbd>space</kbd>+<kbd>se</kbd> | Make split window equal |
-| Normal | <kbd>space</kbd>+<kbd>sx</kbd> | Close current split window |
-| Normal | <kbd>space</kbd>+<kbd>tx</kbd> | Close current tab |
-| Normal | <kbd>space</kbd>+<kbd>to</kbd> | Open new tab |
-| Normal | <kbd>space</kbd>+<kbd>tn</kbd> | Go to next tab |
-| Normal | <kbd>space</kbd>+<kbd>tp</kbd> | Go to previous tab |
-| Normal | <kbd>space</kbd>+<kbd>h</kbd> | Jump to left window |
-| Normal | <kbd>space</kbd>+<kbd>l</kbd> | Jump to right window |
-| Normal | <kbd>space</kbd>+<kbd>k</kbd> | Jump to up window |
-| Normal | <kbd>space</kbd>+<kbd>j</kbd> | Jump to down window |
+| Normal | <kbd>Space</kbd>+<kbd>s</kbd> | Replace all names with the same |
+| Normal | <kbd>Space</kbd>+<kbd>ex</kbd> | File Explorer |
+| Normal | <kbd>Space</kbd>+<kbd>nh</kbd> | No highlight | 
+| Normal | <kbd>Space</kbd>+<kbd>sv</kbd> | Split window vertically |
+| Normal | <kbd>Space</kbd>+<kbd>sh</kbd> | Split window horizontaly |
+| Normal | <kbd>Space</kbd>+<kbd>se</kbd> | Make split window equal |
+| Normal | <kbd>Space</kbd>+<kbd>sx</kbd> | Close current split window |
+| Normal | <kbd>Space</kbd>+<kbd>tx</kbd> | Close current tab |
+| Normal | <kbd>Space</kbd>+<kbd>to</kbd> | Open new tab |
+| Normal | <kbd>Space</kbd>+<kbd>tn</kbd> | Go to next tab |
+| Normal | <kbd>Space</kbd>+<kbd>tp</kbd> | Go to previous tab |
+| Normal | <kbd>Space</kbd>+<kbd>h</kbd> | Jump to left window |
+| Normal | <kbd>Space</kbd>+<kbd>l</kbd> | Jump to right window |
+| Normal | <kbd>Space</kbd>+<kbd>k</kbd> | Jump to up window |
+| Normal | <kbd>Space</kbd>+<kbd>j</kbd> | Jump to down window |
 | Normal | <kbd>Ctrl</kbd>+<kbd>d</kbd> | Jumps down half a page but the cursor stays in the middle |  
 | Normal | <kbd>Ctrl</kbd>+<kbd>u</kbd> | Jumps up half a page but the cursor stays in the middle |  
 | Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
 | Normal | <kbd>N</kbd> | Used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
-| Normal | <kbd>space</kbd>+<kbd>space</kbd> | Reload configuration | 
-| Normal | <kbd>yk</kbd> | Copy words  |
-| Normal | <kbd>hw</kbd> | Highlight words |  
-| Normal | <kbd>space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
+| Normal | <kbd>Space</kbd>+<kbd>Space</kbd> | Reload configuration | 
+| Normal | <kbd>y1</kbd> | Copy words  |
+| Normal | <kbd>t2</kbd> | Highlight words |  
+| Normal | <kbd>Space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
 
 ### Plugins
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
 | Normal | <kbd>K</kbd> | `Lsp Hover` |
-| Normal | <kbd>space</kbd>+<kbd>vrn</kbd> | Lsp rename |
+| Normal | <kbd>Space</kbd>+<kbd>vrn</kbd> | Lsp rename |
+| Normal | <kbd>Space</kbd>+<kbd>vrr</kbd> | Lsp buf references |
+| Normal | <kbd>Space</kbd>+<kbd>vca</kbd> | Lsp buf code action |
+| Normal | <kbd>Space</kbd>+<kbd>gf</kbd> | Lsp buf format |
+| Normal | <kbd>Space</kbd>+<kbd>gf</kbd> | Lsp buf format |
+| Normal | <kbd>gd</kbd> | Lsp buffer definition |
+| Normal | <kbd>Space</kbd>+<kbd>ff</kbd> | Telescope find files |
+| Normal | <kbd>Space</kbd>+<kbd>fg</kbd> | Telescope live grep |
+| Normal | <kbd>Space</kbd>+<kbd>fc</kbd> | Telescope grep string using nvim input |
+| Normal | <kbd>Space</kbd>+<kbd>fb</kbd> | Telescope buffers |
+| Normal | <kbd>Space</kbd>+<kbd>fh</kbd> | Telescope help tags |
+| Normal | <kbd>Space</kbd>+<kbd>gc</kbd> | Telescope git commits |
+| Normal | <kbd>Space</kbd>+<kbd>gfc</kbd> | Telescope git commits for current file/buffer |
+| Normal | <kbd>Space</kbd>+<kbd>gb</kbd> | Telescope git branches |
+| Normal | <kbd>Space</kbd>+<kbd>gs</kbd> | Telescope git status |
+| Normal | <kbd>Ctrl</kbd>+<kbd>k</kbd> | Telescope move selection previous |
+| Normal | <kbd>Ctrl</kbd>+<kbd>j</kbd> | Telescope move selection next |
+| Normal | <kbd>Ctrl</kbd>+<kbd>q</kbd> | Telescope send selected to qflist and open qflist |
+| Normal | <kbd>Ctrl</kbd>+<kbd>b</kbd> | Cmp mapping scroll docs up | 
+| Normal | <kbd>Ctrl</kbd>+<kbd>f</kbd> | Cmp mapping scroll docs down | 
+| Normal | <kbd>Ctrl</kbd>+<kbd>Space</kbd> | Cmp mapping complete | 
+| Normal | <kbd>Ctrl</kbd>+<kbd>e</kbd> | Cmp mapping abort | 
+| Normal | <kbd>Tab</kbd> | Cmp snippet select next item | 
+| Normal | <kbd>Shift</kbd>+<kbd>Tab</kbd>  | Cmp snippet select previous item | 
 
-ini belom semua ya kalau ada waktu update lagi sedang males update kwkwkw
+

@@ -37,8 +37,8 @@ keymap.set("n", "<leader>Y", [["+Y]])
 
 keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
-keymap.set("n","yk","yiw")
-keymap.set("n","hw","viw")
+keymap.set("n","y1","yiw")
+keymap.set("n","t2","viw")
 keymap.set("x", "<leader>p", "\"_dP")
 
 keymap.set("n", "<leader><leader>", function()
