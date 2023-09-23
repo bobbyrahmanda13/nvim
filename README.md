@@ -10,7 +10,7 @@ Because I use build from source, this is the Debian package that I have to insta
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find
 ```
-untuk informasi selanjutnya liat aja di [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
+For further information, just look at [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
 - this is if using termux
 
