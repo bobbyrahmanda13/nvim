@@ -65,6 +65,9 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>y1</kbd> | Copy words  |
 | Normal | <kbd>t2</kbd> | Highlight words |  
 | Normal | <kbd>Space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
+| Normal | <kbd>Space</kbd>+<kbd>vd</kbd> | Open diagnostic  |
+| Normal | <kbd>[d</kbd> | Diagnostic go to next |
+| Normal | <kbd>]d</kbd> | Diagnostic go to prev |
 
 ### Plugins
 | Mode | Key Shortcut | Description |
@@ -74,8 +77,8 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>Space</kbd>+<kbd>vrr</kbd> | Lsp buf references |
 | Normal | <kbd>Space</kbd>+<kbd>vca</kbd> | Lsp buf code action |
 | Normal | <kbd>Space</kbd>+<kbd>gf</kbd> | Lsp buf format |
-| Normal | <kbd>Space</kbd>+<kbd>gf</kbd> | Lsp buf format |
-| Normal | <kbd>gd</kbd> | Lsp buffer definition |
+| Normal | <kbd>Ctrl</kbd>+<kbd>h</kbd> | Lsp buf signature help |
+| Normal | <kbd>gd</kbd> | Lsp buf definition |
 | Normal | <kbd>Space</kbd>+<kbd>ff</kbd> | Telescope find files |
 | Normal | <kbd>Space</kbd>+<kbd>fg</kbd> | Telescope live grep |
 | Normal | <kbd>Space</kbd>+<kbd>fc</kbd> | Telescope grep string using nvim input |
@@ -94,5 +97,4 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>Ctrl</kbd>+<kbd>e</kbd> | Cmp mapping abort | 
 | Normal | <kbd>Tab</kbd> | Cmp snippet select next item | 
 | Normal | <kbd>Shift</kbd>+<kbd>Tab</kbd>  | Cmp snippet select previous item | 
-
 
