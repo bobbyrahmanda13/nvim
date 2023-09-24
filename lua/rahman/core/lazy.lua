@@ -10,7 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({
+
+local plugins = { 
   { 
     "catppuccin/nvim", 
     name = "catppuccin", 
@@ -40,4 +41,34 @@ require("lazy").setup({
   {"saadparwaiz1/cmp_luasnip"},
   {"rafamadriz/friendly-snippets"},
   {"nvim-lualine/lualine.nvim"}
-})
+}
+local opts = {
+  root = vim.fn.stdpath("data") .. "/lazy",
+  install = {colorscheme = { "catppuccin" }},
+  ui = {
+    icons = {
+      cmd = " ",
+      config = "",
+      event = "",
+      ft = " ",
+      init = " ",
+      import = " ",
+      keys = " ",
+      lazy = "󰒲 ",
+      loaded = "●",
+      not_loaded = "○",
+      plugin = " ",
+      runtime = " ",
+      source = " ",
+      start = "",
+      task = "✔ ",
+      list = {
+        "●",
+        "➜",
+        "★",
+        "‒",
+      },
+    },  
+  }
+}
+require("lazy").setup(plugins, opts)
