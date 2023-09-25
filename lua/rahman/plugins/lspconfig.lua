@@ -1,6 +1,23 @@
 local lspconfig = require 'lspconfig'
 local on_attach = function(_, bufnr)
+local borderNih = "single"
   local opts = { buffer = bufnr, noremap = true, silent = true }
+
+vim.diagnostic.config({
+    float = { border = borderNih }
+  })
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = borderNih
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = borderNih
+  }
+)
 
   --mapping
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
