@@ -1,7 +1,7 @@
 local lspconfig = require 'lspconfig'
 local on_attach = function(_, bufnr)
 local borderNih = "single"
-  local opts = { buffer = bufnr, noremap = true, silent = true }
+local opts = { buffer = bufnr, noremap = true, silent = true }
 
 vim.diagnostic.config({
     float = { border = borderNih }
@@ -23,7 +23,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float, opts)
- vim.keymap.set('n', '[d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_prev, opts)
   vim.keymap.set('n', '<leader>vca', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>vrr', vim.lsp.buf.references, opts)
@@ -118,5 +118,15 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+  },
+  window = {
+    completion = {
+      border= 'rounded',
+      scrollbar = ''
+    },
+    documentation = {
+      border = 'rounded',
+      scrollbar = ''
+    }
   },
 }
