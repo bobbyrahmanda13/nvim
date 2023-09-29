@@ -5,14 +5,14 @@ This is a config for javascript / typescript developers, this config without usi
 
 Because I use build from source, this is the Debian package that I have to install
 
-- this is if using Debian Linux
+- Debian Linux
 
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find
 ```
 For further information, just look at [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
-- this is if using termux
+- [Termux](https://github.com/termux/termux-app)
 
 ```
 pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd unzip 
