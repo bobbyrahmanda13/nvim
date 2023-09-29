@@ -14,7 +14,9 @@ For further information, just look at [Building Neovim](https://github.com/neovi
 
 - this is if using termux
 
-```pkg install neovim nodejs-lts curl xsel build-essential ripgrep fd-find unzip ```
+```
+pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd-find unzip 
+```
 
 Because in termux the package is not as complete as linux so just install whatever is there, just use **pnpm** error, use **yarn** is lazy, in the end just use **npm** again, because building from source also doesn't work in termux
 
@@ -43,7 +45,7 @@ Because in termux the package is not as complete as linux so just install whatev
 | Visual | <kbd>J</kbd> | Move the highlighted code to the bottom using visual mode |
 | Visual | <kbd>K</kbd> | Move the highlighted code to the top using visual mode |
 | Normal | <kbd>Space</kbd>+<kbd>s</kbd> | Replace all names with the same |
-| Normal | <kbd>Space</kbd>+<kbd>ex</kbd> | File Explorer |
+| Normal | <kbd>Space</kbd>+<kbd>ex</kbd> | File Explorer  ([Keyboard Shortcuts](https://neovim.io/doc/user/pi_netrw.html#netrw-quickmaps))|
 | Normal | <kbd>Space</kbd>+<kbd>nh</kbd> | No highlight | 
 | Normal | <kbd>Space</kbd>+<kbd>sv</kbd> | Split window vertically |
 | Normal | <kbd>Space</kbd>+<kbd>sh</kbd> | Split window horizontaly |
@@ -61,7 +63,8 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>Ctrl</kbd>+<kbd>u</kbd> | Jumps up half a page but the cursor stays in the middle |  
 | Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
 | Normal | <kbd>N</kbd> | Used if looking for something if you have found it, use this then the cursor will always be in the middle (up) |
-| Normal | <kbd>Space</kbd>+<kbd>Space</kbd> | Reload configuration | 
+| Normal | <kbd>Space</kbd>+<kbd>Space</kbd> | Reload lua configuration | 
+| Normal | <kbd>space</kbd>+<kbd>y</kbd> | Copy paragraph  |
 | Normal | <kbd>y1</kbd> | Copy words  |
 | Normal | <kbd>t2</kbd> | Highlight words |  
 | Normal | <kbd>Space</kbd>+<kbd>p</kbd> | Highlight and copy the sentence/word/paragraph then you highlight the sentence/word/paragraph and paste it there |
