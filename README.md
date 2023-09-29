@@ -18,7 +18,7 @@ For further information, just look at [Building Neovim](https://github.com/neovi
 pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd unzip 
 ```
 
-Because in termux the package is not as complete as linux so just install whatever is there, just use **pnpm** error, use **yarn** is lazy, in the end just use **npm** again, because building from source also doesn't work in termux
+Because in termux the package is not as complete as linux so just install whatever is there, just use [pnpm](https://pnpm.io/) error, use [yarn](https://yarnpkg.com/) is lazy, in the end just use [npm](https://github.com/npm/cli) again, because building from source also doesn't work in termux
 
 ## Plugins
 
