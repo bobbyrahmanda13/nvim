@@ -46,29 +46,7 @@ local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
   install = {colorscheme = { "catppuccin" }},
   ui = {
-    icons = {
-      cmd = " ",
-      config = "",
-      event = "",
-      ft = " ",
-      init = " ",
-      import = " ",
-      keys = " ",
-      lazy = "󰒲 ",
-      loaded = "●",
-      not_loaded = "○",
-      plugin = " ",
-      runtime = " ",
-      source = " ",
-      start = "",
-      task = "✔ ",
-      list = {
-        "●",
-        "➜",
-        "★",
-        "‒",
-      },
-    },  
+    border = "rounded"
   }
 }
 require("lazy").setup(plugins, opts)
