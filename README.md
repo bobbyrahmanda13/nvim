@@ -105,5 +105,3 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>Ctrl</kbd>+<kbd>e</kbd> | Cmp mapping abort | 
 | Normal | <kbd>Tab</kbd> | Cmp snippet select next item | 
 | Normal | <kbd>Shift</kbd>+<kbd>Tab</kbd>  | Cmp snippet select previous item | 
-
-blom update lagi kwkwkw
