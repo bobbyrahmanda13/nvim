@@ -45,6 +45,13 @@ keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
 
+-- terminal nvim keymap
+keymap.set({"t","i"}, "<A-n>", [[<C-\><C-n>]])
+keymap.set({"t","i"}, "<A-h>", [[<C-\><C-n><C-w>h]])
+keymap.set({"t","i"}, "<A-j>", [[<C-\><C-n><C-w>j]])
+keymap.set({"t","i"}, "<A-k>", [[<C-\><C-n><C-w>k]])
+keymap.set({"t","i"}, "<A-l>", [[<C-\><C-n><C-w>l]])
+
 -- plugin keymaps
 -- telescope 
 

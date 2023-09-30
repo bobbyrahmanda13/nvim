@@ -59,6 +59,11 @@ Because in termux the package is not as complete as linux so just install whatev
 | Normal | <kbd>Space</kbd>+<kbd>l</kbd> | Jump to right window |
 | Normal | <kbd>Space</kbd>+<kbd>k</kbd> | Jump to up window |
 | Normal | <kbd>Space</kbd>+<kbd>j</kbd> | Jump to down window |
+| Terminal | <kbd>Alt</kbd>+<kbd>n</kbd> | Terminal go to Normal Mode |
+| Terminal | <kbd>Alt</kbd>+<kbd>h</kbd> | Terminal go to Normal mode and jump to left window |
+| Terminal | <kbd>Alt</kbd>+<kbd>j</kbd> | Terminal go to Normal mode and jump to down window |
+| Terminal | <kbd>Alt</kbd>+<kbd>k</kbd> | Terminal go to Normal mode and jump to up window |
+| Terminal | <kbd>Alt</kbd>+<kbd>l</kbd> | Terminal go to Normal mode and jump to right window |
 | Normal | <kbd>Ctrl</kbd>+<kbd>d</kbd> | Jumps down half a page but the cursor stays in the middle |  
 | Normal | <kbd>Ctrl</kbd>+<kbd>u</kbd> | Jumps up half a page but the cursor stays in the middle |  
 | Normal | <kbd>n</kbd> | Used if you are looking for something and then highlight what you are looking for, use this and the cursor will always be in the middle (down) | 
