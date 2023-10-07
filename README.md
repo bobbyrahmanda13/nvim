@@ -22,6 +22,10 @@ Because in termux the package is not as complete as linux so just install whatev
 
 ### Troubleshooting Termux
 
+If you have installed it on Termux, there will be an error in the LSP, the error is `language server not spawning and permission denied` so the way to fix it is to change the Termux bootstrap which initially uses **apt** to **pacman**, so:
+1. Change the termux package manager follow [change package manager termux](https://wiki.termux.com/wiki/Switching_package_manager)
+2. If you have installed everything again from the beginning, when it is finished, there will be another error, namely in the treesitter section, to fix it, run `:TSInstall` so that it can run as in the example `:TSInstall javascript typescript bash python` like that if it is finished, kwkwkkwkw
+
 ## Plugins
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
