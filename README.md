@@ -20,6 +20,8 @@ pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd unzip
 
 Because in termux the package is not as complete as linux so just install whatever is there, just use [pnpm](https://pnpm.io/) error, use [yarn](https://yarnpkg.com/) is lazy, in the end just use [npm](https://github.com/npm/cli) again, because building from source also doesn't work in termux
 
+### Troubleshooting Termux
+
 ## Plugins
 
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
