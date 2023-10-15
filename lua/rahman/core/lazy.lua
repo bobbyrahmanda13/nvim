@@ -40,7 +40,12 @@ local plugins = {
   {"L3MON4D3/LuaSnip"},
   {"saadparwaiz1/cmp_luasnip"},
   {"rafamadriz/friendly-snippets"},
-  {"nvim-lualine/lualine.nvim"}
+  {"nvim-lualine/lualine.nvim"},
+  {"numToStr/Comment.nvim",
+    config = function()
+      require('Comment').setup()
+    end
+  }
 }
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
