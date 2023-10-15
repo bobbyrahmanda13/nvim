@@ -28,6 +28,7 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 
 ## Plugins
 
+- Colorscheme [catppuccin](https://github.com/catppuccin/nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
@@ -38,10 +39,11 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 - [luasnip](https://github.com/L3M0N4D3/LuaSnip)
 - [nvim-lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-- Colorscheme [catppuccin](https://github.com/catppuccin/nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+
 
 ## Keyboard Shortcuts
 
