@@ -18,6 +18,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     border = borderNih
   }
 )
+  require('lspconfig.ui.windows').default_options.border = borderNih
 
   --mapping
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
