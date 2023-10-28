@@ -8,14 +8,14 @@ Because I use build from source, this is the Debian package that I have to insta
 - Debian Linux
 
 ```
-sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find
+sudo apt-get install ninja-build gettext cmake unzip curl xsel systemtap-sdt-dev build-essential ripgrep fd-find renameutils
 ```
 For further information, just look at [Building Neovim](https://github.com/neovim/neovim/wiki/Building-Neovim)
 
 - [Termux](https://github.com/termux/termux-app)
 
 ```
-pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd unzip 
+pkg install neovim termux-api nodejs-lts curl build-essential ripgrep fd unzip renameutils
 ```
 
 Because in termux the package is not as complete as linux so just install whatever is there, just use [pnpm](https://pnpm.io/) error, use [yarn](https://yarnpkg.com/) is lazy, in the end just use [npm](https://github.com/npm/cli) again, because building from source also doesn't work in termux
