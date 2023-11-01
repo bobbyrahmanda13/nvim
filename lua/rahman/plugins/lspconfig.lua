@@ -48,10 +48,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig["html"].setup({
-capabilities = capabilities,
-on_attach = on_attach
-})
 
 lspconfig["tsserver"].setup({
 capabilities = capabilities,
@@ -59,19 +55,29 @@ on_attach = on_attach,
 root_dir = vim.loop.cwd
 })
 
-lspconfig["cssls"].setup({
-capabilities = capabilities,
-on_attach = on_attach
-})
+-- lspconfig["html"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach
+-- })
+--
+-- lspconfig["cssls"].setup({
+-- capabilities = capabilities,
+-- on_attach = on_attach
+-- })
 
 lspconfig["emmet_ls"].setup({
 capabilities = capabilities,
 on_attach = on_attach
 })
 
-lspconfig["volar"].setup({
-capabilities = capabilities,
-on_attach = on_attach
+ lspconfig["volar"].setup({
+  init_options = {
+    typescript = {
+      tsdk = '/home/rahman/.bun/install/global/node_modules/typescript/lib/'
+      -- Alternative location if installed as root:
+      -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+    }
+  }
 })
 
 
