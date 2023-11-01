@@ -40,14 +40,13 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Enable the following language servers
-local servers = {"tsserver","emmet_ls","volar","cssls", "html"}
+local servers = {"tsserver","emmet_ls","volar"}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
-
 
 lspconfig["tsserver"].setup({
 capabilities = capabilities,
@@ -65,15 +64,15 @@ root_dir = vim.loop.cwd
 -- on_attach = on_attach
 -- })
 
-lspconfig["emmet_ls"].setup({
-capabilities = capabilities,
-on_attach = on_attach
-})
+-- lspconfig["emmet_ls"].setup({
+-- capabilities = capabilities,
+-- on_attach = on_attach
+-- })
 
- lspconfig["volar"].setup({
+lspconfig["volar"].setup({
   init_options = {
     typescript = {
-      tsdk = '/home/rahman/.bun/install/global/node_modules/typescript/lib/'
+      tsdk = ''
       -- Alternative location if installed as root:
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
     }
