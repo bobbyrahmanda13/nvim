@@ -40,7 +40,7 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Enable the following language servers
-local servers = {"tsserver","emmet_ls","volar"}
+local servers = {"tsserver","volar"}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -72,7 +72,7 @@ root_dir = vim.loop.cwd
 lspconfig["volar"].setup({
   init_options = {
     typescript = {
-      tsdk = ''
+      tsdk = '/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
       -- Alternative location if installed as root:
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
     }
