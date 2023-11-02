@@ -1,4 +1,5 @@
 local lspconfig = require 'lspconfig'
+local util = require 'lspconfig.util'
 local on_attach = function(_, bufnr)
 local borderNih = "rounded"
 local opts = { buffer = bufnr, noremap = true, silent = true }
@@ -54,31 +55,48 @@ on_attach = on_attach,
 root_dir = vim.loop.cwd
 })
 
--- lspconfig["html"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach
--- })
---
--- lspconfig["cssls"].setup({
--- capabilities = capabilities,
--- on_attach = on_attach
--- })
-
--- lspconfig["emmet_ls"].setup({
--- capabilities = capabilities,
--- on_attach = on_attach
--- })
+-- local volar_path=''
+local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
 
 lspconfig["volar"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   init_options = {
     typescript = {
-      tsdk = '/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
+      tsdk = tslib_path
       -- Alternative location if installed as root:
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
     }
   }
 })
-
+-- local util = require 'lspconfig.util'
+-- local function get_typescript_server_path(root_dir)
+--
+--   local global_ts = '/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
+--   -- Alternative location if installed as root:
+--   -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+--   local found_ts = ''
+--   local function check_dir(path)
+--     found_ts =  util.path.join(path, 'node_modules', 'typescript', 'lib')
+--     if util.path.exists(found_ts) then
+--       return path
+--     end
+--   end
+--   if util.search_ancestors(root_dir, check_dir) then
+--     return found_ts
+--   else
+--     return global_ts
+--   end
+-- end
+--
+-- require'lspconfig'.volar.setup{
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   on_new_config = function(new_config, new_root_dir)
+--     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+--   end,
+-- }
 
 -- luasnip setup
 local luasnip = require 'luasnip'
