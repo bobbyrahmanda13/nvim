@@ -9,7 +9,8 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
-opt.foldmethod = "indent"
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
 
 -- opt.showtabline = 0
