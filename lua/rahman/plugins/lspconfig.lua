@@ -4,7 +4,8 @@ local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
 
 
-local borderLsp = "rounded"
+-- local borderLsp = "rounded"
+local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 
 vim.diagnostic.config({
     float = { border = borderLsp }
