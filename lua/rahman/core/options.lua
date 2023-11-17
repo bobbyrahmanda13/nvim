@@ -3,6 +3,7 @@ local opt = vim.opt -- for conciseness
 -- line numbers
 -- opt.relativenumber = true
 opt.number = true
+vim.g.netrw_keepdir = 0
 
 -- tabs & indentation
 opt.tabstop = 2
