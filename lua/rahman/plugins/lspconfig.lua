@@ -147,13 +147,11 @@ cmp.setup {
     { name = 'luasnip' },
   },
   window = {
-    completion = {
-      border= 'rounded',
-      scrollbar = ''
-    },
-    documentation = {
-      border = 'rounded',
-      scrollbar = ''
-    }
+    completion = cmp.config.window.bordered({ 
+      border = "double" 
+    }),
+    documentation = cmp.config.window.bordered({ 
+      border = "double" 
+    }),
   },
 }
