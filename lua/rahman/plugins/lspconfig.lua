@@ -1,25 +1,27 @@
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig.util'
 local on_attach = function(_, bufnr)
-local borderNih = "rounded"
-local opts = { buffer = bufnr, noremap = true, silent = true }
+  local opts = { buffer = bufnr, noremap = true, silent = true }
+
+
+local borderLsp = "rounded"
 
 vim.diagnostic.config({
-    float = { border = borderNih }
+    float = { border = borderLsp }
   })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
-    border = borderNih
+    border = borderLsp
   }
 )
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, {
-    border = borderNih
+    border = borderLsp
   }
 )
-  require('lspconfig.ui.windows').default_options.border = borderNih
+  require('lspconfig.ui.windows').default_options.border = borderLsp
 
   --mapping
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
