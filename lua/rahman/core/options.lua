@@ -1,6 +1,16 @@
 local opt = vim.opt -- for conciseness
 
 -- line numbers
+opt.list = true
+opt.listchars:append({ tab = '▸\\ ', trail = '·', extends = '❯', precedes = '❮', nbsp = '␣' })
+opt.listchars:append({ 
+  -- eol = '¬', 
+  space = '_' 
+})
+opt.showbreak = '↪'
+opt.breakindent = true
+opt.breakindentopt = { shift = 2 }
+
 -- opt.relativenumber = true
 opt.number = true
 vim.g.netrw_keepdir = 0
@@ -42,3 +52,4 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
