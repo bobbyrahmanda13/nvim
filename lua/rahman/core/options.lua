@@ -1,12 +1,13 @@
 local opt = vim.opt -- for conciseness
 
 -- line numbers
-opt.list = true
-opt.listchars:append({ tab = '▸\\ ', trail = '·', extends = '❯', precedes = '❮', nbsp = '␣' })
-opt.listchars:append({ 
-  -- eol = '¬', 
-  space = '_' 
-})
+-- opt.list = true
+-- opt.listchars:append({ tab = '▸\\ ', trail = '·', extends = '❯', precedes = '❮', nbsp = '␣' })
+-- opt.listchars:append({ 
+--   -- eol = '¬', 
+--   space = '_' 
+-- })
+
 opt.showbreak = '↪'
 opt.breakindent = true
 opt.breakindentopt = { shift = 2 }

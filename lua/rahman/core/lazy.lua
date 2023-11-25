@@ -22,7 +22,7 @@ local plugins = {
 
   },
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.3',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
     -- or                              , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
@@ -45,7 +45,8 @@ local plugins = {
     config = function()
       require('Comment').setup()
     end
-  }
+  },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 }
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
