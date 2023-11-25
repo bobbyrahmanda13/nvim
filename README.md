@@ -43,6 +43,7 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 
 ## Keyboard Shortcuts
