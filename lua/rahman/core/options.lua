@@ -9,9 +9,6 @@ local opt = vim.opt -- for conciseness
 -- })
 
 opt.showbreak = '↪'
-opt.breakindent = true
-opt.breakindentopt = { shift = 2 }
-
 -- opt.relativenumber = true
 opt.number = true
 vim.g.netrw_keepdir = 0
