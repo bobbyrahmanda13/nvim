@@ -75,6 +75,16 @@ lspconfig["volar"].setup({
       tsdk = tslib_path
       -- Alternative location if installed as root:
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+    },
+    documentFeatures = {
+      foldingRange = true,
+      documentFormatting = {
+        -- defaultPrintWidth = 100,
+        documentOnTypeFormattingProvider = {
+          firstTriggerCharacter = ';',
+          moreTriggerCharacter = '}', '\n',
+        }
+      }
     }
   }
 })
