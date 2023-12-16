@@ -9,7 +9,7 @@ local opt = vim.opt -- for conciseness
 -- })
 
 opt.showbreak = '↪'
--- opt.relativenumber = true
+opt.relativenumber = true
 opt.number = true
 vim.g.netrw_keepdir = 0
 
