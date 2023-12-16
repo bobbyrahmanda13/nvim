@@ -32,7 +32,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   --mapping
   vim.keymap.set('n', 'gdc', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', 'gtf', "<cmd>Telescope lsp_definitions<CR>", opts)
-  vim.keymap.set('n', 'gdf', vim.lsp.buf.definition, opts)
+  -- vim.keymap.set('n', 'gdf', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_next, opts)
