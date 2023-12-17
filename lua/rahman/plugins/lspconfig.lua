@@ -80,9 +80,14 @@ lspconfig["volar"].setup({
       -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
     },
     documentFeatures = {
+      selectionRange = true,
+      linkedEditingRange = true,
+      documentSymbol = true,
       foldingRange = true,
       documentFormatting = {
-        -- defaultPrintWidth = 100,
+        defaultPrintWidth = 100,
+        documentFormattingProvider = true,
+        documentRangeFormattingProvider = true,
         documentOnTypeFormattingProvider = {
           firstTriggerCharacter = ';',
           moreTriggerCharacter = '}', '\n',
