@@ -23,7 +23,7 @@ local plugins = {
   },
 
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
     -- or                              , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
@@ -51,7 +51,7 @@ local plugins = {
       require('Comment').setup()
     end
   },
-
+  {"ThePrimeagen/harpoon", branch = "harpoon2"},
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 }
 

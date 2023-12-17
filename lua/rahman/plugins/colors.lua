@@ -38,11 +38,15 @@ require("catppuccin").setup({
   end,
   integrations = {
     cmp = true,
-    gitsigns = false,
-    nvimtree = false,
     treesitter = true,
-    notify = false,
-    mini = false,
+    telescope = { enabled = true },
+    harpoon = true,
+    indent_blankline = {
+      enabled = true,
+      scope_color = "",
+      colored_indent_levels = false,
+    },
+
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })
