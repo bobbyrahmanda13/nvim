@@ -3,17 +3,55 @@ local util = require 'lspconfig.util'
 local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
 
-local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+
+-- deprecated
+-- for type, icon in pairs(signsIcon) do
+--   local hl = "DiagnosticSign" .. type
+--   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+-- end
 
 -- local borderLsp = "rounded"
 local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 
+-- create underline
+-- local hl_groups = { 'DiagnosticUnderlineError','DiagnosticUnderlineWarn','DiagnosticUnderlineInfo','DiagnosticUnderlineHint' }
+-- for _, hl in ipairs(hl_groups) do
+--   vim.cmd.highlight(hl .. ' gui=undercurl')
+-- end
+
+-- vim.cmd([[highlight DiagnosticErrorLn guibg=#501010]])
+-- vim.cmd([[highlight DiagnosticWarnLn guibg=#501010]])
+-- vim.cmd([[highlight DiagnosticHintLn guibg=#501010]])
+-- vim.cmd([[highlight DiagnosticInfoLn guibg=#501010]])
+
+local signsIcon = { ERROR = "󰅚 ", WARN = "󰀪 ", HINT = "󰌶 ", INFO = " " }
+
 vim.diagnostic.config({
-    float = { border = borderLsp }
+    float = { border = borderLsp },
+    virtual_text = true, --default true
+    underline = true,
+    severity_sort = true,
+    signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
+        [vim.diagnostic.severity.WARN] = signsIcon.WARN,
+        [vim.diagnostic.severity.INFO] = signsIcon.INFO,
+        [vim.diagnostic.severity.HINT] = signsIcon.HINT,
+
+      },
+      linehl = {
+        [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+      },
+      numhl = {
+        [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+      },
+    }
   })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

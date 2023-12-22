@@ -1,53 +1,46 @@
-local opt = vim.opt -- for conciseness
+vim.opt.number = true
+vim.opt.relativenumber = true
 
--- line numbers
--- opt.list = true
--- opt.listchars:append({ tab = '▸\\ ', trail = '·', extends = '❯', precedes = '❮', nbsp = '␣' })
--- opt.listchars:append({ 
---   -- eol = '¬', 
---   space = '_' 
--- })
+vim.opt.showbreak = '↪'
 
-opt.showbreak = '↪'
-opt.relativenumber = true
-opt.number = true
-vim.g.netrw_keepdir = 0
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
 
--- tabs & indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = false
+vim.opt.title = true
+vim.opt.autoindent = true
+vim.opt.smartindent =  true
 
--- opt.showtabline = 0
+vim.opt.wrap = false
 
--- line wrapping
-opt.wrap = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
--- search settings
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.termguicolors = true
 
--- cursor line
-opt.cursorline = true
+vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search 
+vim.opt.smartcase = true -- Case insensitive searching UNLESS /C or capital in search 
 
--- appereance 
-opt.termguicolors = true
---opt.background = "dark"
-opt.signcolumn = "yes"
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
 
--- backspace 
-opt.backspace = "indent,eol,start"
+vim.opt.fileencoding = "utf-8"
 
--- clipboard
-opt.clipboard:append("unnamedplus")
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
 
--- split windows
-opt.splitright = true
-opt.splitbelow = true
+vim.opt.colorcolumn = "80"
 
-opt.iskeyword:append("-")
+vim.opt.updatetime = 50
 
+vim.opt.isfname:append("@-@")
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- opt.foldenable = false
