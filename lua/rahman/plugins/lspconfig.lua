@@ -19,10 +19,10 @@ local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 --   vim.cmd.highlight(hl .. ' gui=undercurl')
 -- end
 
--- vim.cmd([[highlight DiagnosticErrorLn guibg=#501010]])
--- vim.cmd([[highlight DiagnosticWarnLn guibg=#501010]])
--- vim.cmd([[highlight DiagnosticHintLn guibg=#501010]])
--- vim.cmd([[highlight DiagnosticInfoLn guibg=#501010]])
+vim.cmd([[highlight ErrorMsg guifg=#f38ba8 guibg=#5B2B2B]])
+vim.cmd([[highlight WarningMsg guifg=#FFD700 guibg=#5C462B]])
+vim.cmd([[highlight DiagnosticHintLn guifg=#7AA6DA guibg=#2E3A44]])
+vim.cmd([[highlight DiagnosticInfoLn guifg=#7FC1CA guibg=#2E3A44]])
 
 local signsIcon = { ERROR = "󰅚 ", WARN = "󰀪 ", HINT = "󰌶 ", INFO = " " }
 
@@ -42,8 +42,8 @@ vim.diagnostic.config({
       linehl = {
         [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
         [vim.diagnostic.severity.WARN] = 'WarningMsg',
-        [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-        [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
       },
       numhl = {
         [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
