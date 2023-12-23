@@ -23,6 +23,9 @@ bind("n", "<leader>j", "<C-w>j<CR>")
 bind("n", "<leader>k", "<C-w>k<CR>") 
 bind("n", "<leader>l", "<C-w>l<CR>") 
 
+bind("n", "J", "mzJ`z")
+bind("n", "Q", "<nop>")
+
 bind("n", "<C-d>", "<C-d>zz<CR>") 
 bind("n", "<C-u>", "<C-u>zz<CR>") 
 bind("n", "n", "nzzzv") 
