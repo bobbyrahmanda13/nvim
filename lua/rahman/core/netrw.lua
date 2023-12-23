@@ -8,3 +8,4 @@ vim.g.netrw_list_hide = [[\(^\|\s\s\)\zs\.\S\+]]
 local bind = vim.keymap.set
 bind("n","<leader>ex",":Lexplore<CR>")
 bind("n","<leader>xx",":Lexplore %:p:h<CR>")
+
