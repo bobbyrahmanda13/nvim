@@ -20,8 +20,8 @@ local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 -- end
 
 vim.cmd([[highlight ErrorMsg guifg=#f38ba8 guibg=#5B2B2B]])
-vim.cmd([[highlight WarningMsg guifg=#FFD700 guibg=#5C462B]])
-vim.cmd([[highlight DiagnosticHintLn guifg=#7AA6DA guibg=#2E3A44]])
+vim.cmd([[highlight WarningMsg guifg=#f9e2af guibg=#5C462B]])
+vim.cmd([[highlight DiagnosticHintLn guifg=#94e2d5 guibg=#2E3A44]])
 vim.cmd([[highlight DiagnosticInfoLn guifg=#7FC1CA guibg=#2E3A44]])
 
 local signsIcon = { ERROR = "󰅚 ", WARN = "󰀪 ", HINT = "󰌶 ", INFO = " " }
