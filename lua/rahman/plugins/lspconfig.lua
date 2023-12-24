@@ -19,10 +19,10 @@ local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 --   vim.cmd.highlight(hl .. ' gui=undercurl')
 -- end
 
-vim.cmd([[highlight ErrorMsg guibg=#511A1A ]])
+vim.cmd([[highlight ErrorMsg guibg=#3d0000 ]])
 vim.cmd([[highlight WarningMsg guibg=#513A1A ]])
-vim.cmd([[highlight DiagnosticHintLn guibg=#1D2A32 ]])
-vim.cmd([[highlight DiagnosticInfoLn guibg=#1D2A32 ]])
+vim.cmd([[highlight DiagnosticHintLn guibg=#024649 ]])
+vim.cmd([[highlight DiagnosticInfoLn guibg=#024649 ]])
 
 local signsIcon = { ERROR = "󰅚 ", WARN = "󰀪 ", HINT = "󰌶 ", INFO = " " }
 
