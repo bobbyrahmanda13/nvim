@@ -24,7 +24,7 @@ vim.cmd([[highlight WarningMsg guibg=#513A1A ]])
 vim.cmd([[highlight DiagnosticHintLn guibg=#024649 ]])
 vim.cmd([[highlight DiagnosticInfoLn guibg=#024649 ]])
 
-local signsIcon = { ERROR = "󰅚 ", WARN = "󰀪 ", HINT = "󰌶 ", INFO = " " }
+local signsIcon = { ERROR = " ", WARN = " ", HINT = "󰠠 ", INFO = " " }
 
 vim.diagnostic.config({
     float = { border = borderLsp },
