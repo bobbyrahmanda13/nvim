@@ -4,12 +4,15 @@ vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_localcopydircmd = "cp -r"
 vim.g.netrw_altv = 1
+vim.g.netrw_chgwin = -1
 
 -- Set default netrw options
 vim.g.netrw_list_hide = [[\(^\|\s\s\)\zs\.\S\+]]
 
 -- Add netrw_gitignore#Hide for Lua files
 vim.g.netrw_list_hide = vim.g.netrw_list_hide .. ',' .. vim.fn['netrw_gitignore#Hide']() .. ',\\.git$'
+
+-- ! Note => jika pas awal buka folder nya gk ada berarti itu ke hidden caranya ya gunakan keymap "gh" untuk memunculkan file and folder nya
 
 -- vim.g.netrw_list_hide = vim.fn['netrw_gitignore#Hide']() -- default setting
 
