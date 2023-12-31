@@ -19,6 +19,7 @@ vim.g.netrw_list_hide = vim.g.netrw_list_hide .. ',' .. vim.fn['netrw_gitignore#
 
 local bind = vim.keymap.set
 bind("n","<leader>ex",":cd %:p:h<CR>:Lexplore<CR>")
+bind("n","<leader>dd",":call delete(expand('%'))<CR>")
 
 -- bind("n","<leader>ex",":Lexplore<CR>")
 -- bind("n","<leader>xx",":Lexplore %:p:h<CR>")
