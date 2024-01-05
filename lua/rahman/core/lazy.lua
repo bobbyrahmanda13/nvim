@@ -12,14 +12,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = { 
-  { 
-    "catppuccin/nvim", 
-    name = "catppuccin", 
-    priority = 1000, 
-    lazy = true,
-    --		config = function()
-    --			vim.cmd.colorscheme("catppuccin")
-    --		end
+  -- { 
+  --   "catppuccin/nvim", 
+  --   name = "catppuccin", 
+  --   priority = 1000, 
+  --   lazy = true,
+  --   --		config = function()
+  --   --			vim.cmd.colorscheme("catppuccin")
+  --   --		end
+  -- },
+
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
 
   {
