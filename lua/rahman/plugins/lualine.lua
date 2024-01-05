@@ -1,14 +1,3 @@
-
--- local lualine = require("lualine")
--- lualine.setup({
---   options = {
---   -- icons_enabled = false,
---   theme = ',
---   -- section_separators = { left = ' ', right = ' ' },
---   -- component_separators = { left = ' ', right = ' ' }
---   }
--- })
-
 local colors = require("solarized-osaka.colors").setup({ transform = true })
 local config = require("solarized-osaka.config").options
 
