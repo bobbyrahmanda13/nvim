@@ -78,8 +78,8 @@ require('lualine').setup{
     lualine_c = {
       {
         'filename', 
-        color = { fg = colors.none},
-        path = 1,
+        color = { fg = colors.red200},
+        path = 4,
         file_status = false
       },
     },
