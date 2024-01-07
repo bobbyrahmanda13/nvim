@@ -60,19 +60,21 @@ bind("t", "<A-l>", [[<C-\><C-n><C-w>l]])
 
 local builtin = require('telescope.builtin')
 
-bind("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-bind("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
+bind("n", "<leader>ff", builtin.find_files, {})
+bind("n", "<leader>fg", builtin.live_grep, {})
 bind("n", "<leader>fc", function()
 builtin.grep_string({search = vim.fn.input("GREP > ")})
 end)
-bind("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-bind("n", "<leader>fh", "<cmd>Telescope help-tags<CR>")
+bind("n", "<leader>fb", builtin.buffers, {})
+bind("n", "<leader>fh", builtin.help_tags, {})
+bind("n", "<leader>fk", builtin.keymaps, {})
+bind("n", "<leader>fr", builtin.lsp_references, {})
 
 -- telescope git commands (not on youtube nvim video)
-bind("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
-bind("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-bind("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-bind("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+-- bind("n", "<leader>gc", "<cmd>telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+-- bind("n", "<leader>gfc", "<cmd>telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+-- bind("n", "<leader>gb", "<cmd>telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
+-- bind("n", "<leader>gs", "<cmd>telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
 
 -- vim.keymap autoclose
