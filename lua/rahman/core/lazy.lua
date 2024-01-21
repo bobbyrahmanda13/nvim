@@ -64,7 +64,7 @@ local plugins = {
 
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
-  install = {colorscheme = { "catppuccin" }},
+  install = {colorscheme = { "solarized-osaka" }},
   ui = {
     border = "rounded",
     icons = {
