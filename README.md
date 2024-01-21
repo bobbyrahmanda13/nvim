@@ -27,6 +27,7 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 2. If you have installed everything again from the beginning, when it is finished, there will be another error, namely in the treesitter section, to fix it, run `:TSInstall` so that it can run as in the example `:TSInstall javascript typescript bash python` like that if it is finished, kwkwkkwkw
 
 ## Plugins
+<details>
 
 - Colorscheme [solarized-osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -46,6 +47,7 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
+</details>
 
 ## Keyboard Shortcuts
 
