@@ -1,9 +1,31 @@
-vim.o.termguicolors = true
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.showbreak = '↪'
+vim.opt.backspace = { "start", "eol", "indent" }
+
+vim.opt.foldenable = false
+vim.opt.foldlevel = 2
+vim.opt.foldmethod = 'indent'
+
+vim.opt.listchars = {
+    space = "⋅",
+    eol = "↴",
+    tab = "▎_",
+    -- tab = "|_>",
+    trail = "•",
+    extends = "❯",
+    precedes = "❮",
+    nbsp = "",
+}
+vim.opt.fillchars = {
+    fold = " ",
+    foldsep = " ",
+    foldopen = "",
+    foldclose = "",
+    diff = "╱",
+}
 
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -31,7 +53,7 @@ vim.opt.fileencoding = "utf-8"
 
 vim.opt.backup = false
 vim.opt.swapfile = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undodir"
 vim.opt.undofile = true
 
 vim.opt.colorcolumn = "80"
