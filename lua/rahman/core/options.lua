@@ -65,6 +65,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
--- opt.foldenable = false
