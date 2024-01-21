@@ -28,7 +28,7 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 
 ## Plugins
 
-- Colorscheme [catppuccin](https://github.com/catppuccin/nvim)
+- Colorscheme [solarized-osaka](https://github.com/craftzdog/solarized-osaka.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
@@ -44,11 +44,14 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
 
 ## Keyboard Shortcuts
 
-### Editor
+<details>
+<summary>Editor</summary>
+
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
 | Visual | <kbd>J</kbd> | Move the highlighted code to the bottom using visual mode |
@@ -86,7 +89,11 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 | Normal | <kbd>[d</kbd> | Diagnostic go to next |
 | Normal | <kbd>]d</kbd> | Diagnostic go to prev |
 
-### Plugins
+</details>
+
+<details>
+<summary>Plugins</summary>
+
 | Mode | Key Shortcut | Description |
 |-----|-----|-----|
 | Normal | <kbd>K</kbd> | `Lsp Hover` |
@@ -114,3 +121,5 @@ If you have installed it on Termux, there will be an error in the LSP, the error
 | Normal | <kbd>Ctrl</kbd>+<kbd>e</kbd> | Cmp mapping abort | 
 | Normal | <kbd>Tab</kbd> | Cmp snippet select next item | 
 | Normal | <kbd>Shift</kbd>+<kbd>Tab</kbd>  | Cmp snippet select previous item | 
+
+</details>
