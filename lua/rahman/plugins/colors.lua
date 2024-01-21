@@ -108,6 +108,10 @@ require("solarized-osaka").setup({
   ---@param highlights Highlights
   ---@param colors ColorScheme
 on_highlights = function(hl, c)
+    hl.IblIndent = { fg = c.base03, nocombine = true }
+    hl.IndentBlanklineChar = { fg = c.blue, nocombine = true }
+    hl.IndentBlanklineContextChar = { fg = c.orange500, nocombine = true }
+
     local prompt = "#2d3149"
     hl.TelescopeNormal = {
       bg = c.bg_dark,
