@@ -2,6 +2,7 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.o.mouse = 'a'
 vim.opt.showbreak = '↪'
 vim.opt.backspace = { "start", "eol", "indent" }
 
