@@ -73,6 +73,7 @@ require('lualine').setup{
     lualine_c = {
       {
         'filename', 
+        on_click = function() print('file name clicked') end, 
         color = { fg = colors.red200},
         path = 4,
         file_status = false
