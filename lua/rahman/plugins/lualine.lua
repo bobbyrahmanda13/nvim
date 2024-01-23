@@ -73,7 +73,10 @@ require('lualine').setup{
     lualine_c = {
       {
         'filename', 
-        on_click = function() print('file name clicked') end, 
+        on_click = function() 
+          require('telescope.builtin').find_files()
+          -- print('file name clicked') 
+        end, 
         color = { fg = colors.red200},
         path = 4,
         file_status = false
@@ -82,6 +85,9 @@ require('lualine').setup{
     lualine_x = {
       {
         'diagnostics',
+        on_click = function()
+          require('telescope.builtin').diagnostics()
+        end,
         separator = { left = '' },
         sources = { 'nvim_diagnostic'},
         sections = { 'error', 'warn', 'info', 'hint' },

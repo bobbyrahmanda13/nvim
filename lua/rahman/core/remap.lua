@@ -69,6 +69,7 @@ bind("n", "<leader>fb", builtin.buffers, {})
 bind("n", "<leader>fh", builtin.help_tags, {})
 bind("n", "<leader>fk", builtin.keymaps, {})
 bind("n", "<leader>fr", builtin.lsp_references, {})
+-- bind("n", "<leader>fb", builtin.loclist, {})
 
 -- telescope git commands (not on youtube nvim video)
 -- bind("n", "<leader>gc", "<cmd>telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
