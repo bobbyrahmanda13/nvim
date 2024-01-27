@@ -1,6 +1,12 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 telescope.setup({
+  -- pickers = {
+  --   cwd = vim.fn.expand('%:p:h')
+  --   find_files = {
+  --     find_command = {"rg", "--files", "--hidden", "--ignore", "-u", "--glob=!**/.git/*", "--glob=!**/node_modules/*", "--glob=!**/.next/*"},    
+  --   }
+  -- },
 	defaults = {
 		mappings = {
 			i = {
