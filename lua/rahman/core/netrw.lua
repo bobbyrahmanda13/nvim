@@ -1,4 +1,4 @@
-vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 1
 vim.g.netrw_winsize = 30
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
@@ -20,4 +20,4 @@ local bind = vim.keymap.set
 -- bind("n","<leader>ex",":cd %:p:h<CR>:Lexplore<CR>")
 
 bind("n","<leader>ex",":Lexplore<CR>")
-bind("n","<leader>ec",":Lexplore %:p:h<CR>")
+-- bind("n","<leader>ec",":Lexplore %:p:h<CR>")
