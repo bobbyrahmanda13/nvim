@@ -4,6 +4,8 @@ vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_localcopydircmd = "cp -r"
 vim.g.netrw_cursor = 1
+vim.g.netrw_keepj = ""
+vim.g.netrw_cygwin = 0
 -- vi.g.netrw_browse_split = 0
 
 -- Set default netrw options
