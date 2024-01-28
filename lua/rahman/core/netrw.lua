@@ -1,8 +1,9 @@
-vim.g.netrw_keepdir = 1
+vim.g.netrw_keepdir = 0
 vim.g.netrw_winsize = 30
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 vim.g.netrw_localcopydircmd = "cp -r"
+vim.g.netrw_cursor = 1
 -- vi.g.netrw_browse_split = 0
 
 -- Set default netrw options
@@ -20,4 +21,4 @@ local bind = vim.keymap.set
 -- bind("n","<leader>ex",":cd %:p:h<CR>:Lexplore<CR>")
 
 bind("n","<leader>ex",":Lexplore<CR>")
--- bind("n","<leader>ec",":Lexplore %:p:h<CR>")
+bind("n","<leader>ec",":Lexplore %:p:h<CR>")
