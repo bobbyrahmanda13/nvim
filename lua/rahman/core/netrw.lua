@@ -1,7 +1,7 @@
 -- vim.g.netrw_keepdir = 1
 vim.g.netrw_winsize = 25
 vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
+-- vim.g.netrw_liststyle = 3
 vim.g.netrw_localcopydircmd = "cp -r"
 vim.g.netrw_cursor = 1
 vim.g.netrw_keepj = ""
