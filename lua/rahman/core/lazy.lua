@@ -61,7 +61,7 @@ local plugins = {
   {"ThePrimeagen/harpoon", branch = "harpoon2"},
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {"nvim-tree/nvim-tree.lua", version = "*", lazy = false},
-  {"nvim-tree/nvim-web-devicons"}
+  {"nvim-tree/nvim-web-devicons", lazy = true}
 }
 
 local opts = {

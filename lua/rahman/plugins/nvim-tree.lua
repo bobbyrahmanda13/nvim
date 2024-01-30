@@ -35,9 +35,32 @@ require("nvim-tree").setup({
     end,
   },
   filters = {
-    custom = {".DS_Store",".git",".undodir","node-module"}
+    custom = {".DS_Store",".undodir","node-module","\\.git$", "\\.pyc$", "__pycache__"}
   },
   git = {
     ignore = false
   },
+  renderer = {
+    icons = {
+      glyphs = {
+        default = "",
+        -- folder = {
+        --   default = "",
+        --   open = "",
+        --   empty = "",
+        --   empty_open = "",
+        -- },
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      },
+    },
+  }
 })
