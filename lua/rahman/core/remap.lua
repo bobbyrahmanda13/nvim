@@ -48,6 +48,10 @@ bind("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
 
+-- nvim tree keymap
+bind("n","<leader>ex",":NvimTreeToggle<CR>", {desc = "Toggle file explorer"})
+bind("n","<leader>er",":NvimTreeRefresh<CR>", {desc = "Toggle file explorer"})
+
 -- terminal nvim vim.keymap
 bind("t", "<A-n>", [[<C-\><C-n>]])
 bind("t", "<A-h>", [[<C-\><C-n><C-w>h]])
