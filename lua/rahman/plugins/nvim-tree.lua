@@ -7,7 +7,8 @@ local WIDTH_RATIO = 0.7   -- You can change this too
 
 require("nvim-tree").setup({
   view = {
-    relativenumber = true,
+    relativenumber = false,
+    number = false,
     float = {
       enable = true,
       open_win_config = function()
@@ -50,6 +51,15 @@ require("nvim-tree").setup({
         --   empty = "",
         --   empty_open = "",
         -- },
+        git = {
+          unstaged = "",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
         folder = {
           arrow_closed = "",
           arrow_open = "",
