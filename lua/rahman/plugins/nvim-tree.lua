@@ -36,7 +36,7 @@ require("nvim-tree").setup({
     end,
   },
   filters = {
-    custom = {".DS_Store",".undodir","node-module","\\.git$", "\\.pyc$", "__pycache__"}
+    custom = {".DS_Store",".nuxt",".undodir","node_modules","\\.git$", "\\.pyc$", "__pycache__"}
   },
   git = {
     ignore = false
