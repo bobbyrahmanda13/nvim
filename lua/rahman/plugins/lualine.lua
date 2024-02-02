@@ -176,10 +176,11 @@ require('lualine').setup{
           end
           return msg
         end,
-        icon = ' LSP:',
+        -- icon = ' LSP:',
+        icon = {'  ', color = {bg = colors.red900, fg = colors.base1}},
         -- separator = { left = '', right = ''},
         -- separator = { left = ' ', right = ' '},
-        color = { fg = colors.base1, gui = 'italic', bg = colors.base04 },
+        color = { fg = colors.base1, gui = 'bold', bg = colors.base04 },
       },
 
       {
