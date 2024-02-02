@@ -40,29 +40,81 @@ for _, mode in pairs(solarized_osaka) do
   end
 end
 
+-- local empty = require('lualine.component'):extend()
+
+-- local function jarak()
+--   return ' '
+-- end
+
+local empty = require('lualine.component'):extend()
+function empty:draw(default_highlight)
+  self.status = ''
+  self.applied_separator = ''
+  self:apply_highlights(default_highlight)
+  self:apply_section_separators()
+  return self.status
+end
+
+local function process_sections(sections)
+  for name, section in pairs(sections) do
+    local left = name:sub(9, 10) < 'x'
+    for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
+      table.insert(section, pos * 2, { empty, color = { fg = colors.base03, bg = colors.base03 } })
+    end
+    for id, comp in ipairs(section) do
+      if type(comp) ~= 'table' then
+        comp = { comp }
+        section[id] = comp
+      end
+      -- comp.separator = left and { right = '' } or { left = '' }
+      comp.separator = left and { right = ' ' } or { left = ' '}
+    end
+  end
+  return sections
+end
+
+
 require('lualine').setup{
   options =
     {
       theme = solarized_osaka,
-      -- component_separators = { left = '', right = ''},
-      -- section_separators = { left = '', right = ''},
+      -- icons_enabled = true,
+      -- component_separators = { left = '', right = '' },
+      -- section_separators = {left = '', right = ''  },
     },
-  sections = {
+  sections = process_sections {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
+      { 'mode', 
+        -- icons_enabled = true, 
+        icon = {
+          " ",
+          color = { fg = colors.base03, bg = colors.base0, gui = 'bold'}
+        },
+        -- color = { fg = colors.base0, bg = colors.green300, gui = 'bold' },
+        -- separator = { left = '', right = '' },
+        -- left_padding = 2, right_padding = 0,
+      },
     },
     -- lualine_b = { 'filename', 'branch' },
     lualine_b = {
       {
         'branch',
-        separator = { right = ''},
-        left_padding =2 
+        -- separator = { left = '', right = '' },
+        -- left_padding = 0, right_padding = 2,
+        -- icon = {
+        --   " ",
+        --   -- align = 'left',
+          -- color = { fg = colors.base03, bg = colors.base0, gui = 'bold'},
+        --   -- separator = {left = '', right = ''}
+        -- },
+        -- left_padding = 0,
+        color = { fg = colors.base0, bg = colors.base04, gui = 'bold' },
       },
       {
         'diff',
-        separator = { right = ''},
+        -- separator = { right = '',left = ''},
         colored = true,
-        symbols = {added = " " , modified = " " , removed = " " },
+        symbols = { added = " " , modified = " " , removed = " " },
         diff_color = {
           added = { fg = colors.green300, bg = colors.base03 },
           modified = { fg = colors.yellow300, bg = colors.base03 },
@@ -77,9 +129,11 @@ require('lualine').setup{
           require('telescope.builtin').find_files()
           -- print('file name clicked') 
         end, 
-        color = { fg = colors.red200},
+        icon = ' ',
+        color = { fg = colors.base0, bg = colors.base04, gui = 'bold'},
         path = 4,
-        file_status = false
+        file_status = false,
+        -- separator = { right = '', left = ''},
       },
     },
     lualine_x = {
@@ -88,7 +142,7 @@ require('lualine').setup{
         on_click = function()
           require('telescope.builtin').diagnostics()
         end,
-        separator = { left = '' },
+        -- separator = { left = '' },
         sources = { 'nvim_diagnostic'},
         sections = { 'error', 'warn', 'info', 'hint' },
 
@@ -124,39 +178,46 @@ require('lualine').setup{
         end,
         icon = ' LSP:',
         -- separator = { left = '', right = ''},
-        separator = { left = ' ', right = ' '},
-        color = { fg = colors.base05, gui = 'italic', bg = colors.base03 },
+        -- separator = { left = ' ', right = ' '},
+        color = { fg = colors.base1, gui = 'italic', bg = colors.base04 },
       },
 
       {
         'encoding',
-        separator = { left = '' },
+        -- separator = { left = '' },
+        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
+
       },
-      {
-        'fileformat',
-        separator = { left = '' },
-      },
+      -- {
+      --   'fileformat',
+      --   -- separator = { left = '' },
+      -- },
       {
         'filetype',
-        separator = { left = '', right = ' ' },
+        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
+        -- separator = { left = '', right = ' ' },
       }
     },
     lualine_y = {
       {
-        'progress',
+        'progress', left_padding = 0,
+        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
       }
     },
     lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
+      { 
+        'location', 
+        -- separator = { right = '' }, left_padding = 2 },
+      }  
     },
   },
   inactive_sections = {
-    lualine_a = { 'filename' },
+    lualine_a = {},
     lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
     lualine_y = {},
-    lualine_z = { 'location' },
+    lualine_z = {},
   },
   tabline = {},
   extensions = {},
