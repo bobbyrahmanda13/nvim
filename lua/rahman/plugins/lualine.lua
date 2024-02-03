@@ -88,7 +88,7 @@ require('lualine').setup{
         -- icons_enabled = true, 
         icon = {
           " ",
-          color = { fg = colors.base03, bg = colors.base0, gui = 'bold'}
+          color = { fg = colors.base04, bg = colors.base1, gui = 'bold'}
         },
         -- color = { fg = colors.base0, bg = colors.green300, gui = 'bold' },
         -- separator = { left = '', right = '' },
@@ -108,7 +108,7 @@ require('lualine').setup{
         --   -- separator = {left = '', right = ''}
         -- },
         -- left_padding = 0,
-        color = { fg = colors.base0, bg = colors.base04, gui = 'bold' },
+        color = { fg = colors.base1, bg = colors.base04, gui = 'bold' },
       },
       {
         'diff',
@@ -130,7 +130,7 @@ require('lualine').setup{
           -- print('file name clicked') 
         end, 
         icon = ' ',
-        color = { fg = colors.base0, bg = colors.base04, gui = 'bold'},
+        color = { fg = colors.base1, bg = colors.yellow900, gui = 'bold'},
         path = 4,
         file_status = false,
         -- separator = { right = '', left = ''},
@@ -186,7 +186,7 @@ require('lualine').setup{
       {
         'encoding',
         -- separator = { left = '' },
-        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
+        color = {bg = colors.red900, fg = colors.base1, gui = 'bold'}
 
       },
       -- {
@@ -195,14 +195,14 @@ require('lualine').setup{
       -- },
       {
         'filetype',
-        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
+        color = {bg = colors.magenta900, fg = colors.base1, gui = 'bold'}
         -- separator = { left = '', right = ' ' },
       }
     },
     lualine_y = {
       {
         'progress', left_padding = 0,
-        color = {bg = colors.base01, fg = colors.base3, gui = 'bold'}
+        color = {bg = colors.green900, fg = colors.base1, gui = 'bold'}
       }
     },
     lualine_z = {
