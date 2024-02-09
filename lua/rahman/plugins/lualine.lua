@@ -208,6 +208,9 @@ require('lualine').setup{
     lualine_z = {
       { 
         'location', 
+        -- function()
+        --   return "Ln:%l Col:%c"
+        -- end
         -- separator = { right = '' }, left_padding = 2 },
       }  
     },
