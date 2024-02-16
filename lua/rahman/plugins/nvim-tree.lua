@@ -42,6 +42,7 @@ require("nvim-tree").setup({
     ignore = false
   },
   renderer = {
+    full_name = true,
     icons = {
       glyphs = {
         default = "",
