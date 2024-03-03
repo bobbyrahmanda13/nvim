@@ -207,7 +207,7 @@ require('lualine').setup{
     },
     lualine_z = {
       { 
-        'location', 
+        -- 'location', 
         -- function()
         --   return "Ln:%l Col:%c"
         -- end
