@@ -2,8 +2,8 @@ local lspconfig = require 'lspconfig'
 local util = require 'lspconfig.util'
 local bind = vim.keymap.set
 
--- local borderLsp = "rounded"
-local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+local borderLsp = "rounded"
+-- local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, {
@@ -171,10 +171,10 @@ cmp.setup {
   },
   window = {
     completion = cmp.config.window.bordered({ 
-      border = "double" 
+      border = borderLsp 
     }),
     documentation = cmp.config.window.bordered({ 
-      border = "double" 
+      border = borderLsp 
     }),
   },
 }
