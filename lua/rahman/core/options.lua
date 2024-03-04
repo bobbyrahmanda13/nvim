@@ -9,9 +9,11 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.foldenable = false
 vim.opt.foldlevel = 2
 vim.opt.foldmethod = 'indent'
+vim.opt.smoothscroll = true
 
+vim.opt.list = true
 vim.opt.listchars = {
-    space = "⋅",
+    space = " ",
     eol = "↴",
     tab = "▎_",
     -- tab = "|_>",
