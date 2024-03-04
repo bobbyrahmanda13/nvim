@@ -3,28 +3,28 @@ local config = require("solarized-osaka.config").options
 
 local solarized_osaka  = {
   normal = {
-    a = { bg = colors.blue, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.blue100 },
     b = { bg = colors.fg, fg = colors.black },
     c = { bg = colors.bg_statusline, fg = colors.fg },
   },
   insert = {
-    a = { bg = colors.green, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.green100 },
   },
 
   command = {
-    a = { bg = colors.yellow, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.yellow100 },
   },
 
   visual = {
-    a = { bg = colors.magenta, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.magenta100 },
   },
 
   replace = {
-    a = { bg = colors.red, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.red100 },
   },
 
   terminal = {
-    a = { bg = colors.green, fg = colors.black },
+    a = { bg = colors.base03, fg = colors.orange100 },
   },
 
   inactive = {
@@ -68,6 +68,7 @@ local function process_sections(sections)
       end
       -- comp.separator = left and { right = '' } or { left = '' }
       comp.separator = left and { right = ' ' } or { left = ' '}
+      -- comp.separator = {left = '' } and { right = '' }
     end
   end
   return sections
@@ -79,7 +80,7 @@ require('lualine').setup{
     {
       theme = solarized_osaka,
       -- icons_enabled = true,
-      -- component_separators = { left = '', right = '' },
+      -- component_separators = { left = '>', right = '┇' },
       -- section_separators = {left = '', right = ''  },
     },
   sections = process_sections {
@@ -87,8 +88,8 @@ require('lualine').setup{
       { 'mode', 
         -- icons_enabled = true, 
         icon = {
-          " ",
-          color = { fg = colors.base04, bg = colors.base1, gui = 'bold'}
+          " ",
+          color = { fg = colors.base4, bg = colors.base03, gui = 'bold'}
         },
         -- color = { fg = colors.base0, bg = colors.green300, gui = 'bold' },
         -- separator = { left = '', right = '' },
@@ -101,14 +102,14 @@ require('lualine').setup{
         'branch',
         -- separator = { left = '', right = '' },
         -- left_padding = 0, right_padding = 2,
-        -- icon = {
-        --   " ",
-        --   -- align = 'left',
-          -- color = { fg = colors.base03, bg = colors.base0, gui = 'bold'},
+        icon = {
+          "",
+          -- align = 'left',
+          color = { fg = colors.orange100, bg = colors.base03, gui = 'bold'},
         --   -- separator = {left = '', right = ''}
-        -- },
+        },
         -- left_padding = 0,
-        color = { fg = colors.base1, bg = colors.base04, gui = 'bold' },
+        color = { fg = colors.orange100, bg = colors.base03, gui = 'bold' },
       },
       {
         'diff',
@@ -116,9 +117,9 @@ require('lualine').setup{
         colored = true,
         symbols = { added = " " , modified = " " , removed = " " },
         diff_color = {
-          added = { fg = colors.green300, bg = colors.base03 },
-          modified = { fg = colors.yellow300, bg = colors.base03 },
-          removed = { fg = colors.red300, bg = colors.base03 },
+          added = { fg = colors.green300, bg = colors.base03, gui = 'bold' },
+          modified = { fg = colors.yellow300, bg = colors.base03, gui = 'bold' },
+          removed = { fg = colors.red300, bg = colors.base03, gui = 'bold' },
         }
       },
     },
@@ -130,10 +131,10 @@ require('lualine').setup{
           -- print('file name clicked') 
         end, 
         icon = ' ',
-        color = { fg = colors.base1, bg = colors.yellow900, gui = 'bold'},
+        color = { fg = colors.yellow100, bg = colors.base03, gui = 'bold'},
         path = 4,
         file_status = false,
-        -- separator = { right = '', left = ''},
+        -- separator = { right = '┇', left = '┇'},
       },
     },
     lualine_x = {
@@ -147,11 +148,11 @@ require('lualine').setup{
         sections = { 'error', 'warn', 'info', 'hint' },
 
         diagnostics_color = {
-          error = { fg = colors.red300, bg = colors.base03 }, -- Changes diagnostics' error color.
-          added = { fg = colors.green300, bg = colors.base03 },
-          warn  = { fg = colors.yellow300, bg = colors.base03 },  -- Changes diagnostics' warn color.
-          info  = { fg = colors.blue300, bg = colors.base03 },  -- Changes diagnostics' info color.
-          hint  = { fg = colors.cyan300, bg = colors.base03 },  -- Changes diagnostics' hint color.
+          error = { fg = colors.red300, bg = colors.base03 , gui = 'bold'}, -- Changes diagnostics' error color.
+          added = { fg = colors.green300, bg = colors.base03, gui = 'bold'},
+          warn  = { fg = colors.yellow300, bg = colors.base03, gui = 'bold' },  -- Changes diagnostics' warn color.
+          info  = { fg = colors.blue300, bg = colors.base03, gui = 'bold' },  -- Changes diagnostics' info color.
+          hint  = { fg = colors.cyan300, bg = colors.base03, gui = 'bold' },  -- Changes diagnostics' hint color.
         },
         symbols = { error = " ", warn = " ", hint = "󰠠 ", info = " " },
         colored = true,           -- Displays diagnostics status in color if set to true.
@@ -162,7 +163,7 @@ require('lualine').setup{
         -- code from https://github.com/nvim-lualine/lualine.nvim/blob/566b7036f717f3d676362742630518a47f132fff/examples/evil_lualine.lua
         -- Lsp server name .
         function()
-          local msg = 'Not Active'
+          local msg = 'No LSP'
           local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
           local clients = vim.lsp.get_active_clients()
           if next(clients) == nil then
@@ -177,32 +178,32 @@ require('lualine').setup{
           return msg
         end,
         -- icon = ' LSP:',
-        icon = {'  ', color = {bg = colors.red900, fg = colors.base1}},
+        -- icon = {'  ', color = {bg = colors.base03, fg = colors.red100}},
         -- separator = { left = '', right = ''},
         -- separator = { left = ' ', right = ' '},
-        color = { fg = colors.base1, gui = 'bold', bg = colors.base04 },
+        color = { fg = colors.base4, gui = 'bold', bg = colors.base03 },
       },
 
-      {
-        'encoding',
-        -- separator = { left = '' },
-        color = {bg = colors.red900, fg = colors.base1, gui = 'bold'}
-
-      },
+      -- {
+      --   'encoding',
+      --   -- separator = { left = '' },
+      --   color = {bg = colors.red900, fg = colors.base1, gui = 'bold'}
+      --
+      -- },
       -- {
       --   'fileformat',
       --   -- separator = { left = '' },
       -- },
       {
         'filetype',
-        color = {bg = colors.magenta900, fg = colors.base1, gui = 'bold'}
+        color = {bg = colors.base03, fg = colors.magenta100, gui = 'bold'}
         -- separator = { left = '', right = ' ' },
       }
     },
     lualine_y = {
       {
         'progress', left_padding = 0,
-        color = {bg = colors.green900, fg = colors.base1, gui = 'bold'}
+        color = {bg = colors.base03, fg = colors.cyan100, gui = 'bold'}
       }
     },
     lualine_z = {
