@@ -106,6 +106,7 @@ lspconfig["tsserver"].setup({
   capabilities = capabilities,
   root_dir = vim.loop.cwd,
   init_options = {
+    hostInfo = "neovim",
     plugins = {
       {
         name = "@vue/typescript-plugin",
@@ -114,7 +115,7 @@ lspconfig["tsserver"].setup({
       },
     },
   },
-  filetype = {
+  filetypes = {
     "javascript",
     "typescript",
     "vue"
