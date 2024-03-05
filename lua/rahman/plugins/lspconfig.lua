@@ -32,31 +32,31 @@ vim.cmd([[highlight DiagnosticInfoLn guibg=#024649 ]])
 local signsIcon = { ERROR = " ", WARN = " ", HINT = "󰠠 ", INFO = " " }
 
 vim.diagnostic.config({
-    float = { border = borderLsp },
-    -- virtual_text = true, --default true
-    -- underline = true,
-    -- severity_sort = true,
-    signs = {
-      text = {
-        [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
-        [vim.diagnostic.severity.WARN] = signsIcon.WARN,
-        [vim.diagnostic.severity.INFO] = signsIcon.INFO,
-        [vim.diagnostic.severity.HINT] = signsIcon.HINT,
-      },
+  float = { border = borderLsp },
+  -- virtual_text = true, --default true
+  -- underline = true,
+  -- severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
+      [vim.diagnostic.severity.WARN] = signsIcon.WARN,
+      [vim.diagnostic.severity.INFO] = signsIcon.INFO,
+      [vim.diagnostic.severity.HINT] = signsIcon.HINT,
+    },
     --   linehl = {
     --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
     --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
     --     [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
     --     [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
     --   },
-      numhl = {
-        [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-        [vim.diagnostic.severity.WARN] = 'WarningMsg',
-        [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-        [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-      },
-    }
-  })
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+      [vim.diagnostic.severity.WARN] = 'WarningMsg',
+      [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+      [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+    },
+  }
+})
 
 -- deprecated
 -- local on_attach = function(_, bufnr)
@@ -102,9 +102,23 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig["tsserver"].setup({
-capabilities = capabilities,
--- on_attach = on_attach,
-root_dir = vim.loop.cwd
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = vim.loop.cwd,
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin",
+        languages = {"javascript","typescript","vue"}
+      },
+    },
+  },
+  filetype = {
+    "javascript",
+    "typescript",
+    "vue"
+  },
 })
 
 -- local volar_path=''
@@ -140,7 +154,7 @@ cmp.setup {
     ['<C-f>'] = cmp.mapping.scroll_docs(4), -- Down
     -- C-b (back) C-f (forward) for snippet placeholder navigation.
     ['<C-Space>'] = cmp.mapping.complete(),
-     ['<C-e>'] = cmp.mapping.abort(),
+    ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
     ['<Tab>'] = cmp.mapping(function(fallback)
@@ -148,7 +162,7 @@ cmp.setup {
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-           elseif has_words_before() then
+      elseif has_words_before() then
         cmp.complete()
       else
         fallback()
