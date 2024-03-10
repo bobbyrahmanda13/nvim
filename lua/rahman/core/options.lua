@@ -39,7 +39,7 @@ vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent =  true
 
-vim.opt.wrap = true 
+vim.opt.wrap = false 
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -59,7 +59,7 @@ vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undodir"
 vim.opt.undofile = true
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
 vim.opt.updatetime = 50
 
