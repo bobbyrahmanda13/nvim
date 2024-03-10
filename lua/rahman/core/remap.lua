@@ -59,6 +59,8 @@ bind("t", "<A-j>", [[<C-\><C-n><C-w>j]])
 bind("t", "<A-k>", [[<C-\><C-n><C-w>k]])
 bind("t", "<A-l>", [[<C-\><C-n><C-w>l]])
 
+bind("n","<leader>gf",[[ggVGgq]])
+
 -- plugin keymaps
 -- telescope 
 
