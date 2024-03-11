@@ -1,4 +1,4 @@
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -38,6 +38,10 @@ vim.opt.expandtab = true
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.smartindent =  true
+vim.opt.breakindent = true
+vim.opt.fileencodings = "utf-8"
+vim.opt.fileformat = "unix"
+vim.opt.encoding = "utf-8"
 
 vim.opt.wrap = false 
 
@@ -52,14 +56,15 @@ vim.opt.smartcase = true -- Case insensitive searching UNLESS /C or capital in s
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 
-vim.opt.fileencoding = "utf-8"
-
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undodir"
 vim.opt.undofile = true
 
+vim.g.have_nerd_font = true
+
 vim.opt.colorcolumn = "100"
+vim.opt.cursorline = true
 
 vim.opt.updatetime = 50
 
