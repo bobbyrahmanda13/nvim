@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Enable the following language servers
-local servers = {"tsserver","volar"}
+local servers = { "tsserver", "volar" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -101,17 +101,19 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
+
 lspconfig["tsserver"].setup({
   -- on_attach = on_attach,
   capabilities = capabilities,
-  root_dir = vim.loop.cwd,
+  root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
   init_options = {
     hostInfo = "neovim",
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin",
-        languages = {"vue"}
+        location = vue_ts_plugin,
+        languages = ["vue"]
       },
     },
   },
@@ -123,20 +125,19 @@ lspconfig["tsserver"].setup({
 })
 
 -- local volar_path=''
-local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
+local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/tsserverlibrary.js'
+local volar_init_options = {
+  typescript = {
+    tsdk = tslib_path,
+  },
+}
 
 lspconfig["volar"].setup({
   -- on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  filetypes = { 'vue' },
   root_dir = util.root_pattern 'package.json',
-  init_options = {
-    typescript = {
-      tsdk = tslib_path
-      -- Alternative location if installed as root:
-      -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-    },
-  }
+  init_options = volar_init_options,
 })
 
 -- luasnip setup
