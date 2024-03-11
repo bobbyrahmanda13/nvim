@@ -111,7 +111,7 @@ lspconfig["tsserver"].setup({
       {
         name = "@vue/typescript-plugin",
         location = "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin",
-        languages = {"javascript","typescript","vue"}
+        languages = {"vue"}
       },
     },
   },
