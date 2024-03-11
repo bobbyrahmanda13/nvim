@@ -40,8 +40,9 @@ vim.opt.autoindent = true
 vim.opt.smartindent =  true
 vim.opt.breakindent = true
 vim.opt.fileencodings = "utf-8"
-vim.opt.fileformat = "unix"
+vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
+vim.opt.smarttab = true
 
 vim.opt.wrap = false 
 
