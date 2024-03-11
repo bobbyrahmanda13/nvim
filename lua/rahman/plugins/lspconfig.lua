@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bind('n', '<leader>vrn', vim.lsp.buf.rename, opts)
     bind('i', '<C-h>', vim.lsp.buf.signature_help, opts)
     bind('n', '<leader>hf', function()
-      vim.lsp.buf.format {}
+      vim.lsp.buf.format({ async = true})
     end, opts)
   end,
 })
