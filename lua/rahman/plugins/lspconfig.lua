@@ -81,8 +81,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- bind('n', '<leader>vrr', "<cmd>Telescope lsp_references<CR>", opts)
     bind('n', '<leader>vrn', vim.lsp.buf.rename, opts)
     bind('i', '<C-h>', vim.lsp.buf.signature_help, opts)
-    bind('n', '<leader>gf', function()
-      vim.lsp.buf.format { async = true }
+    bind('n', '<leader>hf', function()
+      vim.lsp.buf.format {}
     end, opts)
   end,
 })
