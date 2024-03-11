@@ -125,7 +125,7 @@ lspconfig["tsserver"].setup({
 })
 
 -- local volar_path=''
-local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/tsserverlibrary.js'
+local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
 local volar_init_options = {
   typescript = {
     tsdk = tslib_path,
