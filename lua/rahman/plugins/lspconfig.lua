@@ -113,7 +113,7 @@ lspconfig["tsserver"].setup({
       {
         name = "@vue/typescript-plugin",
         location = vue_ts_plugin,
-        languages = ["vue"]
+        languages = {"vue"}
       },
     },
   },
