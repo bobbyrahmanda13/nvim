@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local bind = vim.keymap.set
 
 -- general keymaps
-bind("i", "jk", "<ESC>")
+bind("i", "<C-c>", "<Esc>")
 
 bind("n", "<leader>nh", ":nohl<CR>")
 bind("n", "<C-s>", ":w<CR>")
