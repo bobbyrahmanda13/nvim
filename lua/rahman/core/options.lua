@@ -44,7 +44,7 @@ vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.smarttab = true
 
-vim.opt.wrap = false 
+vim.opt.wrap = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
