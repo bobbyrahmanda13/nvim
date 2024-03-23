@@ -117,11 +117,11 @@ lspconfig["tsserver"].setup({
       },
     },
   },
-  -- filetypes = {
-  --   "javascript",
-  --   "typescript",
-  --   "vue",
-  -- },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
 })
 
 -- local volar_path=''
