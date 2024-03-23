@@ -113,15 +113,15 @@ lspconfig["tsserver"].setup({
       {
         name = "@vue/typescript-plugin",
         location = vue_ts_plugin,
-        languages = {"vue","javascript","typescript"}
+        languages = {"vue"}
       },
     },
   },
-  filetypes = {
-    "javascript",
-    "typescript",
-    "vue",
-  },
+  -- filetypes = {
+  --   "javascript",
+  --   "typescript",
+  --   "vue",
+  -- },
 })
 
 -- local volar_path=''
