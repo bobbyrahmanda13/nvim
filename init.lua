@@ -12,5 +12,3 @@ require("rahman.plugins.friendlySnippet")
 require("rahman.plugins.harpoon")
 require("rahman.plugins.nvim-tree")
 
-
-
