@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Enable the following language servers
-local servers = { "tsserver", "volar" }
+local servers = { "tsserver", "volar","gopls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -100,6 +100,10 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig["gopls"].setup({
+  capabilities = capabilities,
+})
 
 local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
 
