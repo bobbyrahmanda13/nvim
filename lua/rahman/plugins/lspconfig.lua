@@ -103,6 +103,20 @@ end
 
 lspconfig["gopls"].setup({
   capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go","gomod","gowork", "gotmpl"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completedUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      }
+    }
+  }
+
+
 })
 
 local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
