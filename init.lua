@@ -8,7 +8,7 @@ require("rahman.plugins.telescope")
 require("rahman.plugins.treesitter")
 require("rahman.plugins.lualine")
 require("rahman.plugins.lspconfig")
-require("rahman.plugins.friendlySnippet")
+require("rahman.plugins.mySnippets")
 require("rahman.plugins.harpoon")
 require("rahman.plugins.nvim-tree")
 
