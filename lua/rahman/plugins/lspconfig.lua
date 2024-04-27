@@ -92,7 +92,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Enable the following language servers
-local servers = { "tsserver", "volar","gopls" }
+local servers = { "tsserver", "volar", "gopls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -103,19 +103,7 @@ end
 
 lspconfig["gopls"].setup({
   capabilities = capabilities,
-  cmd = {"gopls"},
-  filetypes = {"go","gomod","gowork", "gotmpl"},
-  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-  settings = {
-    gopls = {
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-      }
-    }
-  }
-
-
+  filetype = {'go', 'gomod', 'gowork', 'gotmpl'},
 })
 
 local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
