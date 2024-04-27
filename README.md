@@ -1,5 +1,4 @@
 # Rahman init.lua
-This is a config for javascript / typescript developers, this config without using null-ls as formatting or using mason because you're lazy, so if you want to install a language server, just follow the LSP method and install it using the package manager you like
 
 ## Quickstart
 
