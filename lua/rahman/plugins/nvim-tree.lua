@@ -1,5 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy =false,
   depedencies = "nvim-tree/nvim-web-devicons",
   config = function()
 
@@ -60,33 +62,33 @@ return {
           glyphs = {
             default = "",
             -- folder = {
-              --   default = "",
-              --   open = "",
-              --   empty = "",
-              --   empty_open = "",
-              -- },
-              git = {
-                unstaged = "󰅙",
-                staged = "",
-                unmerged = "󰘭",
-                renamed = "",
-                untracked = "",
-                deleted = "󰗨",
-                ignored = "",
-              },
-              folder = {
-                arrow_closed = "",
-                arrow_open = "",
-                default = "",
-                open = "",
-                empty = "",
-                empty_open = "",
-                symlink = "",
-                symlink_open = "",
-              },
+            --   default = "",
+            --   open = "",
+            --   empty = "",
+            --   empty_open = "",
+            -- },
+            git = {
+              unstaged = "󰅙",
+              staged = "",
+              unmerged = "󰘭",
+              renamed = "",
+              untracked = "",
+              deleted = "󰗨",
+              ignored = "",
+            },
+            folder = {
+              arrow_closed = "",
+              arrow_open = "",
+              default = "",
+              open = "",
+              empty = "",
+              empty_open = "",
+              symlink = "",
+              symlink_open = "",
             },
           },
-        }
-      })
-    end
-  }
+        },
+      }
+    })
+  end
+}
