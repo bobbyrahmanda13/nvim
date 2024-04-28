@@ -44,4 +44,4 @@ local opts = {
   }
 }
 
-require("lazy").setup("rahman.plugins", opts)
+require("lazy").setup({ { import = "rahman.plugins"},{import = "rahman.plugins.lsp"} }, opts )
