@@ -48,7 +48,7 @@ return {
       float = { border = borderLsp },
       -- virtual_text = true, --default true
       -- underline = true,
-      -- severity_sort = true,
+      severity_sort = true,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
@@ -56,12 +56,12 @@ return {
           [vim.diagnostic.severity.INFO] = signsIcon.INFO,
           [vim.diagnostic.severity.HINT] = signsIcon.HINT,
         },
-        --   linehl = {
-        --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-        --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
-        --     [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
-        --     [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
-        --   },
+          -- linehl = {
+          --   [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          --   [vim.diagnostic.severity.WARN] = 'WarningMsg',
+          --   [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
+          --   [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
+          -- },
         numhl = {
           [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
           [vim.diagnostic.severity.WARN] = 'WarningMsg',
