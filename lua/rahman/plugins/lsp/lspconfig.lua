@@ -37,39 +37,40 @@ return {
     -- vim.cmd([[highlight DiagnosticHintLn guibg=#024649 ]])
     -- vim.cmd([[highlight DiagnosticInfoLn guibg=#024649 ]])
 
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
+    local signsIcon = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 
-    -- vim.diagnostic.config({
-    --   float = { border = borderLsp },
-    --   -- virtual_text = true, --default true
-    --   -- underline = true,
-    --   -- severity_sort = true,
-    --   signs = {
-    --     text = {
-    --       [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
-    --       [vim.diagnostic.severity.WARN] = signsIcon.WARN,
-    --       [vim.diagnostic.severity.INFO] = signsIcon.INFO,
-    --       [vim.diagnostic.severity.HINT] = signsIcon.HINT,
-    --     },
-    --     --   linehl = {
-    --     --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-    --     --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
-    --     --     [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
-    --     --     [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
-    --     --   },
-    --     numhl = {
-    --       [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-    --       [vim.diagnostic.severity.WARN] = 'WarningMsg',
-    --       [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-    --       [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-    --     },
-    --   }
-    -- })
-    --
+    -- for type, icon in pairs(signs) do
+    --   local hl = "DiagnosticSign" .. type
+    --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    -- end
+
+    vim.diagnostic.config({
+      float = { border = borderLsp },
+      -- virtual_text = true, --default true
+      -- underline = true,
+      -- severity_sort = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = signsIcon.ERROR,
+          [vim.diagnostic.severity.WARN] = signsIcon.WARN,
+          [vim.diagnostic.severity.INFO] = signsIcon.INFO,
+          [vim.diagnostic.severity.HINT] = signsIcon.HINT,
+        },
+        --   linehl = {
+        --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        --     [vim.diagnostic.severity.INFO] = 'DiagnosticInfoLn',
+        --     [vim.diagnostic.severity.HINT] = 'DiagnosticHintLn',
+        --   },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+          [vim.diagnostic.severity.WARN] = 'WarningMsg',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+        },
+      }
+    })
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
