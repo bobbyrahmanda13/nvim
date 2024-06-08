@@ -138,7 +138,7 @@ return {
               {
                 name = "@vue/typescript-plugin",
                 location = vue_language_server_path,
-                languages = {'javascript','typescript','vue'}
+                languages = {'vue'}
               },
             }
           },
@@ -156,7 +156,7 @@ return {
         local volar_typescript = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
 
         lspconfig["volar"].setup({
-          filetypes = { "typescript", "javascript", "vue" },
+          filetypes = { "vue" },
           capabilities = capabilities,
           root_dir = util.root_pattern("package.json"),
           init_options = {
