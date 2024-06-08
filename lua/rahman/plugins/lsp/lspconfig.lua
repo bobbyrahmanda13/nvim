@@ -103,6 +103,10 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    local vue_typescript_plugin = '/home/rahman/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin/'
+    local volar_typescript = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/'
+
+
     mason_lspconfig.setup_handlers({
 
       function(server_name)
@@ -110,6 +114,7 @@ return {
           capabilities =capabilities,
         })
       end,
+
       ["gopls"] = function()
 
         lspconfig["gopls"].setup({
@@ -120,13 +125,8 @@ return {
         })
 
       end,
-      ["tsserver"] = function()
 
-        local vue_typescript_plugin = require('mason-registry')
-          .get_package('vue-language-server')
-          :get_install_path()
-        .. '/node_modules/@vue/language-server'
-        .. '/node_modules/@vue/typescript-plugin'
+      ["tsserver"] = function()
 
         lspconfig["tsserver"].setup({
 
@@ -138,7 +138,7 @@ return {
               {
                 name = "@vue/typescript-plugin",
                 location = vue_typescript_plugin,
-                languages = {'javascript','typescript', 'vue'},
+                languages = {'vue'},
               },
             },
           },
@@ -156,10 +156,10 @@ return {
 
         lspconfig["volar"].setup({
           capabilities = capabilities,
-          filetypes = {"vue", "javascript", "typescript"},
+          filetypes = {"vue"},
           init_options = {
             typescript = {
-              tsdk = "/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/",
+              tsdk = volar_typescript,
             },
           },
         })
