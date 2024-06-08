@@ -104,6 +104,7 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     local vue_typescript_plugin = '/home/rahman/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin/'
+
     local volar_typescript = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/'
 
 
