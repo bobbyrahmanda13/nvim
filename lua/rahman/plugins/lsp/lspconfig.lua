@@ -103,8 +103,6 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
-
     mason_lspconfig.setup_handlers({
 
       function(server_name)
@@ -124,22 +122,6 @@ return {
 
         lspconfig["tsserver"].setup({
           capabilities = capabilities,
-          root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
-          init_options = {
-            hostInfo = "neovim",
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = '/home/rahman/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin/',
-                languages = {"vue"}
-              },
-            },
-          },
-          filetypes = {
-            "javascript",
-            "typescript",
-            "vue",
-          },
         })
 
       end,
@@ -150,15 +132,6 @@ return {
         
         lspconfig["volar"].setup({
           capabilities = capabilities,
-          filetypes = { 'vue' },
-          root_dir = util.root_pattern 'package.json',
-          init_options = {
-            typescript = {
-              tsdk = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/'
-              -- Alternative location if installed as root:
-              -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-            }
-          }
         })
 
       end
