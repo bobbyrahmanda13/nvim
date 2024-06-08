@@ -133,7 +133,6 @@ return {
           capabilities = capabilities,
           root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
           init_options = {
-            hostInfo = "neovim",
             plugins = {
               {
                 name = "@vue/typescript-plugin",
@@ -141,11 +140,6 @@ return {
                 languages = {'vue'}
               },
             }
-          },
-          filetypes = {
-            "javascript",
-            "typescript",
-            "vue",
           },
         })
 
@@ -156,12 +150,11 @@ return {
         local volar_typescript = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
 
         lspconfig["volar"].setup({
-          filetypes = { "vue","javascript","typescript" },
           capabilities = capabilities,
-          root_dir = util.root_pattern("package.json"),
+          root_dir = util.root_pattern("package.json","vue.config.ts","nuxt.config.ts","uno.config.ts"),
           init_options = {
             vue = {
-              hybridMode = true,
+              hybridMode = false,
             },
             typescript = {
               tsdk = volar_typescript,
