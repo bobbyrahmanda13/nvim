@@ -14,8 +14,8 @@ return {
 
     local bind = vim.keymap.set
 
-    local borderLsp = "rounded"
-    -- local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+    -- local borderLsp = "rounded"
+    local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
       vim.lsp.handlers.hover, {
