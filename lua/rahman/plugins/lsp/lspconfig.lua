@@ -103,7 +103,7 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
+    -- local vue_ts_plugin = '/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin'
 
     mason_lspconfig.setup_handlers({
 
@@ -123,7 +123,6 @@ return {
       ["tsserver"] = function()
 
         lspconfig["tsserver"].setup({
-          -- on_attach = on_attach,
           capabilities = capabilities,
           root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
           init_options = {
@@ -131,7 +130,7 @@ return {
             plugins = {
               {
                 name = "@vue/typescript-plugin",
-                location = vue_ts_plugin,
+                location = '/home/rahman/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin/',
                 languages = {"vue"}
               },
             },
@@ -146,19 +145,20 @@ return {
       end,
       ["volar"] = function()
 
-        local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
-        local volar_init_options = {
-          typescript = {
-            tsdk = tslib_path,
-          },
-        }
-
+        -- global typescrip lib
+        -- local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
+        
         lspconfig["volar"].setup({
-          -- on_attach = on_attach,
           capabilities = capabilities,
           filetypes = { 'vue' },
           root_dir = util.root_pattern 'package.json',
-          init_options = volar_init_options,
+          init_options = {
+            typescript = {
+              tsdk = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/'
+              -- Alternative location if installed as root:
+              -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+            }
+          }
         })
 
       end
