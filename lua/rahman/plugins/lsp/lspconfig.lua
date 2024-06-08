@@ -113,25 +113,55 @@ return {
       ["gopls"] = function()
 
         lspconfig["gopls"].setup({
+
           capabilities = capabilities,
           filetype = {'go', 'gomod', 'gowork', 'gotmpl'},
+
         })
 
       end,
       ["tsserver"] = function()
 
+        local vue_typescript_plugin = require('mason-registry')
+          .get_package('vue-language-server')
+          :get_install_path()
+        .. '/node_modules/@vue/language-server'
+        .. '/node_modules/@vue/typescript-plugin'
+
         lspconfig["tsserver"].setup({
+
           capabilities = capabilities,
+          root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
+          init_options = {
+            hostInfo = "neovim",
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = vue_typescript_plugin,
+                languages = {'javascript','typescript', 'vue'},
+              },
+            },
+          },
+          filetypes = {
+            "javascript",
+            "typescript",
+            "vue",
+          },
+
         })
 
       end,
+
       ["volar"] = function()
 
-        -- global typescrip lib
-        -- local tslib_path='/home/rahman/.local/share/pnpm/global/5/node_modules/typescript/lib/'
-        
         lspconfig["volar"].setup({
           capabilities = capabilities,
+          filetypes = {"vue", "javascript", "typescript"},
+          init_options = {
+            typescript = {
+              tsdk = "/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib/",
+            },
+          },
         })
 
       end
