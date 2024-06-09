@@ -52,7 +52,7 @@ return {
 
     vim.diagnostic.config({
       float = { border = borderLsp },
-      -- virtual_text = true, --default true
+      virtual_text = { prefix = '●'}, --default true
       -- underline = true,
       severity_sort = true,
       signs = {
