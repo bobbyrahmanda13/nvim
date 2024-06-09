@@ -147,7 +147,7 @@ return {
 
       ["volar"] = function()
 
-        local volar_typescript = '/home/rahman/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
+        local volar_typescript = mason_registry.get_package('typescript-language-server'):get_install_path() .. '/node_modules/typescript/lib'
 
         lspconfig["volar"].setup({
           capabilities = capabilities,
