@@ -41,8 +41,9 @@ bind("n", "<leader>Y", [["+Y]])
 bind({"n", "v"}, "<leader>d", [["_d]])
 
 bind("n","y1","yiw")
-bind("n","t2","viw")
+bind("n","t2","viwxi")
 bind("x", "<leader>p", "\"_dP")
+
 
 bind("n", "<leader><leader>", function()
   vim.cmd("so")
