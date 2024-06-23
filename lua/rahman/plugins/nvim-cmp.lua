@@ -11,7 +11,8 @@ return {
       build = "make install_jsregexp"
     },
     "saadparwaiz1/cmp_luasnip",
-    "bobbyrahmanda13/my-snippets"
+    -- "bobbyrahmanda13/my-snippets"
+    "rafamadriz/friendly-snippets"
   },
   config = function()
 
