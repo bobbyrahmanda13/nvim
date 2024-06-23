@@ -32,18 +32,13 @@ return {
     ui_lsp.default_options.border = borderLsp
 
 
-    -- vim.cmd([[highlight ErrorMsg guibg=#3d0000 ]])
-    -- vim.cmd([[highlight WarningMsg guibg=#513A1A ]])
-    -- vim.cmd([[highlight DiagnosticHintLn guibg=#024649 ]])
-    -- vim.cmd([[highlight DiagnosticInfoLn guibg=#024649 ]])
+    vim.cmd([[highlight DiagnosticSignError gui=bold guifg=#dc312e ]])
+    vim.cmd([[highlight DiagnosticSignWarn gui=bold guifg=#b38600 ]])
+    vim.cmd([[highlight DiagnosticHintLn gui=bold guifg=#2aa298 ]])
+    vim.cmd([[highlight DiagnosticInfoLn gui=bold guifg=#859900 ]])
     
-    -- vim.cmd [[
-    -- hi DiagnosticUnderlineError guisp='Red' gui=undercurl
-    -- hi DiagnosticUnderlineHint guisp='Cyan' gui=underline
-    -- " set termguicolors
-    -- ]]
-
-    local signsIcon = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    -- 
+    -- local signsIcon = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 
     -- for type, icon in pairs(signs) do
     --   local hl = "DiagnosticSign" .. type
@@ -57,23 +52,26 @@ return {
       severity_sort = true,
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = signsIcon.Error,
-          [vim.diagnostic.severity.WARN] = signsIcon.Warn,
-          [vim.diagnostic.severity.HINT] = signsIcon.Hint,
-          [vim.diagnostic.severity.INFO] = signsIcon.Info,
+          -- [vim.diagnostic.severity.ERROR] = signsIcon.Error,
+          -- [vim.diagnostic.severity.WARN] = signsIcon.Warn,
+          -- [vim.diagnostic.severity.HINT] = signsIcon.Hint,
+          -- [vim.diagnostic.severity.INFO] = signsIcon.Info,
+          [vim.diagnostic.severity.ERROR] = 'E',
+          [vim.diagnostic.severity.WARN] = 'W',
+          [vim.diagnostic.severity.HINT] = 'H',
+          [vim.diagnostic.severity.INFO] = 'I',
         },
-        -- linehl = {
-          -- [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        linehl = {
+          -- [vim.diagnostic.severity.ERROR] = 'DiagnosticUnderlineError',
           -- [vim.diagnostic.severity.WARN] = 'WarningMsg',
           -- [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
           -- [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-        -- },
+        },
         numhl = {
-          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
-          [vim.diagnostic.severity.WARN] = 'WarningMsg',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-
+          [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+          [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+          [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+          [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
         },
       }
     })
