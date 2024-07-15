@@ -15,7 +15,7 @@ return {
       ui = {
         check_outdated_packages_on_open = true,
         border = "rounded",
-        width = 0.5,
+        width = 0.8,
         height = 0.7,
         icons = {
           package_installed = "✓",
