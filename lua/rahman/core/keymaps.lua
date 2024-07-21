@@ -13,6 +13,11 @@ bind("n", "<leader>sh", "<C-w>s") -- split window horizontaly
 bind("n", "<leader>se", "<C-w>=") -- make split windows equal width
 bind("n", "<leader>sx", ":close<CR>") -- close current split window
 
+bind("n", "rv", ":vertical resize +5<CR>") 
+bind("n", "rvv", ":vertical resize -5<CR>") 
+bind("n", "rh", ":horizontal resize +5<CR>") 
+bind("n", "rhh", ":horizontal resize -5<CR>") 
+
 bind("n", "<leader>to", ":tabnew<CR>") -- open new tab 
 bind("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 bind("n", "<leader>tn", ":tabn<CR>") -- go to next tab
