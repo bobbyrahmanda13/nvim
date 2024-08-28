@@ -79,8 +79,6 @@ return {
         return sections
       end
 
-      local lazy_status = require("lazy.status")
-
       require('lualine').setup{
         options =
         {
@@ -166,9 +164,9 @@ return {
             always_visible = false,   -- Show diagnostics even if there are none.
           },
           {
-            lazy_status.updates,
-            cond = lazy_status.has_updates,
-            color = {fg=colors.orange300},
+            require("lazy.status").updates,
+            cond = require("lazy.status").has_updates,
+            color = { fg = colors.orange300 },
           },
           {
             -- code from https://github.com/nvim-lualine/lualine.nvim/blob/566b7036f717f3d676362742630518a47f132fff/examples/evil_lualine.lua
