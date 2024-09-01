@@ -77,9 +77,9 @@ return {
           end
         end
         return sections
-      end
+    end
 
-      require('lualine').setup{
+    require('lualine').setup{
         options =
         {
           theme = solarized_osaka,
