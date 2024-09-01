@@ -17,16 +17,17 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
-  install = {colorscheme = { "solarized-osaka" }},
+  install = { colorscheme = { "solarized-osaka" } },
   change_detection = {
-    notify = false,
+    notify = true,
+    enabled = true,
   },
   checker = {
     enabled = true,
     notify = false,
   },
   ui = {
-    -- border = "none",
+    border = "none",
     icons = {
       cmd = " ",
       config = "",

@@ -80,16 +80,22 @@ return {
     end
 
     require('lualine').setup{
-        options =
+      options =
         {
           theme = solarized_osaka,
           -- icons_enabled = true,
           -- component_separators = { left = '>', right = '┇' },
           -- section_separators = {left = '', right = ''  },
         },
-        sections = process_sections {
-          lualine_a = {
-            { 'mode', 
+      ignore_focus = {},
+      refresh = {
+        statusline = 1000,
+        tabline = 1000,
+        winbar = 1000,
+        },
+      sections = process_sections {
+        lualine_a = {
+          { 'mode', 
             -- icons_enabled = true, 
             icon = {
               " ",
@@ -209,22 +215,22 @@ return {
           { 
             -- 'location', 
             -- function()
-              --   return "Ln:%l Col:%c"
-              -- end
-              -- separator = { right = '' }, left_padding = 2 },
-            }  
-          },
+            --   return "Ln:%l Col:%c"
+            -- end
+            -- separator = { right = '' }, left_padding = 2 },
+          }  
         },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {'filename'},
-          lualine_x = {'location'},
-          lualine_y = {},
-          lualine_z = {},
-        },
-        tabline = {},
-        extensions = {},
-      }
-    end
-  }
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      extensions = {},
+    }
+  end
+}
