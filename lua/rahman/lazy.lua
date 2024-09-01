@@ -26,16 +26,24 @@ local opts = {
     notify = false,
   },
   ui = {
-    border = "rounded",
+    -- border = "none",
     icons = {
+      cmd = " ",
       config = "",
+      event = " ",
+      favorite = " ",
       ft = " ",
       init = " ",
+      import = " ",
       keys = " ",
+      lazy = "󰒲 ",
       loaded = "●",
       not_loaded = "○",
-      start = "⚙️",
+      plugin = " ",
+      runtime = " ",
+      require = "󰢱 ",
       source = " ",
+      start = " ",
       task = "✔ ",
       list = {
         "●",
@@ -43,7 +51,7 @@ local opts = {
         "★",
         "‒",
       },
-    }
+    },
   }
 }
 
