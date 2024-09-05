@@ -126,7 +126,7 @@ return {
 
       ["tsserver"] = function()
 
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
 
           capabilities = capabilities,
           root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
