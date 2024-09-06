@@ -17,17 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
+  spec = {
+    { import = "rahman.plugins"},
+    { import = "rahman.plugins.lsp"} 
+  },
   install = { colorscheme = { "solarized-osaka" } },
   change_detection = {
-    notify = true,
     enabled = true,
+    notify = false,
   },
   checker = {
     enabled = true,
     notify = false,
   },
   ui = {
-    border = "none",
+    border = "rounded",
+    -- pills = true,
     icons = {
       cmd = " ",
       config = "",
@@ -56,9 +61,4 @@ local opts = {
   }
 }
 
-require("lazy").setup({ 
-  spec = {
-    { import = "rahman.plugins"},
-    { import = "rahman.plugins.lsp"} },
-  opts
-})
+require("lazy").setup(opts)
