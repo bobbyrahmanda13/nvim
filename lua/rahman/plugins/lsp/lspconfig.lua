@@ -124,6 +124,17 @@ return {
 
       end,
 
+      ["templ"] = function()
+
+        lspconfig["templ"].setup({
+
+          capabilities = capabilities,
+          filetype = {'html','templ'},
+
+        })
+
+      end,
+
       ["tsserver"] = function()
 
         lspconfig["ts_ls"].setup({
