@@ -30,7 +30,7 @@ return {
       ensure_installed = {
         "gopls",
         "templ",
-        "tsserver",
+        "ts_ls",
         "volar",
       },
     })

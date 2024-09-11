@@ -135,7 +135,7 @@ return {
 
       end,
 
-      ["tsserver"] = function()
+      ["ts_ls"] = function()
 
         lspconfig["ts_ls"].setup({
 
