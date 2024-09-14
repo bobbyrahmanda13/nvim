@@ -23,7 +23,7 @@ return {
     require("nvim-tree").setup({
       view = {
         relativenumber = false,
-        number = false,
+        number = true,
         float = {
           enable = true,
           open_win_config = function()
@@ -56,17 +56,40 @@ return {
       git = {
         ignore = false
       },
+      ui = {
+        confirm = {
+          remove = true,
+          trash = true,
+          default_yes = false,
+        },
+      },
       renderer = {
         full_name = true,
+        indent_markers = {
+          enable = true,
+          inline_arrows = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "│",
+            bottom = "─",
+            none = " ",
+          },
+        },
         icons = {
+          -- web_devicons = {
+          --   file = {
+          --     enable = true,
+          --     color = true,
+          --   },
+          -- },
+          padding = " ",
           glyphs = {
             default = "",
-            -- folder = {
-            --   default = "",
-            --   open = "",
-            --   empty = "",
-            --   empty_open = "",
-            -- },
+            symlink = "",
+            bookmark = "󰆤",
+            modified = "●",
+              hidden = "󰜌",
             git = {
               unstaged = "󰅙",
               staged = "",
