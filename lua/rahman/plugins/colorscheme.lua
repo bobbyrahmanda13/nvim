@@ -16,8 +16,8 @@ return {
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
         keywords = { italic = true },
-        functions = { italic = true },
-        variables = { bold = true},
+        functions = { italic = true},
+        variables = { bold = true },
         -- Background styles. Can be "dark", "transparent" or "normal"
         sidebars = "dark", -- style for sidebars, see below
         floats = "dark", -- style for floating windows
