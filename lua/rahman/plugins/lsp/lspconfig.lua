@@ -143,10 +143,21 @@ return {
           capabilities = capabilities,
           filetype = {'rust'},
           settings = {
-            ['rust-analyzer'] = {
-              diagnostics = {
-                enable = false;
-              }
+            ["rust-analyzer"] = {
+              imports = {
+                granularity = {
+                  group = "module",
+                },
+                prefix = "self",
+              },
+              cargo = {
+                buildScripts = {
+                  enable = true,
+                },
+              },
+              procMacro = {
+                enable = true
+              },
             }
           }
 
