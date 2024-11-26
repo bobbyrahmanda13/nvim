@@ -30,6 +30,7 @@ return {
       ensure_installed = {
         "gopls",
         "templ",
+        "rust_analyzer",
         "ts_ls",
         "volar",
       },

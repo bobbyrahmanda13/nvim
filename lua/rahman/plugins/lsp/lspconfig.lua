@@ -109,7 +109,7 @@ return {
 
       function(server_name)
         lspconfig[server_name].setup({
-          capabilities =capabilities,
+          capabilities = capabilities,
         })
       end,
 
@@ -130,6 +130,25 @@ return {
 
           capabilities = capabilities,
           filetype = {'html','templ'},
+
+        })
+
+      end,
+
+
+      ["rust_analyzer"] = function()
+
+        lspconfig["rust_analyzer"].setup({
+
+          capabilities = capabilities,
+          filetype = {'rust'},
+          settings = {
+            ['rust-analyzer'] = {
+              diagnostics = {
+                enable = false;
+              }
+            }
+          }
 
         })
 
