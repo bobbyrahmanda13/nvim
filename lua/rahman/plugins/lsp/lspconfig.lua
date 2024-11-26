@@ -3,7 +3,7 @@ return {
   event = {"BufReadPre", "BufNewFile"},
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-  },
+
   config = function()
 
     local lspconfig = require("lspconfig")
@@ -105,6 +105,7 @@ return {
     local mason_registry = require('mason-registry')
     local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
 
+
     mason_lspconfig.setup_handlers({
 
       function(server_name)
@@ -124,65 +125,37 @@ return {
 
       end,
 
-      ["templ"] = function()
+        ["templ"] = function()
 
-        lspconfig["templ"].setup({
+          lspconfig["templ"].setup({
 
-          capabilities = capabilities,
-          filetype = {'html','templ'},
+            capabilities = capabilities,
+            filetype = {'html','templ'},
 
-        })
+          })
 
-      end,
+        end,
 
+        ["rust_analyzer"] = function() end,
 
-      ["rust_analyzer"] = function()
+        ["ts_ls"] = function()
 
-        lspconfig["rust_analyzer"].setup({
+          lspconfig["ts_ls"].setup({
 
-          capabilities = capabilities,
-          filetype = {'rust'},
-          settings = {
-            ["rust-analyzer"] = {
-              imports = {
-                granularity = {
-                  group = "module",
+            capabilities = capabilities,
+            root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
+            init_options = {
+              plugins = {
+                {
+                  name = "@vue/typescript-plugin",
+                  location = vue_language_server_path,
+                  languages = {'vue'}
                 },
-                prefix = "self",
-              },
-              cargo = {
-                buildScripts = {
-                  enable = true,
-                },
-              },
-              procMacro = {
-                enable = true
-              },
-            }
-          }
+              }
+            },
+          })
 
-        })
-
-      end,
-
-      ["ts_ls"] = function()
-
-        lspconfig["ts_ls"].setup({
-
-          capabilities = capabilities,
-          root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = vue_language_server_path,
-                languages = {'vue'}
-              },
-            }
-          },
-        })
-
-      end,
+        end,
 
       ["volar"] = function()
 
@@ -206,4 +179,5 @@ return {
     })
 
   end
+}
 }
