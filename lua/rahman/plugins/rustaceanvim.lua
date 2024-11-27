@@ -41,11 +41,11 @@ return {
             inlayHints = {
               typeHints = true,
             },
-            diagnostics = {
-              styleLints = {
-                enable = true,
-              }
-            }
+            -- diagnostics = {
+            --   styleLints = {
+            --     enable = true,
+            --   }
+            -- }
 
           },
         },
