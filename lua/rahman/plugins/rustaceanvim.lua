@@ -38,18 +38,14 @@ return {
               },
               prefix = "self",
             },
-            cargo = {
-              allFeatures = true,
-              buildScripts = {
-                enable = true,
-              },
-            },
             inlayHints = {
               typeHints = true,
             },
-            procMacro = {
-              enable = true
-            },
+            diagnostics = {
+              styleLints = {
+                enable = true,
+              }
+            }
 
           },
         },
