@@ -77,7 +77,7 @@ return {
     })
 
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
+      group = vim.api.nvim_create_augroup('rahman-lsp-config', { clear = true }),
       callback = function(ev)
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
