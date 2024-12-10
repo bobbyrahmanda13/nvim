@@ -79,6 +79,8 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('rahman-lsp-config', { clear = true }),
       callback = function(ev)
+
+
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf, silent = true }
@@ -93,9 +95,23 @@ return {
         -- bind('n', '<leader>vrr', "<cmd>Telescope lsp_references<CR>", opts)
         bind('n', '<leader>vrn', vim.lsp.buf.rename, opts)
         bind('i', '<C-h>', vim.lsp.buf.signature_help, opts)
-        bind('n', '<leader>hf', function()
-          vim.lsp.buf.format({ async = true})
-        end, opts)
+        -- bind('n', '<leader>hf', function()
+        --   vim.lsp.buf.format({ async = true})
+        -- end, opts)
+
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+          if not client then return end
+
+          if client.supports_method('textDocument/formatting') then
+            vim.api.nvim_create_autocmd('BufWritePre',{
+              buffer = ev.buf,
+              callback = function ()
+                vim.lsp.buf.format({bufnr = ev.buf, id = client.id})
+              end
+            })
+          end
+
+
       end,
     })
 
