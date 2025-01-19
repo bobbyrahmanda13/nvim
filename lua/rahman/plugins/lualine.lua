@@ -164,7 +164,7 @@ return {
               info  = { fg = colors.blue300, bg = colors.base03, gui = 'bold' },  -- Changes diagnostics' info color.
               hint  = { fg = colors.cyan300, bg = colors.base03, gui = 'bold' },  -- Changes diagnostics' hint color.
             },
-            symbols = { error = " ", warn = " ", hint = "󰠠 ", info = " " },
+            symbols = { error = "'", warn = " ", hint = "󰌵'", info = " " },
             colored = true,           -- Displays diagnostics status in color if set to true.
             update_in_insert = true, -- Update diagnostics in insert mode. default = false
             always_visible = false,   -- Show diagnostics even if there are none.
