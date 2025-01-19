@@ -57,9 +57,9 @@ return {
           -- [vim.diagnostic.severity.HINT] = signsIcon.Hint,
           -- [vim.diagnostic.severity.INFO] = signsIcon.Info,
           -- [vim.diagnostic.severity.ERROR] = ' ',
-          [vim.diagnostic.severity.ERROR] = '',
+          [vim.diagnostic.severity.ERROR] = ' ',
           [vim.diagnostic.severity.WARN] = ' ',
-          [vim.diagnostic.severity.HINT] = '󰌵'',
+          [vim.diagnostic.severity.HINT] = '󰌵 ',
           [vim.diagnostic.severity.INFO] = ' ',
         },
         linehl = {
