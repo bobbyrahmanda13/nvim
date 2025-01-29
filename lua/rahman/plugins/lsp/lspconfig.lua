@@ -142,16 +142,26 @@ return {
 
       end,
 
-        ["templ"] = function()
+      ["bashls"] = function()
 
-          lspconfig["templ"].setup({
+        lspconfig["bashls"].setup({
 
-            capabilities = capabilities,
-            filetype = {'html','templ'},
+          capabilities = capabilities,
 
-          })
+        })
 
-        end,
+      end,
+
+        -- ["templ"] = function()
+        --
+        --   lspconfig["templ"].setup({
+        --
+        --     capabilities = capabilities,
+        --     filetype = {'html','templ'},
+        --
+        --   })
+        --
+        -- end,
 
         ["rust_analyzer"] = function() end,
 
