@@ -38,12 +38,11 @@ return {
               },
               prefix = "self",
             },
-            typing = {
-              autoClosingAngleBrackets = {
-                enable = true,
-              },
+            completion = {
+              addSemicolonToUnit = true,
             },
             inlayHints = {
+              enable = true,
               typeHints = true,
             },
             diagnostics = {
