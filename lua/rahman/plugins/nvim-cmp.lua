@@ -63,6 +63,7 @@ return {
         { name = 'luasnip' },
         { name = 'path'},
         { name = 'buffer'},
+        { name = 'render-markdown'},
       }),
       window = {
         completion = cmp.config.window.bordered({ 
