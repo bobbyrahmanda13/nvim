@@ -70,3 +70,7 @@ bind("i", "{", "{}<left>")
 bind("i", "<", "<><left>") 
 bind("i", "'", "''<left>") 
 bind("i", '"', '""<left>') 
+
+-- Keymap render-markdown
+bind("n", "<leader>md", ":RenderMarkdown toggle<CR>") -- go to previous tab
+
