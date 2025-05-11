@@ -33,7 +33,7 @@ return {
         "bashls",
         "rust_analyzer",
         "ts_ls",
-        "volar",
+        "lua_ls",
       },
     })
   end,

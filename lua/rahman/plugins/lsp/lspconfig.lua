@@ -118,52 +118,52 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+      mason_lspconfig.setup({
 
-    local mason_registry = require('mason-registry')
-    local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+        function(server_name)
+          lspconfig[server_name].setup({
+            capabilities = capabilities,
+          })
+        end,
 
-
-    mason_lspconfig.setup_handlers({
-
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-
-      ["gopls"] = function()
-
-        lspconfig["gopls"].setup({
-
-          capabilities = capabilities,
-          filetype = {'go', 'gomod', 'gowork', 'gotmpl'},
-
-        })
-
-      end,
-
-      ["bashls"] = function()
-
-        lspconfig["bashls"].setup({
-
-          capabilities = capabilities,
-
-        })
-
-      end,
-
-        -- ["templ"] = function()
-        --
-        --   lspconfig["templ"].setup({
-        --
-        --     capabilities = capabilities,
-        --     filetype = {'html','templ'},
-        --
-        --   })
-        --
-        -- end,
+        ["lua_ls"] = function() 
+          lspconfig["lua_ls"].setup({
+            capabilities = capabilities,
+            settings = {
+              Lua = {
+                diagnostics = {
+                  globals = { "vim" },
+                },
+                completion = {
+                  callSnippet = "Replace",
+                },
+              },
+            },
+          })
+        end,
 
         ["rust_analyzer"] = function() end,
+
+        ["gopls"] = function()
+
+          lspconfig["gopls"].setup({
+
+            capabilities = capabilities,
+            filetype = {'go', 'gomod', 'gowork', 'gotmpl'},
+
+          })
+
+        end,
+
+        ["bashls"] = function()
+
+          lspconfig["bashls"].setup({
+
+            capabilities = capabilities,
+
+          })
+
+        end,
 
         ["ts_ls"] = function()
 
@@ -171,40 +171,12 @@ return {
 
             capabilities = capabilities,
             root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
-            init_options = {
-              plugins = {
-                {
-                  name = "@vue/typescript-plugin",
-                  location = vue_language_server_path,
-                  languages = {'vue'}
-                },
-              }
-            },
           })
 
         end,
 
-      ["volar"] = function()
+      })
 
-        local volar_typescript = mason_registry.get_package('typescript-language-server'):get_install_path() .. '/node_modules/typescript/lib'
+    end
 
-        lspconfig["volar"].setup({
-          capabilities = capabilities,
-          root_dir = util.root_pattern("package.json","vue.config.ts","nuxt.config.ts","uno.config.ts"),
-          init_options = {
-            vue = {
-              hybridMode = false,
-            },
-            typescript = {
-              tsdk = volar_typescript,
-            },
-          },
-        })
-
-      end
-
-    })
-
-  end
-}
-}
+  }}
