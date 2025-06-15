@@ -15,7 +15,6 @@ return {
     "rafamadriz/friendly-snippets"
   },
   config = function()
-
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
@@ -30,7 +29,7 @@ return {
       },
       mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- Up
-        ['<C-f>'] = cmp.mapping.scroll_docs(4), -- Down
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),  -- Down
         -- C-b (back) C-f (forward) for snippet placeholder navigation.
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
@@ -59,18 +58,19 @@ return {
         end, { 'i', 's' }),
       }),
       sources = cmp.config.sources({
+        { name = 'path' },
+        { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'path'},
-        { name = 'buffer'},
-        { name = 'render-markdown'},
+        { name = 'render-markdown' },
+        { name = 'crates' },
       }),
       window = {
-        completion = cmp.config.window.bordered({ 
-          border = "rounded" 
+        completion = cmp.config.window.bordered({
+          border = "rounded"
         }),
-        documentation = cmp.config.window.bordered({ 
-          border = "rounded" 
+        documentation = cmp.config.window.bordered({
+          border = "rounded"
         }),
       },
     }
