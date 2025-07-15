@@ -129,9 +129,6 @@ return {
               diagnostics = {
                 globals = { "vim" },
               },
-              completion = {
-                callSnippet = "Replace",
-              },
             },
           },
         })
