@@ -111,6 +111,7 @@ return {
     })
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
+    local mason_lspconfig = require("mason-lspconfig")
 
     mason_lspconfig.setup({
 
