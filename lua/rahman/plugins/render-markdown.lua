@@ -101,7 +101,7 @@ return {
         -- Settings for coq_nvim completions source
         coq = { enabled = false },
         -- Settings for in-process language server completions
-        lsp = { enabled = false },
+        lsp = { enabled = true },
       },
       -- Useful context to have when evaluating values.
       -- | level    | the number of '#' in the heading marker         |
