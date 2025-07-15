@@ -19,7 +19,7 @@ local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
   spec = {
     { import = "rahman.plugins" },
-    { import = "rahman.plugins.lsp" }
+    { import = "rahman.plugins.lsp" },
   },
   install = { colorscheme = { "solarized-osaka" } },
   change_detection = {
