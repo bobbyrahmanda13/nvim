@@ -112,58 +112,56 @@ return {
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    local mason_lspconfig = require("mason-lspconfig")
-
-    mason_lspconfig.setup({
-      --
-      --   function(server_name)
-      --     lspconfig[server_name].setup({
-      --       capabilities = capabilities,
-      --     })
-      --   end,
-      --
-      --   ["lua_ls"] = function()
-      --     lspconfig["lua_ls"].setup({
-      --       capabilities = capabilities,
-      --       settings = {
-      --         Lua = {
-      --           diagnostics = {
-      --             globals = { "vim" },
-      --           },
-      --           completion = {
-      --             callSnippet = "Replace",
-      --           },
-      --         },
-      --       },
-      --     })
-      --   end,
-      --
-      --   ["rust_analyzer"] = function() end,
-      --
-      --   ["gopls"] = function()
-      --     lspconfig["gopls"].setup({
-      --
-      --       capabilities = capabilities,
-      --       filetype = { 'go', 'gomod', 'gowork', 'gotmpl' },
-      --
-      --     })
-      --   end,
-      --
-      --   ["bashls"] = function()
-      --     lspconfig["bashls"].setup({
-      --
-      --       capabilities = capabilities,
-      --
-      --     })
-      --   end,
-      --
-      --   ["ts_ls"] = function()
-      --     lspconfig["ts_ls"].setup({
-      --
-      --       capabilities = capabilities,
-      --       root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
-      --     })
-      --   end,
-    })
+    -- mason_lspconfig.setup({
+    --
+    --   function(server_name)
+    --     lspconfig[server_name].setup({
+    --       capabilities = capabilities,
+    --     })
+    --   end,
+    --
+    --   ["lua_ls"] = function()
+    --     lspconfig["lua_ls"].setup({
+    --       capabilities = capabilities,
+    --       settings = {
+    --         Lua = {
+    --           diagnostics = {
+    --             globals = { "vim" },
+    --           },
+    --           completion = {
+    --             callSnippet = "Replace",
+    --           },
+    --         },
+    --       },
+    --     })
+    --   end,
+    --
+    --   ["rust_analyzer"] = function() end,
+    --
+    --   ["gopls"] = function()
+    --     lspconfig["gopls"].setup({
+    --
+    --       capabilities = capabilities,
+    --       filetype = { 'go', 'gomod', 'gowork', 'gotmpl' },
+    --
+    --     })
+    --   end,
+    --
+    --   ["bashls"] = function()
+    --     lspconfig["bashls"].setup({
+    --
+    --       capabilities = capabilities,
+    --
+    --     })
+    --   end,
+    --
+    --   ["ts_ls"] = function()
+    --     lspconfig["ts_ls"].setup({
+    --
+    --       capabilities = capabilities,
+    --       root_dir = util.root_pattern('tsconfig.json', 'package.json', 'nuxt.config.ts', 'uno.config.ts', '.git'),
+    --     })
+    --   end,
+    -- })
   end
 }
