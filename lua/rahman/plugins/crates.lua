@@ -8,13 +8,14 @@ return {
         on_attach = function(client, bufnr)
         end,
         actions = true,
-        completion = {
-          cmp = {
-            enabled = true,
-          },
-        },
         hover = true,
-      }
+        completion = true,
+      },
+      completion = {
+        cmp = {
+          enabled = true,
+        },
+      },
     }
   end,
 }
