@@ -1,23 +1,22 @@
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
-  lazy =false,
-  dependencies = "nvim-tree/nvim-web-devicons",
+  lazy = false,
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    local HEIGHT_RATIO = 0.8  -- You can change this
-    local WIDTH_RATIO = 0.7   -- You can change this too
+    local HEIGHT_RATIO = 0.8 -- You can change this
+    local WIDTH_RATIO = 0.7  -- You can change this too
 
 
     local bind = vim.keymap.set
 
     -- nvim tree keymap
-    bind("n","<leader>ex",":NvimTreeToggle<CR>", {desc = "Toggle file explorer"})
-    bind("n","<leader>er",":NvimTreeRefresh<CR>", {desc = "Toggle file explorer"})
+    bind("n", "<leader>ex", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+    bind("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "Toggle file explorer" })
 
 
     require("nvim-tree").setup({
@@ -35,7 +34,7 @@ return {
             local window_h_int = math.floor(window_h)
             local center_x = (screen_w - window_w) / 2
             local center_y = ((vim.opt.lines:get() - window_h) / 2)
-            - vim.opt.cmdheight:get()
+                - vim.opt.cmdheight:get()
             return {
               border = 'rounded',
               relative = 'editor',
@@ -51,7 +50,7 @@ return {
         end,
       },
       filters = {
-        custom = {".DS_Store",".nuxt",".undodir","node_modules","\\.git$", "\\.pyc$", "__pycache__"}
+        custom = { ".DS_Store", ".nuxt", ".undodir", "node_modules", "\\.git$", "\\.pyc$", "__pycache__" }
       },
       git = {
         ignore = false
@@ -89,7 +88,7 @@ return {
             symlink = "",
             bookmark = "󰆤",
             modified = "●",
-              hidden = "󰜌",
+            hidden = "󰜌",
             git = {
               unstaged = "󰅙",
               staged = "",
