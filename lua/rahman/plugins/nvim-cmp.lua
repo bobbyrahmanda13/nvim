@@ -73,6 +73,9 @@ return {
           border = "rounded"
         }),
       },
+      formatting = {
+        format = require("nvim-highlight-colors").format
+      }
     }
   end
 }
