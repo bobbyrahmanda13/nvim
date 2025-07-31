@@ -30,8 +30,8 @@ bind("n", "<leader>j", "<C-w>j")          -- move cursor window to down
 bind("n", "<leader>k", "<C-w>k")          -- move cursor window to up
 bind("n", "<leader>l", "<C-w>l")          -- move cursor window to right
 
-bind("v", "J", ":m '>+1<CR>gv=gv<CR>")    -- moves lines down in visual selection
-bind("v", "K", ":m '<-2<CR>gv=gv<CR>")    -- moves lines up in visual selection
+bind("v", "J", ":m '>+1<CR>gv=gv")        -- moves lines down in visual selection
+bind("v", "K", ":m '<-2<CR>gv=gv")        -- moves lines up in visual selection
 
 bind("n", "J", "mzJ`z")                   -- menggabungkan garis bawah ke garis atas dan meletakkannya di belakang
 bind("n", "Q", "<nop>")
@@ -101,7 +101,7 @@ bind("i", "'", "''<left>")
 bind("i", '"', '""<left>')
 
 -- Keymap render-markdown
-bind("n", "<leader>md", ":RenderMarkdown toggle<CR>") -- go to previous tab
+bind("n", "<leader>md", ":RenderMarkdown toggle<CR>") -- render markdown
 
 -- terminal nvim vim.keymap
 bind("t", "<A-n>", [[<C-\><C-n>]])
