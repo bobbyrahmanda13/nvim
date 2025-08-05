@@ -1,17 +1,16 @@
 return {
   "mrcjkb/rustaceanvim",
   version = '^6', -- Recommended
-  lazy = false, -- This plugin is already lazy
+  lazy = false,   -- This plugin is already lazy
   init = function()
     -- Configure rustaceanvim here
     vim.g.rustaceanvim = {
       server = {
         on_attach = function(client, bufnr)
-
           -- local bufnr = vim.api.nvim_get_current_buf()
           -- vim.keymap.set(
-          --   "n", 
-          --   "<leader>a", 
+          --   "n",
+          --   "<leader>a",
           --   function()
           --     vim.cmd.RustLsp('codeAction') -- supports rust-analyzer's grouping
           --     -- or vim.lsp.buf.codeAction() if you don't want grouping.
@@ -19,14 +18,13 @@ return {
           --   { silent = true, buffer = bufnr }
           -- )
           -- vim.keymap.set(
-          --   "n", 
+          --   "n",
           --   "J",  -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
           --   function()
           --     vim.cmd.RustLsp({'hover', 'actions'})
           --   end,
           --   { silent = true, buffer = bufnr }
           -- )
-
         end,
 
         default_settings = {
