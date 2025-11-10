@@ -10,21 +10,22 @@ return {
     },
   },
   dependencies = {
-    "mason-org/mason.nvim",
-
-    opts = {
-      ui = {
-        check_outdated_packages_on_open = true,
-        border = "rounded",
-        width = 0.8,
-        height = 0.7,
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
+    {"mason-org/mason.nvim", 
+      opts={
+        ui = {
+          check_outdated_packages_on_open = true,
+          border = "rounded",
+          width = 0.8,
+          height = 0.7,
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
         },
-      },
+      }
     },
     "neovim/nvim-lspconfig",
   },
 }
+
