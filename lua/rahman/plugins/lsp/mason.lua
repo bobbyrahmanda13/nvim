@@ -10,8 +10,9 @@ return {
     },
   },
   dependencies = {
-    {"mason-org/mason.nvim", 
-      opts={
+    {
+      "mason-org/mason.nvim",
+      opts = {
         ui = {
           check_outdated_packages_on_open = true,
           border = "rounded",
@@ -28,4 +29,3 @@ return {
     "neovim/nvim-lspconfig",
   },
 }
-
