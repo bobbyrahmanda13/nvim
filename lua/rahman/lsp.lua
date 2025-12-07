@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+
 -- local borderLsp = "rounded"
 local borderLsp = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
 
