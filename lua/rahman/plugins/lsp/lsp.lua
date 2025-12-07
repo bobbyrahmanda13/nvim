@@ -8,7 +8,6 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     vim.lsp.config("*", {
-
       capabilities = capabilities,
     })
   end,

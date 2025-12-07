@@ -43,34 +43,15 @@ return {
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-        -- ['<Tab>'] = cmp.mapping(function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_next_item()
-        --   elseif luasnip.locally_jumpable(1) then
-        --     luasnip.jump(1)
-        --   else
-        --     fallback()
-        --   end
-        -- end, { 'i', 's' }),
         ['<Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            if #cmp.get_entries() == 1 then
-              cmp.confirm({ select = true })
-            else
-              cmp.select_next_item()
-            end
-            --[[ Replace with your snippet engine (see above sections on this page)
-      elseif snippy.can_expand_or_advance() then
-        snippy.expand_or_advance() ]]
-          elseif has_words_before() then
-            cmp.complete()
-            if #cmp.get_entries() == 1 then
-              cmp.confirm({ select = true })
-            end
+            cmp.select_next_item()
+          elseif luasnip.locally_jumpable(1) then
+            luasnip.jump(1)
           else
             fallback()
           end
-        end, { "i", "s" }),
+        end, { 'i', 's' }),
 
         ['<S-Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
