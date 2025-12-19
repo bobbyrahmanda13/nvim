@@ -13,21 +13,21 @@ vim.opt.foldmethod = 'indent'
 
 vim.opt.list = true
 vim.opt.listchars = {
-    space = " ",
-    eol = "",
-    tab = "▎ ",
-    -- tab = "|_>",
-    trail = ".",
-    extends = "❯",
-    precedes = "❮",
-    nbsp = "",
+  space = " ",
+  eol = "",
+  tab = "▎ ",
+  -- tab = "|_>",
+  trail = ".",
+  extends = "❯",
+  precedes = "❮",
+  nbsp = "",
 }
 vim.opt.fillchars = {
-    fold = " ",
-    foldsep = " ",
-    foldopen = "",
-    foldclose = "",
-    diff = "╱",
+  fold = " ",
+  foldsep = " ",
+  foldopen = "",
+  foldclose = "",
+  diff = "╱",
 }
 
 vim.opt.tabstop = 2
@@ -37,7 +37,7 @@ vim.opt.expandtab = true
 
 vim.opt.title = true
 vim.opt.autoindent = true
-vim.opt.smartindent =  true
+vim.opt.smartindent = true
 vim.opt.breakindent = true
 vim.opt.fileencodings = "utf-8"
 vim.scriptencoding = "utf-8"
@@ -51,8 +51,8 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search 
-vim.opt.smartcase = true -- Case insensitive searching UNLESS /C or capital in search 
+vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
+vim.opt.smartcase = true  -- Case insensitive searching UNLESS /C or capital in search
 
 vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
