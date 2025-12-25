@@ -90,8 +90,6 @@ bind("t", "<A-j>", [[<C-\><C-n><C-w>j]])
 bind("t", "<A-k>", [[<C-\><C-n><C-w>k]])
 bind("t", "<A-l>", [[<C-\><C-n><C-w>l]])
 
-bind("n", "<leader>gf", [[ggVG=]])
-
 -- vim.keymap autoclose
 bind("i", "(", "()<left>")
 bind("i", "[", "[]<left>")
@@ -111,3 +109,11 @@ bind("t", "<A-k>", [[<C-\><C-n><C-w>k]])
 bind("t", "<A-l>", [[<C-\><C-n><C-w>l]])
 
 bind("n", "<leader>gf", [[ggVG=]])
+
+
+-- disable key
+bind("n", "<Left>", "<Nop>")
+bind("n", "<Right>", "<Nop>")
+bind("n", "<Up>", "<Nop>")
+bind("n", "<Down>", "<Nop>")
+bind("n", "<C-z>", "<Nop>")
