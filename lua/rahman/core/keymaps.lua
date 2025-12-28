@@ -6,6 +6,8 @@ vim.g.mapleader = " "
 -- general keymaps
 bind("i", "jk", "<Esc>")              -- out insert mode to normal mode
 bind("n", "<leader>bt", ":term<CR>")  -- open terminal
+bind("n", "<leader>lz", ":Lazy<CR>")  -- open lazy
+bind("n", "<leader>ms", ":Mason<CR>") -- open mason
 
 bind("n", "<C-s>", ":w<CR>")          -- save
 
