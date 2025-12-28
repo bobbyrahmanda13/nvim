@@ -5,6 +5,7 @@ vim.g.mapleader = " "
 
 -- general keymaps
 bind("i", "jk", "<Esc>")              -- out insert mode to normal mode
+bind("n", "<leader>bt", ":term<CR>")  -- open terminal
 
 bind("n", "<C-s>", ":w<CR>")          -- save
 
