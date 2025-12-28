@@ -11,5 +11,9 @@ return {
     enable_ansi = true,
     enable_var_usage = true,
     enable_tailwind = true,
+    virtual_symbol = '■',
+    virtual_symbol_prefix = '',
+    virtual_symbol_suffix = ' ',
+    virtual_symbol_position = 'inline',
   }
 }

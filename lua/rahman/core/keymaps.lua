@@ -4,15 +4,14 @@ local bind = vim.keymap.set
 vim.g.mapleader = " "
 
 -- general keymaps
-bind("i", "jk", "<Esc>")                                                          -- out insert mode to normal mode
+bind("i", "jk", "<Esc>")              -- out insert mode to normal mode
 
-bind("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search hl", silent = true }) -- clears search highlights
-bind("n", "<C-s>", ":w<CR>")                                                      -- save
+bind("n", "<C-s>", ":w<CR>")          -- save
 
-bind("n", "<leader>sv", "<C-w>v")                                                 -- split window vertically
-bind("n", "<leader>sh", "<C-w>s")                                                 -- split window horizontaly
-bind("n", "<leader>se", "<C-w>=")                                                 -- make split windows equal width
-bind("n", "<leader>sx", ":close<CR>")                                             -- close current split window
+bind("n", "<leader>sv", "<C-w>v")     -- split window vertically
+bind("n", "<leader>sh", "<C-w>s")     -- split window horizontaly
+bind("n", "<leader>se", "<C-w>=")     -- make split windows equal width
+bind("n", "<leader>sx", ":close<CR>") -- close current split window
 
 bind("n", "rv", ":vertical resize +5")
 bind("n", "rvv", ":vertical resize -5")
