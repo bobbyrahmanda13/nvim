@@ -9,6 +9,7 @@ return {
     require("go").setup()
 
     return {
+
       -- lsp_keymaps = false,
       -- other options
     }
