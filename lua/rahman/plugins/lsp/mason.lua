@@ -7,6 +7,7 @@ return {
       "rust_analyzer",
       "ts_ls",
       "lua_ls",
+      "vue_ls",
     },
   },
   dependencies = {
