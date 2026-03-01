@@ -4,6 +4,8 @@ return {
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-nvim-lsp",
+
     {
       "L3MON4D3/LuaSnip",
       -- follow latest release.
@@ -21,6 +23,13 @@ return {
 
     --loads vscode style snippet from installed plugins
     require("luasnip.loaders.from_vscode").lazy_load()
+
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+    })
 
     local has_words_before = function()
       unpack = unpack or table.unpack
