@@ -1,3 +1,2 @@
-require("rahman.plugins")
-require("rahman.configs.lazy")
-
+require("rahman.core")
+require("rahman.lazy")
