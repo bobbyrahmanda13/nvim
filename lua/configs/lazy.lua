@@ -18,7 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy",
   spec = {
-    { import = "rahman.plugins" },
+    { import = "config.plugins" },
   },
   install = { colorscheme = { "solarized-osaka" } },
   change_detection = {
