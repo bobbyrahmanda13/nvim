@@ -11,6 +11,7 @@ return {
       "vtsls",
     },
   },
+
   dependencies = {
     {
       "mason-org/mason.nvim",
@@ -28,6 +29,7 @@ return {
         },
       }
     },
+
     "neovim/nvim-lspconfig",
     config = function()
       local vue_language_server_path = vim.fn.stdpath('data') ..
@@ -73,7 +75,5 @@ return {
 
       vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
     end
-
-
   },
 }
