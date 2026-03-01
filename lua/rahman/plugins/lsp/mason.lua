@@ -45,6 +45,8 @@ return {
       --   capabilities = capabilities,
       -- })
 
+      lspconfig.vue_ls.setup()
+
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         init_options = {
