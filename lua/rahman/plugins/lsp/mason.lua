@@ -32,7 +32,8 @@ return {
       local lspconfig = require("nvim-lspconfig")
 
       local mason_registry = require("mason-registry")
-      local vue_language_server = mason_registry.get_package("vue-language-server"):get_install_path "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
+      local vue_language_server = mason_registry.get_package("vue-language-server"):get_install_path() ..
+          "/node_modules/@vue/language-server"
 
       -- import cmp-nvim-lsp plugin
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
