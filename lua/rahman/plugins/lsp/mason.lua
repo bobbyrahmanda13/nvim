@@ -28,5 +28,33 @@ return {
       }
     },
     "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("nvim-lspconfig")
+
+      local mason_registry = require("mason-registry")
+      local vue_language_server = mason_registry.get_package("vue-language-server"):get_install_path "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
+
+      -- import cmp-nvim-lsp plugin
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+      -- used to enable autocompletion (assign to every lsp server config)
+      local capabilities = cmp_nvim_lsp.default_capabilities()
+
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+      })
+
+      lspconfig.ts_ls.setup({
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vue_language_server,
+              language = { "vue" },
+            }
+          }
+        }
+      })
+    end
   },
 }
