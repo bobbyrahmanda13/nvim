@@ -1,0 +1,16 @@
+{
+  "plugins": {
+    "nvim-lspconfig": {
+      "rev": "ead0f5f342d8d323441e7d4b88f0fc436a81ad5f",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "solarized-osaka.nvim": {
+      "rev": "f0c2f0ba0bd56108d53c9bfae4bb28ff6c67bbdb",
+      "src": "https://github.com/craftzdog/solarized-osaka.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    }
+  }
+}
