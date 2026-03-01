@@ -33,7 +33,7 @@ return {
 
       local mason_registry = require("mason-registry")
       local vue_language_server = mason_registry.get_package("vue-language-server"):get_install_path() ..
-          "/node_modules/@vue/language-server"
+          "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
 
       -- import cmp-nvim-lsp plugin
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -41,11 +41,12 @@ return {
       -- used to enable autocompletion (assign to every lsp server config)
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
-      vim.lsp.config("*", {
-        capabilities = capabilities,
-      })
+      -- vim.lsp.config("*", {
+      --   capabilities = capabilities,
+      -- })
 
       lspconfig.ts_ls.setup({
+        capabilities = capabilities,
         init_options = {
           plugins = {
             {
