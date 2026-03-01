@@ -28,6 +28,14 @@ vim.opt.fillchars = {
   foldopen = "",
   foldclose = "",
   diff = "╱",
+  horiz = "━",
+  horizup = "┻",
+  horizdown = "┳",
+  vert = "┃",
+  vertleft = "┫",
+  vertright = "┣",
+  verthoriz = "╋",
+  eob = " ",
 }
 
 vim.opt.tabstop = 2
