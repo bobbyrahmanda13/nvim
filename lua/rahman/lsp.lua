@@ -1,5 +1,6 @@
 local bind = vim.keymap.set
 
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -62,12 +63,29 @@ vim.cmd([[highlight DiagnosticInfoLn gui=bold guifg=#859900 ]])
 local severity = vim.diagnostic.severity
 
 vim.diagnostic.config({
-  float = { border = borderLsp },
-  virtual_text = { prefix = '●' }, --default true
-  -- underline = true,
-  severity_sort = true,
-  signs = {
+  underline = true,
+  virtual_lines = {
+    current_line = true,
+    format = function(diagnostic)
+      local message = diagnostic.message
+      local win_width = vim.api.nvim_win_get_width(0)
+      local max_width = math.floor(win_width * 3 / 4)
 
+      if #message <= max_width then
+        return message
+      end
+
+      -- wrap if length message is greather than max_width
+      local wrapped = {}
+      for i = 1, #message, max_width do
+        table.insert(wrapped, message:sub(i, i + max_width - 1))
+      end
+
+      return table.concat(wrapped, "\n")
+    end,
+  },
+  -- signs = true,
+  signs = {
     text = {
       -- [vim.diagnostic.severity.ERROR] = signsIcon.Error,
       -- [vim.diagnostic.severity.WARN] = signsIcon.Warn,
@@ -79,20 +97,40 @@ vim.diagnostic.config({
       [severity.HINT] = '󰌵 ',
       [severity.INFO] = ' ',
     },
-
-    linehl = {
-      -- [vim.diagnostic.severity.ERROR] = 'DiagnosticUnderlineError',
-      -- [vim.diagnostic.severity.WARN] = 'WarningMsg',
-      -- [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-      -- [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-    },
-
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-    },
-
   }
 })
+
+-- vim.diagnostic.config({
+--   float = { border = borderLsp },
+--   virtual_text = { prefix = '●' }, --default true
+--   -- underline = true,
+--   severity_sort = true,
+--   signs = {
+--
+--     text = {
+--       -- [vim.diagnostic.severity.ERROR] = signsIcon.Error,
+--       -- [vim.diagnostic.severity.WARN] = signsIcon.Warn,
+--       -- [vim.diagnostic.severity.HINT] = signsIcon.Hint,
+--       -- [vim.diagnostic.severity.INFO] = signsIcon.Info,
+--       -- [vim.diagnostic.severity.ERROR] = ' ',
+--       [severity.ERROR] = ' ',
+--       [severity.WARN] = ' ',
+--       [severity.HINT] = '󰌵 ',
+--       [severity.INFO] = ' ',
+--     },
+--
+--     linehl = {
+--       -- [vim.diagnostic.severity.ERROR] = 'DiagnosticUnderlineError',
+--       -- [vim.diagnostic.severity.WARN] = 'WarningMsg',
+--       -- [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+--       -- [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+--     },
+--
+--     numhl = {
+--       [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+--       [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+--       [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+--       [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+--     },
+--
+--   }

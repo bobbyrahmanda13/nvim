@@ -3,6 +3,7 @@ return {
   event = "InsertEnter",
   dependencies = {
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
 
     {
@@ -20,14 +21,18 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
 
+    -- import cmp-nvim-lsp plugin
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+    -- used to enable autocompletion (assign to every lsp server config)
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+    })
+
     --loads vscode style snippet from installed plugins
     require("luasnip.loaders.from_vscode").lazy_load()
-
-    local has_words_before = function()
-      unpack = unpack or table.unpack
-      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
 
     cmp.setup {
       snippet = {
