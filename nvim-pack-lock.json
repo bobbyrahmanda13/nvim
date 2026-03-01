@@ -4,6 +4,10 @@
       "rev": "ead0f5f342d8d323441e7d4b88f0fc436a81ad5f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-tree.lua": {
+      "rev": "c988e289428d9202b28ba27479647033c7dd2956",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
     "solarized-osaka.nvim": {
       "rev": "f0c2f0ba0bd56108d53c9bfae4bb28ff6c67bbdb",
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"

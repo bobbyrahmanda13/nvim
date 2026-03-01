@@ -212,9 +212,49 @@ vim.pack.add({
   {src="https://github.com/craftzdog/solarized-osaka.nvim"},
   {src="https://github.com/folke/todo-comments.nvim"},
   {src="https://github.com/neovim/nvim-lspconfig"},
+  {src="https://github.com/nvim-tree/nvim-tree.lua"},
 })
 
-vim.lsp.enable({"lua_ls","gopls","vue_ls"})
+vim.lsp.enable({"lua_ls","gopls","vue_ls","vtsls","ts_ls"})
+
+local vue_language_server_path = vim.fn.stdpath('data') .. "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
+
+local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+local vue_plugin = {
+  name = '@vue/typescript-plugin',
+  location = vue_language_server_path,
+  languages = { 'vue' },
+  configNamespace = 'typescript',
+}
+local vtsls_config = {
+  settings = {
+    vtsls = {
+      tsserver = {
+        globalPlugins = {
+          vue_plugin,
+        },
+      },
+    },
+  },
+  filetypes = tsserver_filetypes,
+}
+
+local ts_ls_config = {
+  init_options = {
+    plugins = {
+      vue_plugin,
+    },
+  },
+  filetypes = tsserver_filetypes,
+}
+
+local vue_ls_config = {}
+vim.lsp.config('vtsls', vtsls_config)
+vim.lsp.config('vue_ls', vue_ls_config)
+vim.lsp.config('ts_ls', ts_ls_config)
+vim.lsp.enable({'vtsls', 'vue_ls'}) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+
 
 vim.cmd("colorscheme solarized-osaka")
+require("nvim-tree").setup()
 
