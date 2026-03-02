@@ -121,6 +121,7 @@ bind("n", "<Down>", "<Nop>")
 bind("n", "<C-z>", "<Nop>")
 
 
+-- options config nvim
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.number = true
@@ -208,6 +209,7 @@ vim.opt.signcolumn = "yes"
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
+-- manage plugin vim.pack.add
 vim.pack.add({
   { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
   { src = "https://github.com/folke/todo-comments.nvim" },
@@ -217,8 +219,11 @@ vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim" },
 })
 
+-- enable plugin using nvim-lspconfig
+--
 vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
 
 local vue_language_server_path = vim.fn.stdpath('data') ..
@@ -259,6 +264,8 @@ vim.lsp.config('vue_ls', vue_ls_config)
 vim.lsp.config('ts_ls', ts_ls_config)
 vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
 
+-- plugin nvim-tree
+--
 -- nvim-tree config
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -368,6 +375,8 @@ require("nvim-tree").setup({
 
 vim.cmd("colorscheme solarized-osaka")
 
+-- configuration diagnostic
+
 vim.cmd([[highlight DiagnosticSignError gui=bold guifg=#dc312e ]])
 vim.cmd([[highlight DiagnosticSignWarn gui=bold guifg=#b38600 ]])
 vim.cmd([[highlight DiagnosticHintLn gui=bold guifg=#2aa298 ]])
@@ -413,7 +422,10 @@ vim.diagnostic.config({
   }
 })
 
+-- plugin todo-comments
 require("todo-comments").setup()
+
+-- plugin lualine
 
 local colors          = require("solarized-osaka.colors").setup({ transform = true })
 local config          = require("solarized-osaka.config").options
@@ -634,6 +646,7 @@ require('lualine').setup {
   extensions = {},
 }
 
+-- plugin gitsigns
 require('gitsigns').setup {
   signs                        = {
     add          = { text = '┃' },
@@ -683,3 +696,5 @@ require('gitsigns').setup {
     col = 1
   },
 }
+
+-- plugin telescope
