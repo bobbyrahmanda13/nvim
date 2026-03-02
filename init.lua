@@ -21,21 +21,21 @@ bind("n", "rvv", ":vertical resize -5")
 bind("n", "rh", ":horizontal resize +5")
 bind("n", "rhh", ":horizontal resize -5")
 
-bind("n", "<leader>to", ":tabnew<CR>")    -- open new tab
-bind("n", "<leader>tx", ":tabclose<CR>")  -- close current tab
-bind("n", "<leader>tn", ":tabn<CR>")      -- go to next tab
-bind("n", "<leader>tp", ":tabp<CR>")      -- go to previous tab
+bind("n", "<leader>to", ":tabnew<CR>")   -- open new tab
+bind("n", "<leader>tx", ":tabclose<CR>") -- close current tab
+bind("n", "<leader>tn", ":tabn<CR>")     -- go to next tab
+bind("n", "<leader>tp", ":tabp<CR>")     -- go to previous tab
 bind("n", "<leader>tf", ":tabnew %<CR>") -- go to previous tab
 
-bind("n", "<leader>h", "<C-w>h")          -- move cursor window to left
-bind("n", "<leader>j", "<C-w>j")          -- move cursor window to down
-bind("n", "<leader>k", "<C-w>k")          -- move cursor window to up
-bind("n", "<leader>l", "<C-w>l")          -- move cursor window to right
+bind("n", "<leader>h", "<C-w>h")         -- move cursor window to left
+bind("n", "<leader>j", "<C-w>j")         -- move cursor window to down
+bind("n", "<leader>k", "<C-w>k")         -- move cursor window to up
+bind("n", "<leader>l", "<C-w>l")         -- move cursor window to right
 
-bind("v", "J", ":m '>+1<CR>gv=gv")        -- moves lines down in visual selection
-bind("v", "K", ":m '<-2<CR>gv=gv")        -- moves lines up in visual selection
+bind("v", "J", ":m '>+1<CR>gv=gv")       -- moves lines down in visual selection
+bind("v", "K", ":m '<-2<CR>gv=gv")       -- moves lines up in visual selection
 
-bind("n", "J", "mzJ`z")                   -- menggabungkan garis bawah ke garis atas dan meletakkannya di belakang
+bind("n", "J", "mzJ`z")                  -- menggabungkan garis bawah ke garis atas dan meletakkannya di belakang
 bind("n", "Q", "<nop>")
 
 bind("n", "<C-d>", "<C-d>zz") -- move down in buffer with cursor centered
@@ -209,15 +209,17 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 vim.pack.add({
-  {src="https://github.com/craftzdog/solarized-osaka.nvim"},
-  {src="https://github.com/folke/todo-comments.nvim"},
-  {src="https://github.com/neovim/nvim-lspconfig"},
-  {src="https://github.com/nvim-tree/nvim-tree.lua"},
+  { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
+  { src = "https://github.com/folke/todo-comments.nvim" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/nvim-tree/nvim-tree.lua" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
 
-vim.lsp.enable({"lua_ls","gopls","vue_ls","vtsls","ts_ls"})
+vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
 
-local vue_language_server_path = vim.fn.stdpath('data') .. "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
+local vue_language_server_path = vim.fn.stdpath('data') ..
+    "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
 
 local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
 local vue_plugin = {
@@ -252,9 +254,113 @@ local vue_ls_config = {}
 vim.lsp.config('vtsls', vtsls_config)
 vim.lsp.config('vue_ls', vue_ls_config)
 vim.lsp.config('ts_ls', ts_ls_config)
-vim.lsp.enable({'vtsls', 'vue_ls'}) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+local HEIGHT_RATIO = 0.8 -- You can change this
+local WIDTH_RATIO = 0.7  -- You can change this too
+
+
+-- nvim tree keymap
+bind("n", "<leader>ex", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+bind("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "Toggle file explorer" })
+
+require("nvim-tree").setup({
+  view = {
+    relativenumber = false,
+    number = true,
+    float = {
+      enable = true,
+      open_win_config = function()
+        local screen_w = vim.opt.columns:get()
+        local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+        local window_w = screen_w * WIDTH_RATIO
+        local window_h = screen_h * HEIGHT_RATIO
+        local window_w_int = math.floor(window_w)
+        local window_h_int = math.floor(window_h)
+        local center_x = (screen_w - window_w) / 2
+        local center_y = ((vim.opt.lines:get() - window_h) / 2)
+            - vim.opt.cmdheight:get()
+        return {
+          border = 'rounded',
+          relative = 'editor',
+          row = center_y,
+          col = center_x,
+          width = window_w_int,
+          height = window_h_int,
+        }
+      end,
+    },
+    width = function()
+      return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+    end,
+  },
+  filters = {
+    custom = { ".DS_Store", ".nuxt", ".undodir", "node_modules", "\\.git$", "\\.pyc$", "__pycache__" }
+  },
+  git = {
+    ignore = false
+  },
+  ui = {
+    confirm = {
+      remove = true,
+      trash = true,
+      default_yes = false,
+    },
+  },
+  renderer = {
+    full_name = true,
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "╚",
+        edge = "║",
+        item = "║",
+        bottom = "═",
+        none = " ",
+      },
+    },
+    icons = {
+      -- web_devicons = {
+      --   file = {
+      --     enable = true,
+      --     color = true,
+      --   },
+      -- },
+      padding = " ",
+      glyphs = {
+        default = "",
+        symlink = "",
+        bookmark = "󰆤",
+        modified = "●",
+        hidden = "󰜌",
+        git = {
+          unstaged = "󰅙",
+          staged = "",
+          unmerged = "󰘭",
+          renamed = "",
+          untracked = "",
+          deleted = "󰗨",
+          ignored = "",
+        },
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+      },
+    },
+  }
+})
 
 
 vim.cmd("colorscheme solarized-osaka")
 require("nvim-tree").setup()
-
