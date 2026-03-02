@@ -368,6 +368,51 @@ require("nvim-tree").setup({
 
 vim.cmd("colorscheme solarized-osaka")
 
+vim.cmd([[highlight DiagnosticSignError gui=bold guifg=#dc312e ]])
+vim.cmd([[highlight DiagnosticSignWarn gui=bold guifg=#b38600 ]])
+vim.cmd([[highlight DiagnosticHintLn gui=bold guifg=#2aa298 ]])
+vim.cmd([[highlight DiagnosticInfoLn gui=bold guifg=#859900 ]])
+
+local severity = vim.diagnostic.severity
+
+vim.diagnostic.config({
+  underline = true,
+  virtual_lines = {
+    current_line = true,
+    format = function(diagnostic)
+      local message = diagnostic.message
+      local win_width = vim.api.nvim_win_get_width(0)
+      local max_width = math.floor(win_width * 3 / 4)
+
+      if #message <= max_width then
+        return message
+      end
+
+      -- wrap if length message is greather than max_width
+      local wrapped = {}
+      for i = 1, #message, max_width do
+        table.insert(wrapped, message:sub(i, i + max_width - 1))
+      end
+
+      return table.concat(wrapped, "\n")
+    end,
+  },
+  -- signs = true,
+  signs = {
+    text = {
+      -- [vim.diagnostic.severity.ERROR] = signsIcon.Error,
+      -- [vim.diagnostic.severity.WARN] = signsIcon.Warn,
+      -- [vim.diagnostic.severity.HINT] = signsIcon.Hint,
+      -- [vim.diagnostic.severity.INFO] = signsIcon.Info,
+      -- [vim.diagnostic.severity.ERROR] = ' ',
+      [severity.ERROR] = ' ',
+      [severity.WARN] = ' ',
+      [severity.HINT] = '󰌵 ',
+      [severity.INFO] = ' ',
+    },
+  }
+})
+
 require("todo-comments").setup()
 
 local colors          = require("solarized-osaka.colors").setup({ transform = true })
@@ -412,7 +457,7 @@ for _, mode in pairs(solarized_osaka) do
   end
 end
 
-function process_sections(sections)
+local function process_sections(sections)
   for name, section in pairs(sections) do
     local left = name:sub(9, 10) < 'x'
     for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
