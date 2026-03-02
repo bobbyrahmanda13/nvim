@@ -220,12 +220,28 @@ vim.pack.add({
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
 })
 
 -- enable plugin using nvim-lspconfig
 --
 vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
 
+-- config lua_ls
+local luals_config = {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      }
+    }
+  }
+}
+
+vim.lsp.config("lua_ls", luals_config)
+
+-- config vue_ls, vtsls, ts_ls
 local vue_language_server_path = vim.fn.stdpath('data') ..
     "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
 
@@ -263,6 +279,11 @@ vim.lsp.config('vtsls', vtsls_config)
 vim.lsp.config('vue_ls', vue_ls_config)
 vim.lsp.config('ts_ls', ts_ls_config)
 vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+
+
+-- plugin nvim-treesitter
+require("nvim-treesitter").install{ "javascript", "typescript", "html", "css", "python", "bash", "markdown", "markdown_inline", "lua", "sql", "regex", "json", "scss", "zig", "vue", "go", "templ", "rust", "graphql", "gitignore", "c", "yaml", "toml", "gotmpl" }
+
 
 -- plugin nvim-tree
 --
@@ -576,16 +597,16 @@ require('lualine').setup {
         sections = { 'error', 'warn', 'info', 'hint' },
 
         diagnostics_color = {
-          error = { fg = colors.red300, bg = colors.base03, gui = 'bold' },        -- Changes diagnostics' error color.
+          error = { fg = colors.red300, bg = colors.base03, gui = 'bold' },    -- Changes diagnostics' error color.
           added = { fg = colors.green300, bg = colors.base03, gui = 'bold' },
-          warn  = { fg = colors.yellow300, bg = colors.base03, gui = 'bold' },     -- Changes diagnostics' warn color.
-          info  = { fg = colors.blue300, bg = colors.base03, gui = 'bold' },       -- Changes diagnostics' info color.
-          hint  = { fg = colors.cyan300, bg = colors.base03, gui = 'bold' },       -- Changes diagnostics' hint color.
+          warn  = { fg = colors.yellow300, bg = colors.base03, gui = 'bold' }, -- Changes diagnostics' warn color.
+          info  = { fg = colors.blue300, bg = colors.base03, gui = 'bold' },   -- Changes diagnostics' info color.
+          hint  = { fg = colors.cyan300, bg = colors.base03, gui = 'bold' },   -- Changes diagnostics' hint color.
         },
         symbols = { error = " ", warn = " ", hint = "󰌵 ", info = " " },
-        colored = true,              -- Displays diagnostics status in color if set to true.
-        update_in_insert = true,     -- Update diagnostics in insert mode. default = false
-        always_visible = false,      -- Show diagnostics even if there are none.
+        colored = true,          -- Displays diagnostics status in color if set to true.
+        update_in_insert = true, -- Update diagnostics in insert mode. default = false
+        always_visible = false,  -- Show diagnostics even if there are none.
       },
       {
         -- code from https://github.com/nvim-lualine/lualine.nvim/blob/566b7036f717f3d676362742630518a47f132fff/examples/evil_lualine.lua
@@ -698,3 +719,43 @@ require('gitsigns').setup {
 }
 
 -- plugin telescope
+
+local telescope = require("telescope")
+local actions = require("telescope.actions")
+
+telescope.setup({
+  defaults = {
+    path_display = { "smart" },
+    mappings = {
+      i = {
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+      }
+    }
+  }
+})
+
+telescope.load_extension("fzf")
+
+
+local builtin = require('telescope.builtin')
+
+local bind = vim.keymap.set
+
+bind("n", "<leader>ff", builtin.find_files, {})
+bind("n", "<leader>fg", builtin.live_grep, {})
+bind("n", "<leader>fc", function()
+  builtin.grep_string({ search = vim.fn.input("GREP > ") })
+end)
+bind("n", "<leader>fb", builtin.buffers, {})
+bind("n", "<leader>fh", builtin.help_tags, {})
+bind("n", "<leader>fk", builtin.keymaps, {})
+bind("n", "<leader>fr", builtin.lsp_references, {})
+bind("n", "<leader>fb", builtin.loclist, {})
+
+-- telescope git commands (not on youtube nvim video)
+bind("n", "<leader>gc", "<cmd>telescope git_commits<cr>")   -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+bind("n", "<leader>gfc", "<cmd>telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
+bind("n", "<leader>gb", "<cmd>telescope git_branches<cr>")  -- list git branches (use <cr> to checkout) ["gb" for git branch]
+bind("n", "<leader>gs", "<cmd>telescope git_status<cr>")    -- list current changes per file with diff preview ["gs" for git status]

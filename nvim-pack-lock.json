@@ -16,6 +16,10 @@
       "rev": "c988e289428d9202b28ba27479647033c7dd2956",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
+    "nvim-treesitter": {
+      "rev": "cb2cb74f3c3cbbcc17e79cada2060165d616d849",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
     "nvim-web-devicons": {
       "rev": "737cf6c657898d0c697311d79d361288a1343d50",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
@@ -27,6 +31,10 @@
     "solarized-osaka.nvim": {
       "rev": "f0c2f0ba0bd56108d53c9bfae4bb28ff6c67bbdb",
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
     },
     "telescope.nvim": {
       "rev": "5255aa27c422de944791318024167ad5d40aad20",
