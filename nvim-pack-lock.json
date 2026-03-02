@@ -4,6 +4,10 @@
       "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "lualine.nvim": {
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "ead0f5f342d8d323441e7d4b88f0fc436a81ad5f",
       "src": "https://github.com/neovim/nvim-lspconfig"
