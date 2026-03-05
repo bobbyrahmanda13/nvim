@@ -1,5 +1,7 @@
 local opts = { noremap = true, silent = true }
+local lspconfig = vim.lsp.config
 local bind = vim.keymap.set
+local severity = vim.diagnostic.severity
 
 vim.g.mapleader = " "
 
@@ -62,7 +64,10 @@ bind("n", "<leader>f", vim.lsp.buf.format)
 bind("n", "x", '"_x', opts)                                                    -- prevents deleted characters from copying to clipboard
 
 bind("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) --Replace word cursor is on globally
+bind("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/]])
 bind("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
+
+bind("n", "<leader>ps", "<cmd>lua vim.pack.update()<CR>")
 
 -- Highlight Yank
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -114,6 +119,7 @@ bind("n", "<leader>gf", [[ggVG=]])
 
 
 -- disable key
+bind("n", "q", "<Nop>")
 bind("n", "<Left>", "<Nop>")
 bind("n", "<Right>", "<Nop>")
 bind("n", "<Up>", "<Nop>")
@@ -122,8 +128,10 @@ bind("n", "<C-z>", "<Nop>")
 
 
 -- options config nvim
+
 vim.opt.clipboard = 'unnamedplus'
 
+vim.opt.inccommand = "split"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -239,7 +247,7 @@ local luals_config = {
   }
 }
 
-vim.lsp.config("lua_ls", luals_config)
+lspconfig("lua_ls", luals_config)
 
 -- config vue_ls, vtsls, ts_ls
 local vue_language_server_path = vim.fn.stdpath('data') ..
@@ -275,14 +283,15 @@ local ts_ls_config = {
 }
 
 local vue_ls_config = {}
-vim.lsp.config('vtsls', vtsls_config)
-vim.lsp.config('vue_ls', vue_ls_config)
-vim.lsp.config('ts_ls', ts_ls_config)
+
+lspconfig('vtsls', vtsls_config)
+lspconfig('vue_ls', vue_ls_config)
+lspconfig('ts_ls', ts_ls_config)
 vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
 
 
 -- plugin nvim-treesitter
-require("nvim-treesitter").install{ "javascript", "typescript", "html", "css", "python", "bash", "markdown", "markdown_inline", "lua", "sql", "regex", "json", "scss", "zig", "vue", "go", "templ", "rust", "graphql", "gitignore", "c", "yaml", "toml", "gotmpl" }
+require("nvim-treesitter").install { "javascript", "typescript", "html", "css", "python", "bash", "markdown", "markdown_inline", "lua", "sql", "regex", "json", "scss", "zig", "vue", "go", "templ", "rust", "graphql", "gitignore", "c", "yaml", "toml", "gotmpl" }
 
 
 -- plugin nvim-tree
@@ -403,7 +412,6 @@ vim.cmd([[highlight DiagnosticSignWarn gui=bold guifg=#b38600 ]])
 vim.cmd([[highlight DiagnosticHintLn gui=bold guifg=#2aa298 ]])
 vim.cmd([[highlight DiagnosticInfoLn gui=bold guifg=#859900 ]])
 
-local severity = vim.diagnostic.severity
 
 vim.diagnostic.config({
   underline = true,
@@ -740,8 +748,6 @@ telescope.load_extension("fzf")
 
 local builtin = require('telescope.builtin')
 
-local bind = vim.keymap.set
-
 bind("n", "<leader>ff", builtin.find_files, {})
 bind("n", "<leader>fg", builtin.live_grep, {})
 bind("n", "<leader>fc", function()
@@ -752,4 +758,3 @@ bind("n", "<leader>fh", builtin.help_tags, {})
 bind("n", "<leader>fk", builtin.keymaps, {})
 bind("n", "<leader>fr", builtin.lsp_references, {})
 bind("n", "<leader>fb", builtin.loclist, {})
-
