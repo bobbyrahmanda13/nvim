@@ -241,7 +241,7 @@ local luals_config = {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { "vim" },
+        globals = { "vim", "empty" },
       }
     }
   }
@@ -749,7 +749,7 @@ telescope.load_extension("fzf")
 local builtin = require('telescope.builtin')
 
 bind("n", "<leader>ff", builtin.find_files, {})
-bind("n", "<leader>fg", builtin.live_grep, {})
+-- bind("n", "<leader>fg", builtin.live_grep, {})
 bind("n", "<leader>fc", function()
   builtin.grep_string({ search = vim.fn.input("GREP > ") })
 end)
