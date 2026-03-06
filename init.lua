@@ -232,9 +232,6 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
 })
 
--- enable plugin using nvim-lspconfig
---
-vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls", "rust-analyzer" })
 
 -- config lua_ls
 local luals_config = {
@@ -283,11 +280,15 @@ local ts_ls_config = {
 }
 
 local vue_ls_config = {}
+local rust_config = {}
 
 lspconfig('vtsls', vtsls_config)
 lspconfig('vue_ls', vue_ls_config)
 lspconfig('ts_ls', ts_ls_config)
-vim.lsp.enable({ 'vtsls', 'vue_ls' }) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+lspconfig('rust-analyzer',rust_config)
+
+--
+vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls", "rust-analyzer" })
 
 
 -- plugin nvim-treesitter
