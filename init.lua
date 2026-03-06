@@ -234,7 +234,7 @@ vim.pack.add({
 
 -- enable plugin using nvim-lspconfig
 --
-vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
+vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls", "rust-analyzer" })
 
 -- config lua_ls
 local luals_config = {
