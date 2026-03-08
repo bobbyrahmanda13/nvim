@@ -3,7 +3,7 @@ return {
   lazy = false,
   build = ":TSUpdate",
   config = function()
-    require('nvim-treesitter.config').setup {
+    require('nvim-treesitter.configs').setup {
       ensure_installed = { "javascript", "typescript", "html", "css", "python", "bash", "markdown", "markdown_inline", "lua", "sql", "regex", "json", "scss", "zig", "vue", "go", "templ", "rust", "prisma", "graphql", "gitignore", "c", "yaml", "toml", "helm", "gotmpl" },
 
       sync_install = false,
@@ -16,6 +16,8 @@ return {
       indent = {
         enable = true
       },
+
+
     }
 
     vim.api.nvim_create_autocmd('FileType', {
