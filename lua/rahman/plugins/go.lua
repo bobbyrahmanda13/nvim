@@ -6,10 +6,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
   },
   opts = function()
-    require("go").setup()
-
+    require("go").setup(opts)
     return {
-
       -- lsp_keymaps = false,
       -- other options
     }
