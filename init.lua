@@ -234,7 +234,6 @@ vim.pack.add({
   { src = "https://github.com/mrcjkb/rustaceanvim",                      version = '^8' },
 })
 
-
 -- config lua_ls
 local luals_config = {
   settings = {
@@ -282,20 +281,35 @@ local ts_ls_config = {
 }
 
 local vue_ls_config = {}
-local rust_config = {}
+
+vim.g.rustaceanvim = {
+  -- Plugin configuration
+  tools = {
+  },
+  -- LSP configuration
+  server = {
+    -- on_attach = function(client, bufnr)
+    --   -- you can also put keymaps in here
+    -- end,
+    default_settings = {
+      -- rust-analyzer language server configuration
+      ['rust-analyzer'] = {
+      },
+    },
+  },
+  -- DAP configuration
+  dap = {
+  },
+}
 
 lspconfig('vtsls', vtsls_config)
 lspconfig('vue_ls', vue_ls_config)
 lspconfig('ts_ls', ts_ls_config)
-lspconfig('rust-analyzer', rust_config)
 
---
-vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls", "rust-analyzer" })
-
+vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
 
 -- plugin nvim-treesitter
 require("nvim-treesitter").install { "javascript", "typescript", "html", "css", "python", "bash", "markdown", "markdown_inline", "lua", "sql", "regex", "json", "scss", "zig", "vue", "go", "templ", "rust", "graphql", "gitignore", "c", "yaml", "toml", "gotmpl" }
-
 
 -- plugin nvim-tree
 --
