@@ -230,6 +230,7 @@ vim.pack.add({
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
+  { src = "https://github.com/mrcjkb/rustaceanvim",                      version = '^8' },
 })
 
 
@@ -285,7 +286,7 @@ local rust_config = {}
 lspconfig('vtsls', vtsls_config)
 lspconfig('vue_ls', vue_ls_config)
 lspconfig('ts_ls', ts_ls_config)
-lspconfig('rust-analyzer',rust_config)
+lspconfig('rust-analyzer', rust_config)
 
 --
 vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls", "rust-analyzer" })
