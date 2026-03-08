@@ -27,7 +27,6 @@ bind("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 bind("n", "<leader>tn", ":tabn<CR>")     -- go to next tab
 bind("n", "<leader>tp", ":tabp<CR>")     -- go to previous tab
 bind("n", "<leader>tf", ":tabnew %<CR>") -- go to previous tab
-
 bind("n", "<leader>h", "<C-w>h")         -- move cursor window to left
 bind("n", "<leader>j", "<C-w>j")         -- move cursor window to down
 bind("n", "<leader>k", "<C-w>k")         -- move cursor window to up
