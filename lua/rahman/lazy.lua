@@ -24,6 +24,7 @@ local opts = {
     enabled = true,
     notify = false,
   },
+  install = { colorscheme = { "solarized-osaka" } },
   checker = {
     enabled = true,
     notify = false,
