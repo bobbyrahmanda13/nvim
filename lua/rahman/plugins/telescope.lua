@@ -30,15 +30,15 @@ return {
 
     local bind = vim.keymap.set
 
-bind("n", "<leader>ff", builtin.find_files, {})
--- bind("n", "<leader>fg", builtin.live_grep, {})
-bind("n", "<leader>fc", function()
-  builtin.grep_string({ search = vim.fn.input("GREP > ") })
-end)
-bind("n", "<leader>fb", builtin.buffers, {})
-bind("n", "<leader>fh", builtin.help_tags, {})
-bind("n", "<leader>fk", builtin.keymaps, {})
-bind("n", "<leader>fr", builtin.lsp_references, {})
-bind("n", "<leader>fb", builtin.loclist, {})
+    bind("n", "<leader>ff", builtin.find_files, {})
+    -- bind("n", "<leader>fg", builtin.live_grep, {})
+    bind("n", "<leader>fc", function()
+      builtin.grep_string({ search = vim.fn.input("GREP > ") })
+    end)
+    bind("n", "<leader>fb", builtin.buffers, {})
+    bind("n", "<leader>fh", builtin.help_tags, {})
+    bind("n", "<leader>fk", builtin.keymaps, {})
+    bind("n", "<leader>fr", builtin.lsp_references, {})
+    bind("n", "<leader>fb", builtin.loclist, {})
   end
 }

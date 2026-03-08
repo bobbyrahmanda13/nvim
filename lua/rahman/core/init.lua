@@ -1,6 +1,5 @@
 local bind = vim.keymap.set
 local opts = { noremap = true, silent = true }
-local severity = vim.diagnostic.severity
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"

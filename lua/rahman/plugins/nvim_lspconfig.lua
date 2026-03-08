@@ -84,6 +84,8 @@ return {
       vim.cmd([[highlight DiagnosticInfoLn gui=bold guifg=#859900 ]])
 
 
+      local severity = vim.diagnostic.severity
+
       vim.diagnostic.config({
         underline = true,
         virtual_lines = {
