@@ -230,20 +230,21 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.pack.add({
   { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  { src = "https://github.com/neovim/nvim-lspconfig",                    cmd = true },
+  { src = "https://github.com/neovim/nvim-lspconfig",                   cmd = true },
   { src = "https://github.com/nvim-tree/nvim-tree.lua" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/saghen/blink.cmp",                         build = 'cargo build --release' },
+  { src = "https://github.com/saghen/blink.cmp", },
   { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter",          build = ":TSUpdate" },
-  { src = "https://github.com/mrcjkb/rustaceanvim",                      version = '^8' },
+  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter",         build = ":TSUpdate" },
+  { src = "https://github.com/mrcjkb/rustaceanvim" },
+  { src = "https://github.com/ray-x/go.nvim",                           build = ':lua require("go.install").update_all_sync()' },
+  { src = "https://github.com/ray-x/guihui.lua" },
 })
-
 
 local lspconfig = vim.lsp.config
 

@@ -12,6 +12,10 @@
       "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "go.nvim": {
+      "rev": "659b105cf7f97049f6fe76a554917642f27ecd16",
+      "src": "https://github.com/ray-x/go.nvim"
+    },
     "lualine.nvim": {
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -38,8 +42,7 @@
     },
     "rustaceanvim": {
       "rev": "f2f0c1231a5b019dbc1fd6dafac1751c878925a3",
-      "src": "https://github.com/mrcjkb/rustaceanvim",
-      "version": "'^8'"
+      "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "solarized-osaka.nvim": {
       "rev": "f0c2f0ba0bd56108d53c9bfae4bb28ff6c67bbdb",
