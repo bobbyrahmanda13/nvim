@@ -1,10 +1,8 @@
 local opts = { noremap = true, silent = true }
-local lspconfig = vim.lsp.config
 local bind = vim.keymap.set
 local severity = vim.diagnostic.severity
 
 vim.g.mapleader = " "
-
 -- general keymaps
 bind("i", "jk", "<Esc>")              -- out insert mode to normal mode
 bind("n", "<leader>bt", ":term<CR>")  -- open terminal
@@ -75,6 +73,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("rahman-highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
+  end,
+})
+
+-- Aktifkan petunjuk tipe data (inlay hints) saat LSP menempel ke buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+    end
   end,
 })
 
@@ -222,10 +230,12 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 vim.pack.add({
   { src = "https://github.com/craftzdog/solarized-osaka.nvim" },
   { src = "https://github.com/folke/todo-comments.nvim" },
-  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/neovim/nvim-lspconfig",                    cmd = true },
   { src = "https://github.com/nvim-tree/nvim-tree.lua" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/saghen/blink.cmp",                         build = 'cargo build --release', version = '1.*', },
+  { src = "https://github.com/rafamadriz/friendly-snippets" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/nvim-lualine/lualine.nvim" },
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
@@ -234,8 +244,105 @@ vim.pack.add({
   { src = "https://github.com/mrcjkb/rustaceanvim",                      version = '^8' },
 })
 
--- config lua_ls
+
+local lspconfig = vim.lsp.config
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
+
+capabilities = vim.tbl_deep_extend('force', capabilities, {
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true
+    }
+  }
+})
+
+require("blink.cmp").setup({
+  keymap = {
+    preset = "none",
+    ["<Tab>"] = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
+    ["<CR>"] = { "select_and_accept", "fallback" },
+    ["<C-space>"] = {
+      function(cmp)
+        cmp.show({ providers = { "lsp", "path", "buffer" } })
+      end,
+    },
+  },
+
+  sources = {
+    default = { "lsp", "path", "snippets", "buffer" },
+    providers = {
+      emoji = {
+        module = "blink-emoji",
+        name = "Emoji",
+        score_offset = 15,
+        opts = {
+          insert = true,
+          ---@type string|table|fun():table
+          trigger = function()
+            return { ":" }
+          end,
+        },
+        should_show_items = function()
+          return vim.tbl_contains({ "gitcommit", "markdown", "html" }, vim.o.filetype)
+        end,
+      },
+    },
+  },
+
+  cmdline = {
+    enabled = false,
+  },
+
+  term = {
+    enabled = false,
+  },
+
+  completion = {
+    accept = {
+      create_undo_point = false,
+      auto_brackets = {
+        enabled = false,
+      },
+    },
+
+    list = {
+      selection = { preselect = true, auto_insert = false },
+    },
+
+    menu = {
+      draw = {
+        treesitter = { "lsp" },
+        columns = {
+          { "kind_icon",   gap = 1 },
+          { "label",       "label_description", gap = 1 },
+          { "source_name", gap = 1 },
+        },
+        components = {
+          source_name = {
+            highlight = "BlinkCmpKind",
+          },
+        },
+      },
+    },
+
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 300,
+      window = {
+        border = "single",
+      },
+    },
+  },
+})
+
+
 local luals_config = {
+  capabilities = capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -244,21 +351,23 @@ local luals_config = {
     }
   }
 }
-
 lspconfig("lua_ls", luals_config)
 
 -- config vue_ls, vtsls, ts_ls
 local vue_language_server_path = vim.fn.stdpath('data') ..
     "/home/rahman/.local/share/pnpm/global/5/node_modules/@vue/language-server"
 
-local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
-local vue_plugin = {
+local tsserver_filetypes       = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+local vue_plugin               = {
+  capabilities = capabilities,
   name = '@vue/typescript-plugin',
   location = vue_language_server_path,
   languages = { 'vue' },
   configNamespace = 'typescript',
 }
-local vtsls_config = {
+
+local vtsls_config             = {
+  capabilities = capabilities,
   settings = {
     vtsls = {
       tsserver = {
@@ -271,7 +380,8 @@ local vtsls_config = {
   filetypes = tsserver_filetypes,
 }
 
-local ts_ls_config = {
+local ts_ls_config             = {
+  capabilities = capabilities,
   init_options = {
     plugins = {
       vue_plugin,
@@ -280,7 +390,13 @@ local ts_ls_config = {
   filetypes = tsserver_filetypes,
 }
 
-local vue_ls_config = {}
+local vue_ls_config            = {
+  capabilities = capabilities,
+}
+
+lspconfig('vtsls', vtsls_config)
+lspconfig('vue_ls', vue_ls_config)
+lspconfig('ts_ls', ts_ls_config)
 
 vim.g.rustaceanvim = {
   -- Plugin configuration
@@ -294,6 +410,7 @@ vim.g.rustaceanvim = {
     default_settings = {
       -- rust-analyzer language server configuration
       ['rust-analyzer'] = {
+        capabilites = capabilities,
         imports = {
           granularity = {
             group = "module",
@@ -335,9 +452,6 @@ vim.g.rustaceanvim = {
   },
 }
 
-lspconfig('vtsls', vtsls_config)
-lspconfig('vue_ls', vue_ls_config)
-lspconfig('ts_ls', ts_ls_config)
 
 vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
 

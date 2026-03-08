@@ -1,5 +1,14 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "e9556f9b981f395e22a6bfd69fd5f3008a2a6cd9",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'1.*'"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
     "gitsigns.nvim": {
       "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
