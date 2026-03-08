@@ -8,7 +8,7 @@ return {
     },
   },
   opts = function()
-    require("go").setup(opts)
+    require("go").setup()
   end,
   event = { "CmdlineEnter" },
   ft = { "go", 'gomod' },
