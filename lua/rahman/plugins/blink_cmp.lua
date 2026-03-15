@@ -71,13 +71,50 @@ return {
             draw = {
               treesitter = { "lsp" },
               columns = {
-                { "label",       "label_description", gap = 1 },
-                { "kind_icon",   gap = 1 },
-                { "source_name", gap = 1 },
+                { "kind_icon" },
+                { "label", },
+                { "label_description", gap = 1 },
+                { "source_name",       gap = 1 },
               },
               components = {
+                label = {
+                  width = { fill = true, max = 60 },
+                  text = function(ctx) return ctx.label .. ctx.label_detail end,
+                  highlight = function(ctx)
+                    -- label and label details
+                    local highlights = {
+                      { 0, #ctx.label, group = ctx.deprecated and 'BlinkCmpLabelDeprecated' or 'BlinkCmpLabel' },
+                    }
+                    if ctx.label_detail then
+                      table.insert(highlights,
+                        { #ctx.label, #ctx.label + #ctx.label_detail, group = 'BlinkCmpLabelDetail' })
+                    end
+
+                    -- characters matched on the label by the fuzzy matcher
+                    for _, idx in ipairs(ctx.label_matched_indices) do
+                      table.insert(highlights, { idx, idx + 1, group = 'BlinkCmpLabelMatch' })
+                    end
+
+                    return highlights
+                  end,
+                },
+
+                label_description = {
+                  width = { max = 30 },
+                  text = function(ctx) return ctx.label_description end,
+                  highlight = 'BlinkCmpLabelDescription',
+                },
+
                 source_name = {
-                  highlight = "BlinkCmpKind",
+                  width = { max = 30 },
+                  text = function(ctx) return ctx.source_name end,
+                  highlight = 'BlinkCmpSource',
+                },
+
+                source_id = {
+                  width = { max = 30 },
+                  text = function(ctx) return ctx.source_id end,
+                  highlight = 'BlinkCmpSource',
                 },
               },
             },
