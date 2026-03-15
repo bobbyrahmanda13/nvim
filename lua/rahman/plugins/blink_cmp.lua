@@ -46,8 +46,15 @@ return {
         term = {
           enabled = false,
         },
-
         completion = {
+          ghost_text = {
+            show_with_menu = true,
+            enabled = true,
+          },
+          trigger = {
+            show_on_accept_on_trigger_character = true,
+            show_on_blocked_trigger_characters = { ' ', '\n', '\t' },
+          },
           accept = {
             create_undo_point = false,
             auto_brackets = {
@@ -60,11 +67,12 @@ return {
           },
 
           menu = {
+            auto_show = true,
             draw = {
               treesitter = { "lsp" },
               columns = {
-                { "kind_icon",   gap = 1 },
                 { "label",       "label_description", gap = 1 },
+                { "kind_icon",   gap = 1 },
                 { "source_name", gap = 1 },
               },
               components = {
