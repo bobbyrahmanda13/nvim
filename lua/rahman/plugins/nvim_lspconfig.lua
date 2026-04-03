@@ -14,6 +14,14 @@ return {
         }
       })
 
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(ev)
+          local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP code action' })
+        end
+      })
+
       local luals_config = {
         capabilities = capabilities,
         settings = {
