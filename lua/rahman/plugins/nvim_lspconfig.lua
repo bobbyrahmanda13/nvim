@@ -17,8 +17,20 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(ev)
           local client = vim.lsp.get_client_by_id(ev.data.client_id)
-
-          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP code action' })
+          -- Navigasi dan Informasi Kode
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Lsp declaration' })                    -- Ke Deklarasi
+          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'lsp definition' })                      -- Ke Definisi
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'lsp Dokumentasi' })                           -- Dokumentasi (Hover)
+          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'lsp implementation' })              -- Ke Implementasi
+          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'lsp signature help' })           -- Signature Help
+          vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'lsp references' })                      -- List References
+          vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'lsp type definition' })     -- Type Definition
+          vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'lsp rename variable / function' })  -- Rename Variabel/Fungsi
+          vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP code action' })
+          vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'lsp prev diagnostic error' })         -- Error Sebelumnya
+          vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'lsp next diagnostic error' })         -- Error Berikutnya
+          vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'lsp floating diagnostic' })   -- Floating Diagnostic
+          vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = ' lsp list all diagnostics' }) -- List semua Diagnostic
         end
       })
 
