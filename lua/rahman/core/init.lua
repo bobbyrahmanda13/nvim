@@ -149,9 +149,9 @@ vim.o.mouse = 'a'
 vopt.showbreak = '↪'
 vopt.backspace = { "start", "eol", "indent" }
 
-vopt.foldenable = false
+vopt.foldenable = true
 vopt.foldlevel = 2
-vopt.foldmethod = 'indent'
+vopt.foldmethod = 'marker'
 
 vopt.list = true
 vopt.listchars = {
