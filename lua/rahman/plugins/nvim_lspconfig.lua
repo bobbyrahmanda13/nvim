@@ -87,6 +87,10 @@ return {
         capabilities = capabilities,
       }
 
+      local json_ls_config           = {
+        capabilities = capabilities,
+      }
+
       local gopls_config             = {
         capabilities = capabilities,
         settings = {
@@ -117,6 +121,7 @@ return {
       lspconfig('vue_ls', vue_ls_config)
       lspconfig('ts_ls', ts_ls_config)
       lspconfig('gopls', gopls_config)
+      lspconfig('jsonls', json_ls_config)
 
 
       vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })
