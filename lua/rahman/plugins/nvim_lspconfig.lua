@@ -4,7 +4,7 @@ return {
     config = function()
       local lspconfig = vim.lsp.config
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      -- capabilities.textDocument.completion.completionItem.snippetSupport = true
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
       capabilities = vim.tbl_deep_extend('force', capabilities, {
         textDocument = {
