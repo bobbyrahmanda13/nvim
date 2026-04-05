@@ -90,6 +90,14 @@ return {
 
       local json_ls_config           = {
         capabilities = capabilities,
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = {
+              enable = true
+            },
+          },
+        },
       }
 
       local gopls_config             = {
