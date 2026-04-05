@@ -4,7 +4,7 @@ return {
     config = function()
       local lspconfig = vim.lsp.config
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      -- capabilities.textDocument.completion.completionItem.snippetSupport = true
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
       capabilities = vim.tbl_deep_extend('force', capabilities, {
         textDocument = {
@@ -88,18 +88,6 @@ return {
         capabilities = capabilities,
       }
 
-      local json_ls_config           = {
-        capabilities = capabilities,
-        settings = {
-          json = {
-            schemas = require('schemastore').json.schemas(),
-            validate = {
-              enable = true
-            },
-          },
-        },
-      }
-
       local gopls_config             = {
         capabilities = capabilities,
         settings = {
@@ -130,7 +118,6 @@ return {
       lspconfig('vue_ls', vue_ls_config)
       lspconfig('ts_ls', ts_ls_config)
       lspconfig('gopls', gopls_config)
-      lspconfig('jsonls', json_ls_config)
 
 
       vim.lsp.enable({ "lua_ls", "gopls", "vue_ls", "vtsls", "ts_ls" })

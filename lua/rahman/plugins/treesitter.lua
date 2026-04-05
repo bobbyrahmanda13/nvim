@@ -17,7 +17,7 @@ return {
       },
     }
     require 'nvim-treesitter'.install {
-      'rust', 'comment', 'gowork', 'javascript', 'typescript', "vue", "go", "sql", "graphql", "html", "css", "bash", "python", "vim", "json", "toml", "yaml", "ssh_config", "markdown", "markdown_inline", "gomod", "gosum", "gotmpl", "c", "csv" }
+      'rust', 'comment', 'gowork', 'javascript', 'typescript', "vue", "go", "sql", "graphql", "html", "css", "bash", "python", "vim", "json5", "toml", "yaml", "ssh_config", "markdown", "markdown_inline", "gomod", "gosum", "gotmpl", "c", "csv" }
 
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { '<filetype>' },
