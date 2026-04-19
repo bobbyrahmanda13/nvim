@@ -134,7 +134,7 @@ return {
 
       vim.diagnostic.config({
         underline = true,
-        -- virtual_lines = true,
+        virtual_text = true,
         -- virtual_lines = {
         --   current_line = true,
         --   format = function(diagnostic)
