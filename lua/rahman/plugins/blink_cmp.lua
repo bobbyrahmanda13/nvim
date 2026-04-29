@@ -1,7 +1,7 @@
 return {
   {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    dependencies = { 'rafamadriz/friendly-snippets' ,'saghen/blink.lib' },
     config = function()
       require("blink.cmp").download({force=true,tag = "*"}):wait(60000)
       require("blink.cmp").setup({
