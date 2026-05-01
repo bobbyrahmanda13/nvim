@@ -9,11 +9,7 @@ return {
       require("blink.cmp").build():wait(60000)
     end,
 
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
-
     config = function()
-      require("blink.cmp").download({ force = true, tag = "*" }):wait(60000)
       require("blink.cmp").setup({
         keymap = {
           preset = "none",
@@ -27,7 +23,7 @@ return {
           },
         },
 
-        fuzzy = { implementation = "prefer_rust_with_warning" },
+        fuzzy = { implementation = "rust" },
 
         sources = {
           default = { "lsp", "path", "snippets", "buffer" },
