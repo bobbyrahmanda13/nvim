@@ -45,11 +45,9 @@ return {
             },
           },
         },
-
         cmdline = {
           enabled = false,
         },
-
         term = {
           enabled = false,
         },
@@ -68,7 +66,6 @@ return {
               enabled = false,
             },
           },
-
           list = {
             selection = { preselect = true, auto_insert = false },
           },
