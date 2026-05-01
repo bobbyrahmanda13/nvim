@@ -1,9 +1,19 @@
 return {
   {
     'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' ,'saghen/blink.lib' },
+    dependencies = {
+      'saghen/blink.lib',
+      'rafamadriz/friendly-snippets'
+    },
+    build = function()
+      require("blink.cmp").build():wait(60000)
+    end,
+
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+
     config = function()
-      require("blink.cmp").download({force=true,tag = "*"}):wait(60000)
+      require("blink.cmp").download({ force = true, tag = "*" }):wait(60000)
       require("blink.cmp").setup({
         keymap = {
           preset = "none",
@@ -131,4 +141,6 @@ return {
         },
       })
     end
-  } }
+  },
+
+}
