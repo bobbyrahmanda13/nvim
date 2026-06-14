@@ -5,9 +5,7 @@ return {
       'saghen/blink.lib',
       'rafamadriz/friendly-snippets'
     },
-    build = function()
-      require('blink.cmp').build():pwait()
-    end,
+    build = function() require("blink.cmp").build():pwait() end,
     config = function()
       require("blink.cmp").setup({
         keymap = {
@@ -122,7 +120,6 @@ return {
               },
             },
           },
-
           documentation = {
             auto_show = true,
             auto_show_delay_ms = 300,
