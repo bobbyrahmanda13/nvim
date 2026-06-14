@@ -6,9 +6,8 @@ return {
       'rafamadriz/friendly-snippets'
     },
     build = function()
-      require("blink.cmp").build():pwait()
+      require('blink.cmp').build():pwait()
     end,
-
     config = function()
       require("blink.cmp").setup({
         keymap = {
