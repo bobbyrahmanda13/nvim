@@ -5,7 +5,10 @@ return {
       'saghen/blink.lib',
       'rafamadriz/friendly-snippets'
     },
-    build = function() require("blink.cmp").build():pwait() end,
+    version = "*",
+    build = function()
+      require("blink.cmp").build().pwait()
+    end,
     config = function()
       require("blink.cmp").setup({
         keymap = {
